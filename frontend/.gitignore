@@ -23,6 +23,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-src/components/ChampionList.jsx
-src/services/api.js

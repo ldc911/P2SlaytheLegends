@@ -10,10 +10,10 @@ function ChampionsList() {
       setChampions(json.data);
       setIsMounting(false);
     });
-  }, []);
+  }, [isMounting]);
 
   return isMounting ? (
-    <p>En cours de chargement =P</p>
+    <p>En cours de chargement</p>
   ) : (
     <ul>
       {champions &&
