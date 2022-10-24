@@ -1,0 +1,17 @@
+header {   
+    display: flex ;
+}
+/*classe pour le Dark Mode (default)*/
+header, .darkMode{
+    background-color:var(--header-footer-bg-color-black);
+}
+
+/*classe pour le light Mode*/
+header, .lightMode{
+    background-color:var(--header-footer-bg-color-white);
+}
+
+.headerLogo {
+    max-height: 100px;
+    margin-left:5%;
+}
