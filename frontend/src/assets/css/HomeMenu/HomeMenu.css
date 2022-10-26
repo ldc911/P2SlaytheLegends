@@ -127,13 +127,13 @@ span span:after {
   top: 1.5vmin;
 }
 
-span:hover+.wrap,
+span:hover + .wrap,
 .wrap:hover {
   transform: scale(0.8) translateZ(0px);
   opacity: 1;
 }
 
-span:hover+.wrap a,
+span:hover + .wrap a,
 .wrap:hover a {
   transform: scale(1) translatez(0px);
 }
