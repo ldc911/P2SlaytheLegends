@@ -1,12 +1,6 @@
-import ChampionsList from "@components/ChampionList";
-import logo from "@assets/img/Home/bouton_central.svg";
+// import ChampionsList from "@components/ChampionList";
+import HomeButton from "@components/HomeButton";
 
 export default function Home() {
-  return (  
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      
-    </header>
-
-  );
+  return <HomeButton />;
 }
