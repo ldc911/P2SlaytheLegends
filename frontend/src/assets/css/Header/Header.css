@@ -3,12 +3,12 @@ header {
 }
 /*classe pour le Dark Mode (default)*/
 header, .darkMode{
-    background-color:var(--header-footer-bg-color-black);
+    background-color:var(--background);
 }
 
 /*classe pour le light Mode*/
 header, .lightMode{
-    background-color:var(--header-footer-bg-color-white);
+    background-color:var(--bg-color);
 }
 
 .headerLogo {
