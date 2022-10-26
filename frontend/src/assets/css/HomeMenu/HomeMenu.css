@@ -3,6 +3,8 @@
 }
 
 .Button-container {
+  height: 40vmin;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -46,7 +48,8 @@ button {
   transition: transform 0.5s;
 }
 
-a, .Home-button-logo {
+a,
+.Home-button-logo {
   position: absolute;
   left: 0;
   top: 0;
@@ -54,10 +57,10 @@ a, .Home-button-logo {
   height: 47.5%;
   overflow: hidden;
   transform: scale(0.5) translateZ(0px);
-  background: #585247;
 }
 
-a div, p div {
+a div,
+p div {
   height: 100%;
   background-size: cover;
   opacity: 1;
@@ -71,7 +74,7 @@ a:nth-child(1) {
 }
 
 a:nth-child(1) div {
-  background-image: url("https://farm3.staticflickr.com/2827/10384422264_d9c7299146.jpg");
+  background-image: url("./src/assets/img/HomeMenu/2.png");
 }
 
 a:nth-child(2) {
@@ -82,7 +85,7 @@ a:nth-child(2) {
 }
 
 a:nth-child(2) div {
-  background-image: url("https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg");
+  background-image: url("./src/assets/img/HomeMenu/3.png");
 }
 
 a:nth-child(3) {
@@ -93,7 +96,7 @@ a:nth-child(3) {
 }
 
 a:nth-child(3) div {
-  background-image: url("https://farm7.staticflickr.com/6092/6227418584_d5883b0948.jpg");
+  background-image: url("./src/assets/img/HomeMenu/1.png");
 }
 
 a:nth-child(4) {
@@ -105,7 +108,7 @@ a:nth-child(4) {
   transform: scale(1);
 }
 
-a:nth-child(4) div  {
+a:nth-child(4) div {
   background-image: url("./src/assets/img/HomeMenu/bouton_central.svg");
 }
 
@@ -124,13 +127,13 @@ span span:after {
   top: 1.5vmin;
 }
 
-span:hover + .wrap,
+span:hover+.wrap,
 .wrap:hover {
   transform: scale(0.8) translateZ(0px);
   opacity: 1;
 }
 
-span:hover + .wrap a,
+span:hover+.wrap a,
 .wrap:hover a {
   transform: scale(1) translatez(0px);
 }

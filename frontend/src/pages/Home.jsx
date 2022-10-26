@@ -1,6 +1,6 @@
 // import ChampionsList from "@components/ChampionList";
-import HomeButton from "@components/HomeButton";
+import HomeMenu from "@components/HomeMenu";
 
 export default function Home() {
-  return <HomeButton />;
+  return <HomeMenu />;
 }
