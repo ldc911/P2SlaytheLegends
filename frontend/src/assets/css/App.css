@@ -1,3 +1,5 @@
+@import url(//db.onlinewebfonts.com/c/12420e8c141ca7c3dff41de2d59df13e?family=BeaufortforLOL-Bold);
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -53,4 +55,23 @@ code {
 
 button {
   font-size: calc(10px + 2vmin);
+}
+
+:root {
+  --primary-color: #262d88;
+  --secondary-color: #9a7423;
+  --font-color: #424242;
+  --bg-color: #161625;
+  --heading-color: #292922;
+}
+
+[data-theme="light"] {
+  --primary-color: #5456a3;
+  --secondary-color: #c89d3e;
+  --font-color: #e1e1ff;
+  --bg-color: #fff;
+  --heading-color: #818cab;
+}
+body {
+  background-color: var(--bg-color);
 }
