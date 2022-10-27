@@ -2,20 +2,36 @@ import React, { useState } from "react";
 import "@assets/css/Header/ThemeButton.css";
 
 export default function ThemeButton() {
-  const [toggleState, setToggleState] = useState(false);
+  const [toggleSwitch, setToggleSwitch] = useState(true);
 
-  // eslint-disable-next-line no-unused-vars
+  function changeTheme(toggleStatus) {
+    if (toggleStatus) {
+      document.body.setAttribute("data-theme", "light");
+      // localStorage.setItem("theme", "dark"); // add this
+    } else {
+      document.body.setAttribute("data-theme", "dark");
+      // localStorage.setItem("theme", "light"); // add this
+    }
+  }
+
   const toggleFunction = () => {
-    setToggleState(!toggleState);
+    changeTheme(toggleSwitch);
+    setToggleSwitch(!toggleSwitch);
   };
 
   return (
     <div className="theme-switch-wrapper">
+      <span>🌙</span>
       <label htmlFor="checkbox" className="theme-switch">
-        {/* <button className="themeButton" type="submit"></button> */}
+        <input
+          className="themeButton"
+          type="checkbox"
+          id="checkbox"
+          onChange={() => toggleFunction()}
+        />
         <div className="slider round" />
       </label>
-      <em>Enable Light Mode!</em>
+      <span>☀️</span>
     </div>
   );
 }
