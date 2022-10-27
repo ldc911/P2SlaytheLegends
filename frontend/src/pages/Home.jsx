@@ -1,12 +1,9 @@
-import ChampionsList from "@components/ChampionList";
-import logo from "@assets/img/Home/bouton_central.svg";
+import ChampionsList from "../components/ChampionList";
 
 export default function Home() {
-  return (  
+  return (
     <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      
+      <ChampionsList />
     </header>
-
   );
 }

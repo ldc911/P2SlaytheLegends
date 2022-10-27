@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import api from "../services/api";
 
-function ChampionsList() {
+const ChampionsList = () => {
   const [champions, setChampions] = useState([]);
   const [isMounting, setIsMounting] = useState(true);
 
@@ -10,10 +10,10 @@ function ChampionsList() {
       setChampions(json.data);
       setIsMounting(false);
     });
-  }, []);
+  }, [isMounting]);
 
   return isMounting ? (
-    <p>En cours de chargement =P</p>
+    <p>En cours de chargement</p>
   ) : (
     <ul>
       {champions &&
