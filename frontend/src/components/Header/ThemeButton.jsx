@@ -4,7 +4,7 @@ import "@assets/css/Header/ThemeButton.css";
 export default function ThemeButton() {
   const [toggleSwitch, setToggleSwitch] = useState(true);
 
-  function changeTheme(toggleStatus) {
+  const changeTheme = (toggleStatus) => {
     if (toggleStatus) {
       document.body.setAttribute("data-theme", "light");
       // localStorage.setItem("theme", "dark"); // add this
@@ -12,7 +12,7 @@ export default function ThemeButton() {
       document.body.setAttribute("data-theme", "dark");
       // localStorage.setItem("theme", "light"); // add this
     }
-  }
+  };
 
   const toggleFunction = () => {
     changeTheme(toggleSwitch);
