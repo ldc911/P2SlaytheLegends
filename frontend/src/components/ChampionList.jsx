@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import api from "../services/api";
 
-function ChampionsList() {
+const ChampionsList = () => {
   const [champions, setChampions] = useState([]);
   const [isMounting, setIsMounting] = useState(true);
 
