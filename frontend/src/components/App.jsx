@@ -1,3 +1,4 @@
+import React from "react";
 import Home from "../pages/Home";
 import "../assets/css/App.css";
 import api from "../services/api";
@@ -15,7 +16,7 @@ const pic = () => {
       bgm[Math.floor(Math.random() * bgm.length)]
     }_0.jpg) 50% 50% / cover #ffffff`;
   });
-}
+};
 pic();
 
 function App() {
@@ -25,5 +26,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

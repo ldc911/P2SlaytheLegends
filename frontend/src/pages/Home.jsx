@@ -1,9 +1,9 @@
-import ChampionsList from "../components/ChampionList";
+import HeaderHome from "@components/Header/HeaderHome";
 
 export default function Home() {
   return (
-    <header className="App-header">
-      <ChampionsList />
-    </header>
+    <div>
+      <HeaderHome />
+    </div>
   );
 }

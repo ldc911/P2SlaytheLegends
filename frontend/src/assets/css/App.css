@@ -1,17 +1,4 @@
-/* https://javisperez.github.io/tailwindcolorshades/?scampi=5456a3&smalt=262d88 /
-/ https://javisperez.github.io/tailwindcolorshades/?corn-harvest=9a7423&marigold=c89d3e */
-
-@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700%7CSansita+One);
-
 :root {
-  --primary-color: #262d88;
-  --secondary-color: #9a7423;
-  --font-color: #424242;
-  --bg-color: #fff;
-  --heading-color: #292922;
-}
-
-[data-theme="light"] {
   --primary-color: #5456a3;
   --secondary-color: #c89d3e;
   --font-color: #e1e1ff;
@@ -19,26 +6,26 @@
   --heading-color: #818cab;
 }
 
-body {
+[data-theme="light"] {
+  --primary-color: #262d88;
+  --secondary-color: #9a7423;
+  --font-color: #424242;
+  --bg-color: #fff;
+  --heading-color: #292922;
+}
+
+* {
+  padding: 0;
   margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: calc(10px + 2vmin);
-  /* //full bg image // */
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: calc(1rem + 0.25vh);
 }
 
-.App {
-  text-align: center;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-}

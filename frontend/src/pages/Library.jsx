@@ -1,4 +1,4 @@
-import ChampionsList from "../components/ChampionList";
+/* import ChampionsList from "../components/ChampionList";
 
 export default function Home() {
   return (
@@ -6,4 +6,4 @@ export default function Home() {
       <ChampionsList />
     </div>
   );
-}
+} */
