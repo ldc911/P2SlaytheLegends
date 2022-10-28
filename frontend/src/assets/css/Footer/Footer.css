@@ -1,10 +1,22 @@
 .main-footer {
-  position: relative;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  max-height: 70px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: var(--bg-color);
 }
+
+.colonne-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
 .liste-namecreators-footer {
   list-style-type: none;
   font-family: "Beaufort for LOL", Arial;
@@ -14,17 +26,13 @@
 }
 
 .image-footer {
-  max-height: 100px;
-  height: 20vmin;
-  margin-top: 20px;
+  max-height: 40px;
   object-fit: cover;
   opacity: 10;
 }
 
 .logo-Wild-footer {
-  max-height: 100px;
-  height: 15vmin;
-  margin-top: 25px;
+  max-height: 60px;
   object-fit: cover;
   opacity: 10;
 }
@@ -45,9 +53,7 @@
 
   .logo-team-footer {
     display: block;
-    max-height: 100px;
-    height: 10vmin;
-    margin-top: 35px;
+    max-height: 30px;
     object-fit: cover;
     opacity: 10;
   }

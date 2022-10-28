@@ -2,7 +2,7 @@
 .theme-switch-wrapper {
   display: flex;
   align-items: center;
-  margin-right:5%;
+  margin-right: 5%;
 }
 .theme-switch-wrapper em {
   margin-left: 10px;
