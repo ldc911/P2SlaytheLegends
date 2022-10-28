@@ -8,7 +8,7 @@ function Footer() {
     /* Principal footer of the application */
     <footer className="main-footer">
       {/* the left side information of the footer */}
-      <div className="colonne-footer1">
+      <div className="colonne-footer">
         <img
           className="logo-Wild-footer"
           src={LogoWildCodeSchool}
@@ -16,11 +16,11 @@ function Footer() {
         />
       </div>
       {/* the information in the center of the footer */}
-      <div className="colonne-footer2">
+      <div className="colonne-footer">
         <img className="image-footer" src={LogoFooter} alt="Logo du footer" />
       </div>
       {/* the right side information of the footer */}
-      <div className="colonne-footer3">
+      <div className="colonne-footer">
         <img
           className="logo-team-footer"
           src={LogoTeam}
