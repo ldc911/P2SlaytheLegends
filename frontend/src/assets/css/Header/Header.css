@@ -1,0 +1,10 @@
+header {   
+    display: flex ;
+    justify-content: space-between;
+}
+
+.headerLogo {
+    max-height: 150px;
+    height: 20vmin;
+    margin-left:5%;
+}
