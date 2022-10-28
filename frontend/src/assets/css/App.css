@@ -1,3 +1,7 @@
+/* https://javisperez.github.io/tailwindcolorshades/?scampi=5456a3&smalt=262d88 /
+/ https://javisperez.github.io/tailwindcolorshades/?corn-harvest=9a7423&marigold=c89d3e */
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,700%7CSansita+One);
 :root {
   --primary-color: #5456a3;
   --secondary-color: #c89d3e;
@@ -27,5 +31,10 @@ body {
   max-width: 100%;
   margin: 0 auto;
   font-size: calc(1rem + 0.25vh);
+  /* //full bg image // */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
