@@ -1,144 +1,144 @@
 .Button-logo {
-  height: 40vmin;
+    height: 40vmin;
 }
 
 .Button-container {
-  height: 40vmin;
+    height: 40vmin;
 
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
 }
 
 .Button-logo:hover {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .Button-logo {
-    animation: Button-logo-spin infinite 20s linear;
-  }
-
-  @keyframes Button-logo-spin {
-    from {
-      transform: rotate(0deg);
+    .Button-logo {
+        animation: Button-logo-spin infinite 20s linear;
     }
 
-    to {
-      transform: rotate(360deg);
+    @keyframes Button-logo-spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
     }
-  }
 }
 
 button {
-  font-size: calc(10px + 2vmin);
+    font-size: calc(10px + 2vmin);
 }
 
 .wrap {
-  position: absolute;
-  width: 80vmin;
-  height: 80vmin;
-  margin: 0 auto;
-  background: inherit;
-  transform: scale(0.2) translatez(0px);
-  opacity: 1;
-  transition: transform 0.5s;
+    position: absolute;
+    width: 80vmin;
+    height: 80vmin;
+    margin: 0 auto;
+    background: inherit;
+    transform: scale(0.2) translatez(0px);
+    opacity: 1;
+    transition: transform 0.5s;
 }
 
 a,
 .Home-button-logo {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 47.5%;
-  height: 47.5%;
-  overflow: hidden;
-  transform: scale(0.5) translateZ(0px);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 47.5%;
+    height: 47.5%;
+    overflow: hidden;
+    transform: scale(0.5) translateZ(0px);
 }
 
 a div,
 p div {
-  height: 100%;
-  background-size: cover;
-  opacity: 1;
-  border-radius: inherit;
+    height: 100%;
+    background-size: cover;
+    opacity: 1;
+    border-radius: inherit;
 }
 
 a:nth-child(1) {
-  border-radius: 40vmin 0 0 0;
-  transform-origin: 110% 110%;
-  transition: transform 0.4s 0.15s;
+    border-radius: 40vmin 0 0 0;
+    transform-origin: 110% 110%;
+    transition: transform 0.4s 0.15s;
 }
 
 a:nth-child(1) div {
-  background-image: url("./src/assets/img/HomeMenu/2.png");
+    background-image: url("./src/assets/img/HomeMenu/milieu.png");
 }
 
 a:nth-child(2) {
-  border-radius: 0 40vmin 0 0;
-  left: 52.5%;
-  transform-origin: -10% 110%;
-  transition: transform 0.4s 0.2s;
+    border-radius: 0 40vmin 0 0;
+    left: 52.5%;
+    transform-origin: -10% 110%;
+    transition: transform 0.4s 0.2s;
 }
 
 a:nth-child(2) div {
-  background-image: url("./src/assets/img/HomeMenu/3.png");
+    background-image: url("./src/assets/img/HomeMenu/droite.png");
 }
 
 a:nth-child(3) {
-  border-radius: 0 0 0 40vmin;
-  top: 52.5%;
-  transform-origin: 110% -10%;
-  transition: transform 0.4s 0.25s;
+    border-radius: 0 0 0 40vmin;
+    top: 52.5%;
+    transform-origin: 110% -10%;
+    transition: transform 0.4s 0.25s;
 }
 
 a:nth-child(3) div {
-  background-image: url("./src/assets/img/HomeMenu/1.png");
+    background-image: url("./src/assets/img/HomeMenu/gauche.png");
 }
 
 a:nth-child(4) {
-  width: 55%;
-  height: 55%;
-  left: 22.5%;
-  top: 22.5%;
-  border-radius: 50vmin;
-  transform: scale(1);
+    width: 55%;
+    height: 55%;
+    left: 22.5%;
+    top: 22.5%;
+    border-radius: 50vmin;
+    transform: scale(1);
 }
 
 a:nth-child(4) div {
-  background-image: url("./src/assets/img/HomeMenu/bouton_central.svg");
+    background-image: url("./src/assets/img/HomeMenu/bouton_central.svg");
 }
 
 span span:after,
 span span:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -1.5vmin;
-  width: 100%;
-  height: 100%;
-  background: inherit;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -1.5vmin;
+    width: 100%;
+    height: 100%;
+    background: inherit;
 }
 
 span span:after {
-  top: 1.5vmin;
+    top: 1.5vmin;
 }
 
-span:hover + .wrap,
+span:hover+.wrap,
 .wrap:hover {
-  transform: scale(0.8) translateZ(0px);
-  opacity: 1;
+    transform: scale(0.8) translateZ(0px);
+    opacity: 1;
 }
 
-span:hover + .wrap a,
+span:hover+.wrap a,
 .wrap:hover a {
-  transform: scale(1) translatez(0px);
+    transform: scale(1) translatez(0px);
 }
 
 a:hover div {
-  opacity: 1;
-  transform: translatez(0px);
+    opacity: 1;
+    transform: translatez(0px);
 }
