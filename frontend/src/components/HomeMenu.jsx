@@ -13,9 +13,9 @@ function HomeMenu() {
         <a href="https://reactjs.org">
           <div />
         </a>
-        <a href="https://reactjs.org">
+        <p>
           <div />
-        </a>
+        </p>
       </div>
     </div>
   );
