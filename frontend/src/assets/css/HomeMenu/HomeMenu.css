@@ -10,10 +10,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
 }
 
-.Button-logo:hover {
+.Button-logo:hover,
+.Button-logo:target {
     animation-play-state: paused;
 }
 
@@ -48,7 +48,8 @@ button {
     transition: transform 0.5s;
 }
 
-a, p,
+a,
+p,
 .Home-button-logo {
     position: absolute;
     left: 0;
@@ -104,7 +105,7 @@ p:first-of-type {
     height: 55%;
     left: 22.5%;
     top: 22.5%;
-    margin:0;
+    margin: 0;
     border-radius: 50vmin;
     transform: scale(1);
 }
@@ -129,36 +130,28 @@ span span:after {
 }
 
 span:hover+.wrap,
-.wrap:hover {
-    transform: scale(0.8) translateZ(0px);
-    opacity: 1;
-}
-
-span:hover+.wrap a,
-.wrap:hover a, span:hover+.wrap p, .wrap:hover p {
-    transform: scale(1) translatez(0px);
-}
-
-a:hover div, p:hover div {
-    opacity: 1;
-    transform: translatez(0px);
-}
-
-@media  screen AND (max-width:720p) {
-    span:active+.wrap,
+.wrap:hover,
+span:active+.wrap,
 .wrap:active {
     transform: scale(0.8) translateZ(0px);
     opacity: 1;
 }
 
+span:hover+.wrap a,
+.wrap:hover a,
+span:hover+.wrap p,
+.wrap:hover p,
 span:active+.wrap a,
-.wrap:active a, span:active+.wrap p, .wrap:active p {
+.wrap:active a,
+span:active+.wrap p,
+.wrap:active p {
     transform: scale(1) translatez(0px);
 }
 
-a:active div, p:active div {
+a:hover div,
+p:hover div,
+a:active div,
+p:active div {
     opacity: 1;
     transform: translatez(0px);
-}
-
 }
