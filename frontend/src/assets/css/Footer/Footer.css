@@ -1,0 +1,60 @@
+.main-footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  max-height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.colonne-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.liste-namecreators-footer {
+  list-style-type: none;
+  font-family: "Beaufort for LOL", Arial;
+}
+.name-creators-footer {
+  font-size: 1.5rem;
+}
+
+.image-footer {
+  max-height: 40px;
+  object-fit: cover;
+  opacity: 10;
+}
+
+.logo-Wild-footer {
+  max-height: 60px;
+  object-fit: cover;
+  opacity: 10;
+}
+
+.liste-namecreators-footer {
+  margin-top: 25px;
+}
+
+.logo-team-footer {
+  display: none;
+}
+
+/* max-width , si l'écran est inférieur ou égal à 1024*/
+@media screen and (max-width: 1024px) {
+  .name-creators-footer {
+    display: none;
+  }
+
+  .logo-team-footer {
+    display: block;
+    max-height: 30px;
+    object-fit: cover;
+    opacity: 10;
+  }
+}
