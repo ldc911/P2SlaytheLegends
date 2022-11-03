@@ -29,6 +29,8 @@ function Footer() {
         <ul className="liste-namecreators-footer">
           <li className="name-creators-footer">Yannick</li>
           <li className="name-creators-footer">Rosbain</li>
+        </ul>
+        <ul className="liste-namecreators-footer">
           <li className="name-creators-footer">Laurent</li>
           <li className="name-creators-footer">Romain</li>
         </ul>
