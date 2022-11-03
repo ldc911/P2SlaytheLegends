@@ -1,19 +1,20 @@
 import "@assets/css/HomeMenu/HomeMenu.css";
+import { Link } from "react-router-dom";
 
 function HomeMenu() {
   return (
     <div className="Button-container">
       <div className="wrap Button-logo">
-        <a href="https://reactjs.org">
+        <Link to="/library">
           <div />
-        </a>
-        <a href="https://reactjs.org">
+        </Link>
+        <Link to="/game">
           <div />
-        </a>
-        <a href="https://reactjs.org">
+        </Link>
+        <Link to="/about_riot">
           <div />
-        </a>
-        <p>
+        </Link>
+        <p className="Home-button">
           <div />
         </p>
       </div>
