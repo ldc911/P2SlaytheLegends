@@ -1,5 +1,11 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HeaderHome from "./Header/HeaderHome";
 import Home from "../pages/Home";
+import Game from "../pages/Game";
+import Library from "../pages/Library";
+import AboutRiot from "../pages/AboutRiot";
+import Footer from "./Footer/Footer";
 import "../assets/css/App.css";
 import api from "../services/api";
 
@@ -21,8 +27,21 @@ pic();
 
 export default function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Router>
+      <div className="App">
+        <HeaderHome />
+        <main>
+          <div className="MainContent">
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="/library" element={<Library />} />
+              <Route path="/game" element={<Game />} />
+              <Route path="/about_riot" element={<AboutRiot />} />
+            </Routes>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }

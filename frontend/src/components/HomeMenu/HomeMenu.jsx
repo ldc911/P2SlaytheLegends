@@ -1,0 +1,25 @@
+import "@assets/css/HomeMenu/HomeMenu.css";
+import { Link } from "react-router-dom";
+
+function HomeMenu() {
+  return (
+    <div className="Button-container">
+      <div className="wrap Button-logo">
+        <Link to="/library">
+          <div />
+        </Link>
+        <Link to="/game">
+          <div />
+        </Link>
+        <Link to="/about_riot">
+          <div />
+        </Link>
+        <p className="Home-button">
+          <div />
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default HomeMenu;
