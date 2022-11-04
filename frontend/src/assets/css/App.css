@@ -69,9 +69,11 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  width: 90vw;
-  min-height: auto;
+}
+main.pagecontent{
   background-color: var(--bg-color-opacity);
+  width: 90vw;
+  min-height: auto;  
   padding: 2vw;
   margin: 5vh auto 15vh auto;
   border-radius: 15px;

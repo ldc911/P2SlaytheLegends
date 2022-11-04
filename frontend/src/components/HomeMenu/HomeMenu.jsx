@@ -14,9 +14,9 @@ function HomeMenu() {
         <Link to="/library">
           <div />
         </Link>
-        <p className="Home-button">
+        <div className="Home-button">
           <div />
-        </p>
+        </div>
       </div>
     </div>
   );

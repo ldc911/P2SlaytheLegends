@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import * as React from 'react';
+import { Routes, Route, matchPath, useLocation } from "react-router-dom";
 import HeaderHome from "./Header/HeaderHome";
 import Home from "../pages/Home";
 import Game from "../pages/Game";
@@ -26,10 +26,17 @@ const pic = () => {
 pic();
 
 export default function App() {
+
+  let location = useLocation();
+  const match = matchPath(
+    { path: "/" },
+    location.pathname,
+  );
+
   return (
-    <Router>
       <div className="App">
         <HeaderHome />
+
         <main>
           <div className="MainContent">
             <Routes>
@@ -40,8 +47,8 @@ export default function App() {
             </Routes>
           </div>
         </main>
+
         <Footer />
       </div>
-    </Router>
   );
 }
