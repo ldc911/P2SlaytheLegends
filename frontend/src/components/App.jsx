@@ -36,16 +36,18 @@ export default function App() {
   return (
       <div className="App">
         <HeaderHome />
-          <main className= {match ? "" : "pagecontent"}>
-            <div className="MainContent">
-              <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route path="/library" element={<Library />} />
-                <Route path="/game" element={<Game />} />
-                <Route path="/about_riot" element={<AboutRiot />} />
-              </Routes>
-            </div>
-          </main>
+
+        <main>
+          <div className="MainContent">
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="/library" element={<Library />} />
+              <Route path="/game" element={<Game />} />
+              <Route path="/about-riot" element={<AboutRiot />} />
+            </Routes>
+          </div>
+        </main>
+
         <Footer />
       </div>
   );
