@@ -111,8 +111,7 @@ a:nth-child(3) div {
 }
 
 @media (pointer: fine) {
-
-  .wrap{
+  .wrap {
     width: 80vmin;
     height: 80vmin;
     transform: scale(0.7) translatez(0px);

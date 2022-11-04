@@ -1,0 +1,54 @@
+.Library-filterbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#search {
+  height: 2rem;
+  width: 5rem;
+  border: none;
+  border-radius: 5px;
+}
+
+.Search-menu {
+  display: flex;
+  align-items: center;
+}
+
+.Search-icon {
+  max-height: 30px;
+  margin-right: 1rem;
+}
+
+.Filter-head {
+  width: 10rem;
+}
+
+.Filter-list {
+  display: block;
+  position: absolute;
+  background-color: var(--bg-color-opacity);
+  max-height: 0;
+  transition: max-height 0.7s ease;
+}
+
+.Filter-list li {
+  border-left: 1px solid var(--secondary-color);
+  border-right: 1px solid var(--secondary-color);
+  list-style: none;
+  width: 10rem;
+  padding-top: 0.2rem;
+}
+
+.Filter-head:hover .Filter-list {
+  display: block;
+  max-height: 10rem;
+  transition: max-height 0.7s ease;
+}
+.Filter-head li {
+  list-style: none;
+  border-left: 1px solid var(--secondary-color);
+  border-right: 1px solid var(--secondary-color);
+  text-align: center;
+}
