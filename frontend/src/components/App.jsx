@@ -36,7 +36,7 @@ export default function App() {
               <Route exact path="/" element={<Home />} />
               <Route path="/library" element={<Library />} />
               <Route path="/game" element={<Game />} />
-              <Route path="/about_riot" element={<AboutRiot />} />
+              <Route path="/about-riot" element={<AboutRiot />} />
             </Routes>
           </div>
         </main>
