@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import { Routes, Route, matchPath, useLocation } from "react-router-dom";
 import HeaderHome from "./Header/HeaderHome";
 import Home from "../pages/Home";
@@ -26,29 +26,27 @@ const pic = () => {
 pic();
 
 export default function App() {
-
+  // eslint-disable-next-line prefer-const
   let location = useLocation();
-  const match = matchPath(
-    { path: "/" },
-    location.pathname,
-  );
+  // eslint-disable-next-line no-unused-vars
+  const match = matchPath({ path: "/" }, location.pathname);
 
   return (
-      <div className="App">
-        <HeaderHome />
+    <div className="App">
+      <HeaderHome />
 
-        <main>
-          <div className="MainContent">
-            <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route path="/library" element={<Library />} />
-              <Route path="/game" element={<Game />} />
-              <Route path="/about-riot" element={<AboutRiot />} />
-            </Routes>
-          </div>
-        </main>
+      <main>
+        <div className="MainContent">
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/library" element={<Library />} />
+            <Route path="/game" element={<Game />} />
+            <Route path="/about-riot" element={<AboutRiot />} />
+          </Routes>
+        </div>
+      </main>
 
-        <Footer />
-      </div>
+      <Footer />
+    </div>
   );
 }

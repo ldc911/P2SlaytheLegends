@@ -1,0 +1,66 @@
+.champCard{
+    background-image: url('@assets/img/Card/card.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 23%;    
+    height: calc(1.20 * 25vw);
+    min-height: 412px;
+    min-width: 302px;
+    margin:2px;
+}
+
+.cardContainer{
+    width: 100%;    
+    height: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.manaCard {
+    display: flex;
+    width: 20%;
+    padding-left: 5%;
+    padding-top: 5%;
+    color: black;
+}
+.manaCard h3 {
+    font-size: calc(1rem + 1.5vw);
+    padding:0px;
+    margin: 5%;
+    background: #c89d3e;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.champCardName{
+    background-color:#c89d3e ;
+    margin: auto;
+    width: 70%;
+    font-family: "BeaufortforLOL-Bold"; 
+    border-radius: 10px;
+    Margin-top:3%;
+}
+.champCardName h3{
+    margin: auto;
+    color:black;
+    text-align: center;
+}
+
+.picContainer{
+    margin: auto;
+    height: 40%;
+    width: 70%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.skillsCard{
+    color:black;
+    display: block;
+    background: #c89d3e;
+    align-items: center;
+    width:70%;
+    margin: auto;
+    margin-top: 5%;
+}
