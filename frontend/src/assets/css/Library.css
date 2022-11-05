@@ -109,3 +109,11 @@
     border: none;
   }
 }
+
+.libDisplay{
+  margin:5vh;
+  margin-top: 8vh;
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;  
+}
