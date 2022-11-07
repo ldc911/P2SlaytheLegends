@@ -1,0 +1,11 @@
+.Jeux-wiki img {
+  width: 40%;
+  float: left;
+  padding-right: 3%;
+}
+.Jeux-wiki p:nth-of-type(1) img {
+  content: var(--logo-riot);
+}
+h1 {
+  clear: both;
+}

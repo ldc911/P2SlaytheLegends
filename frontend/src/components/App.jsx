@@ -26,17 +26,14 @@ const pic = () => {
 pic();
 
 export default function App() {
-  // eslint-disable-next-line prefer-const
-  let location = useLocation();
-  // eslint-disable-next-line no-unused-vars
+  const location = useLocation();
   const match = matchPath({ path: "/" }, location.pathname);
 
   return (
     <div className="App">
       <HeaderHome />
-
-      <main>
-        <div className="MainContent">
+      <main className={match ? "" : "pagecontent"}>
+        <div className="main-content">
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/library" element={<Library />} />
@@ -45,7 +42,6 @@ export default function App() {
           </Routes>
         </div>
       </main>
-
       <Footer />
     </div>
   );
