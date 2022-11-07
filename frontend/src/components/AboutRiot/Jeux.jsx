@@ -14,16 +14,11 @@ export default function Jeux() {
             <li>MMO/MMORPG</li>
             <li>FPS</li>
             <li>MOBA</li>
-          </ul>
-          <ul>
             <li>Stratégie</li>
             <li>Jeux de Cartes</li>
             <li>Mobile</li>
           </ul>
         </p>
-        <br />
-        <br />
-        <br />
         <br />
 
         <h1>League of Legends "MOBA"</h1>
@@ -36,9 +31,6 @@ export default function Jeux() {
           />
         </p>
         <br />
-        <br />
-        <br />
-        <br />
 
         <h1>League of Legends : Wild Rift "MOBILE"</h1>
         <hr />
@@ -49,9 +41,6 @@ export default function Jeux() {
             alt="League of Legends : Wild Rift"
           />
         </p>
-        <br />
-        <br />
-        <br />
         <br />
 
         <h1>Valorant "FPS"</h1>
@@ -64,9 +53,6 @@ export default function Jeux() {
           />
         </p>
         <br />
-        <br />
-        <br />
-        <br />
 
         <h1>Team Fight Tactics "Strategie"</h1>
         <hr />
@@ -77,9 +63,6 @@ export default function Jeux() {
             alt="Team Fight Tactics"
           />
         </p>
-        <br />
-        <br />
-        <br />
         <br />
 
         <h1>Legends Of Runeterra "Jeu de Carte"</h1>

@@ -80,6 +80,9 @@ hr {
 br {
   line-height: 1.5;
 }
+p {
+  margin-bottom: 0.8em;
+}
 
 main {
   display: flex;

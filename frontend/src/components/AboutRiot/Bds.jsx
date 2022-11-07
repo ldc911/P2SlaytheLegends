@@ -18,10 +18,10 @@ export default function Bds() {
               alt="BD Riot games"
             />
           </a>
+          
           Riot possèdes aussi tout un univers de bandes déssinées et de récits
           basé autour de chaque champions.
-          <br />
-          <br />
+        </p><p>
           Ils ont même une Newsletter à la quelle vous pouvez vous abonner pour
           connaitre les sorties des dernieres BDs.
         </p>
