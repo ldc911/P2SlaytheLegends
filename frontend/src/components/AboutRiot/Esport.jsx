@@ -20,7 +20,8 @@ export default function Esport() {
           Summoner's Cup de 32 kg et un important prix allant à plus de un
           million de dollars US.
           <br />
-          </p><p>
+        </p>
+        <p>
           En 2018, la finale bat tous les records d'audience précédents avec
           près de 100 millions (99,6) de spectateurs uniques, 44 millions de
           spectateurs simultanés et une moyenne de 19,6 millions de spectateurs
@@ -28,7 +29,8 @@ export default function Esport() {
           4,2 millions de dollars US avec la vente de chromas et skins exclusifs
           à l'événement1.
           <br />
-          </p><p>
+        </p>
+        <p>
           Les championnats du monde de League of Legends ont connu un succès
           retentissant et ont gagné en popularité, ce qui en fait l'un des
           tournois les plus prestigieux et les plus regardés au monde (dépassant
@@ -37,7 +39,8 @@ export default function Esport() {
           et largement perçues comme un événement olympique potentiel, faisant
           déjà partie du programme des Jeux asiatiques de 2022.
           <br />
-          </p><p>
+        </p>
+        <p>
           Le tournoi était tout d'abord organisé dans une ou deux villes. Mais
           de 2013 à 2019, ce sont toujours trois ou quatre villes d'une région
           majeure qui ont pu accueillir l'événement. La Corée du Sud, la Chine,

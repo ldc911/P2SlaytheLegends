@@ -27,7 +27,8 @@
   --secondary-color: #c89d3e;
   --font-color: #e1e1ff;
   --bg-color: #161625;
-  --bg-color-opacity: #161625cc; /* CC = 0.8 opacity 80% */
+  --bg-color-opacity: #161625cc;
+  /* CC = 0.8 opacity 80% */
   --bg-color-hsla: 240, 25%, 12%;
   --heading-color: #818cab;
   /* Font */
@@ -36,6 +37,7 @@
   --font-heading: "BeaufortforLOL-Bold", serif;
   /* img */
   --logo-riot: url("../img/AboutRiot/Riot_Games_Logo_light.png");
+  --logo-central: url("../img/HomeMenu/bouton_central.svg");
 }
 
 [data-theme="light"] {
@@ -43,11 +45,13 @@
   --secondary-color: #9a7423;
   --font-color: #1e1e00;
   --bg-color: #e6dcc8;
-  --bg-color-opacity: #e6dcc8cc; /* CC = 0.8 opacity 80% */
+  --bg-color-opacity: #e6dcc8cc;
+  /* CC = 0.8 opacity 80% */
   --bg-color-hsla: 40, 38%, 84%;
   --heading-color: #292922;
   /* img */
   --logo-riot: url("https://upload.wikimedia.org/wikipedia/fr/7/7c/Riot_Games_Logo.png");
+  --logo-central: url("./src/assets/img/HomeMenu/bouton_central_light.svg");
 }
 
 * {
@@ -77,9 +81,11 @@ body {
 hr {
   border-top: 1px solid var(--secondary-color);
 }
+
 br {
   line-height: 1.5;
 }
+
 p {
   margin-bottom: 0.8em;
 }
@@ -91,6 +97,7 @@ main {
   align-items: center;
   flex-wrap: nowrap;
 }
+
 main.pagecontent {
   background-color: var(--bg-color-opacity);
   width: 90vw;
@@ -99,6 +106,7 @@ main.pagecontent {
   margin: 5vh auto 5vh auto;
   border-radius: 15px;
 }
+
 .main-content {
   width: 100%;
   min-height: 100%;
@@ -164,4 +172,15 @@ h1 {
     hsla(var(--bg-color-hsla), 0.987) 91.9%,
     hsl(var(--bg-color-hsla)) 100%
   );
+}
+
+button {
+  font-family: var(--font-primary);
+  font-size: calc(0.5rem + 0.5vw);
+  color: var(--font-color);
+  white-space: nowrap;
+  background: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
 }
