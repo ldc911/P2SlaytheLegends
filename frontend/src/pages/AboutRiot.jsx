@@ -32,7 +32,7 @@ export default function AboutRiot() {
           ) : (
             <li>
               <button type="button" onClick={() => setContentLoad("anime")}>
-                Bendes Déssinées
+                Bandes Dessinées
               </button>
             </li>
           )}
