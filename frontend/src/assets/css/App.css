@@ -183,4 +183,6 @@ button {
   border: none;
   text-align: center;
   cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }
