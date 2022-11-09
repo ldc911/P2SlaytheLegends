@@ -6,13 +6,6 @@
   height: 100%;
 }
 
-.AboutRiot-menu button:hover {
-  background-color: var(--bg-color);
-  transform: scale(1.1);
-  padding-left: 0.5vw;
-  padding-right: 0.5vw;
-}
-
 .AboutRiot-ul {
   min-height: 70px;
   padding: 1vh;
@@ -43,6 +36,7 @@
   scrollbar-color: rebeccapurple green;
   scrollbar-width: thin;
 }
+
 .AboutRiot-wrapper::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Chrome, Safari and Opera */
 }
