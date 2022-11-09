@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 import "../assets/css/Library.css";
 import searchIcon from "../assets/img/search_icon.svg";
-import Card from "../components/Card";
+import CardLib from "../components/Library/CardLib";
 import api from "../services/api";
+import ModalLib from "../components/Library/ModalLib";
 
 export default function Library() {
   const [champClass, setChampClass] = useState("");
@@ -16,6 +17,8 @@ export default function Library() {
   const [champions, setChampions] = useState([]);
   const [isMounting, setIsMounting] = useState(true);
   const [filteredChamp, setFilteredChamp] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalChamp, setModalChamp] = useState("ok");
 
   // on vérifie la taille de l'écran pour changer l'affichage du menu
   useEffect(() => {
@@ -90,7 +93,7 @@ export default function Library() {
   }, [champClass, champMana, userSearch, champions]);
 
   return (
-    <div>
+    <div className="libWrapper">
       {/* champ de recherche */}
       <div className="Library-filterbar">
         <div className="Search-menu">
@@ -119,49 +122,61 @@ export default function Library() {
             <button
               type="button"
               onClick={() => setChampClass("")}
-              className={!champClass && "Filter-selected"}
+              className={!champClass ? "Filter-selected" : "not-selected"}
             >
               TOUTES
             </button>
             <button
               type="button"
               onClick={() => setChampClass("Assassin")}
-              className={champClass === "Assassin" && "Filter-selected"}
+              className={
+                champClass === "Assassin" ? "Filter-selected" : "not-selected"
+              }
             >
               ASSASSIN
             </button>
             <button
               type="button"
               onClick={() => setChampClass("Mage")}
-              className={champClass === "Mage" && "Filter-selected"}
+              className={
+                champClass === "Mage" ? "Filter-selected" : "not-selected"
+              }
             >
               MAGE
             </button>
             <button
               type="button"
               onClick={() => setChampClass("Fighter")}
-              className={champClass === "Fighter" && "Filter-selected"}
+              className={
+                champClass === "Fighter" ? "Filter-selected" : "not-selected"
+              }
             >
               COMBATTANT
             </button>
             <button
               type="button"
               onClick={() => setChampClass("Marksman")}
-              className={champClass === "Marksman" && "Filter-selected"}
+              className={
+                champClass === "Marksman" ? "Filter-selected" : "not-selected"
+              }
             >
               TIREUR
             </button>
             <button
               type="button"
               onClick={() => setChampClass("Support")}
-              className={champClass === "Support" && "Filter-selected"}
+              className={
+                champClass === "Support" ? "Filter-selected" : "not-selected"
+              }
             >
               SUPPORT
             </button>
             <button
               type="button"
               onClick={() => setChampClass("Tank")}
-              className={champClass === "Tank" && "Filter-selected"}
+              className={
+                champClass === "Tank" ? "Filter-selected" : "not-selected"
+              }
             >
               TANK
             </button>
@@ -183,35 +198,35 @@ export default function Library() {
             <button
               type="button"
               onClick={() => setChampMana("")}
-              className={!champMana && "Filter-selected"}
+              className={!champMana ? "Filter-selected" : "not-selected"}
             >
               TOUT NIVEAU
             </button>
             <button
               type="button"
               onClick={() => setChampMana("0")}
-              className={champMana === "0" && "Filter-selected"}
+              className={champMana === "0" ? "Filter-selected" : "not-selected"}
             >
               0
             </button>
             <button
               type="button"
               onClick={() => setChampMana("1")}
-              className={champMana === "1" && "Filter-selected"}
+              className={champMana === "1" ? "Filter-selected" : "not-selected"}
             >
               1
             </button>
             <button
               type="button"
               onClick={() => setChampMana("2")}
-              className={champMana === "2" && "Filter-selected"}
+              className={champMana === "2" ? "Filter-selected" : "not-selected"}
             >
               2
             </button>
             <button
               type="button"
               onClick={() => setChampMana("3")}
-              className={champMana === "3" && "Filter-selected"}
+              className={champMana === "3" ? "Filter-selected" : "not-selected"}
             >
               3
             </button>
@@ -224,8 +239,18 @@ export default function Library() {
         <div className="libDisplay">
           {champions &&
             filteredChamp.map((champion) => {
-              return <Card key={champion[1].id} cardChampion={champion[1]} />;
+              return (
+                <CardLib
+                  key={champion[1].id}
+                  cardChampion={champion[1]}
+                  setModalChamp={setModalChamp}
+                  setModalOpen={setModalOpen}
+                />
+              );
             })}
+          {modalOpen && (
+            <ModalLib setOpenModal={setModalOpen} modalChamp={modalChamp} />
+          )}
         </div>
       )}
     </div>

@@ -27,8 +27,7 @@
   --secondary-color: #c89d3e;
   --font-color: #e1e1ff;
   --bg-color: #161625;
-  --bg-color-opacity: #161625cc;
-  /* CC = 0.8 opacity 80% */
+  --bg-color-opacity: #161625cc; /* CC = 0.8 opacity 80% */
   --bg-color-hsla: 240, 25%, 12%;
   --heading-color: #818cab;
   /* Font */
@@ -45,8 +44,7 @@
   --secondary-color: #9a7423;
   --font-color: #1e1e00;
   --bg-color: #e6dcc8;
-  --bg-color-opacity: #e6dcc8cc;
-  /* CC = 0.8 opacity 80% */
+  --bg-color-opacity: #e6dcc8cc; /* CC = 0.8 opacity 80% */
   --bg-color-hsla: 40, 38%, 84%;
   --heading-color: #292922;
   /* img */
@@ -103,9 +101,9 @@ main {
 main.pagecontent {
   background-color: var(--bg-color-opacity);
   width: 90vw;
-  height: calc(90vh - 140px);
+  height: calc(97vh - 140px);
   padding: 2vw;
-  margin: 5vh auto 5vh auto;
+  margin: 2vh auto 2vh auto;
   border-radius: 15px;
 }
 
