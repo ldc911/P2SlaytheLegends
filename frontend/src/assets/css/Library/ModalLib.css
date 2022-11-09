@@ -23,7 +23,18 @@
   flex-direction: column;
   padding: 25px;
   border: none;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  scrollbar-color: rebeccapurple green;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 
 @media screen and (max-width: 500px) {
   .modalLibContainer {
@@ -53,6 +64,7 @@
 
 .modalLibContainer .modalLibTitle h2 {
   font-size: 2.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .modalLibTitleCloseBtn {
