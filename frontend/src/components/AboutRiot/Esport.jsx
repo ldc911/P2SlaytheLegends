@@ -13,12 +13,11 @@ export default function Esport() {
             alt="Cup Riot games"
           />
           Le Championnat du monde de League of Legends est le tournoi
-          professionnel annuel du championnat du monde de League of Legends
-          organisé par Riot Games et représente le point culminant de chaque
-          saison. Les meilleures équipes de chaque championnat majeur
-          s'affrontent pour le titre de champion du monde. À la clé, la
-          Summoner's Cup de 32 kg et un important prix allant à plus de un
-          million de dollars US.
+          professionnel annuel mondial de League of Legends organisé par Riot
+          Games, et représente le point culminant de chaque saison. Les
+          meilleures équipes de chaque championnat majeur s'affrontent pour le
+          titre de champion du monde. À la clé, la Summoner's Cup de 32 kg et un
+          important prix se montant à plus d'un million de dollars US.
           <br />
         </p>
         <p>

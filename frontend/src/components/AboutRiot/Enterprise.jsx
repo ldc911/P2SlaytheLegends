@@ -11,12 +11,12 @@ export default function Enterprise() {
           <img alt="Logo Riot Games" />
           Riot Games est une entreprise américaine d'édition et de développement
           de jeux vidéo fondée en 2006 et située à Los Angeles, en Californie.
-          Elle organise aussi plusieurs tournois de sport électronique. La
-          société n'a eu qu’un seul jeu publié à son actif durant plus de dix
-          ans, League of Legends, sorti en 2009 et qui lui confère toute sa
-          notoriété au vu de la popularité qu'il rencontre et maintient à
-          travers le temps. Au cours de l'année 2020, cependant, l'entreprise
-          publie Legends of Runeterra, Valorant et League of Legends: Wild Rift.
+          Elle organise également plusieurs tournois d'e-sport. La société n'a
+          eu qu’un seul jeu publié à son actif pendant plus de dix ans : League
+          of Legends. Sorti en 2009, il lui confère toute sa notoriété à travers
+          la popularité qu'il rencontre et maintient à travers le temps. Au
+          cours de l'année 2020 cependant, l'entreprise publie Legends of
+          Runeterra, Valorant et League of Legends: Wild Rift.
         </p>
       </section>
       <br />
@@ -33,13 +33,13 @@ export default function Enterprise() {
         <p>
           Quelques-uns des employés notables de Riot Games sont : Steve Feak, un
           des fondateurs de Defense of the Ancients (un mod de Warcraft III dont
-          League of Legends est directement inspiré) ; Steve Mescon ; ainsi que
+          League of Legends est directement inspiré), Steve Mescon, ainsi que
           quelques anciens employés de Blizzard Entertainment.
         </p>
         <p>
-          En mars 2016, Riot Games rachète le studio Radiant Entertainment, qui
-          est un studio ayant travaillé sur les jeux Rising Thunder et sur
-          Stonehearth avec « la volonté de diversifier leur catalogue ».
+          En mars 2016, Riot Games rachète le studio Radiant Entertainment,
+          studio ayant travaillé sur les jeux Rising Thunder et sur Stonehearth
+          avec « la volonté de diversifier leur catalogue ».
         </p>
         <p>
           Le 16 décembre 2016, BAMTech achète pour 300 millions de dollars les
@@ -68,8 +68,8 @@ export default function Enterprise() {
         </p>
         <p>
           En décembre 2018, Riot games investit dans Hypixel Studios pour le
-          futur jeu Hytale13. Ils sortent en juin 2019 Teamfight Tactics14 et en
-          janvier 2020 Legends of Runeterra15.
+          futur jeu Hytale. Ils sortent en juin 2019 Teamfight Tactics et en
+          janvier 2020 Legends of Runeterra.
         </p>
         <br />
       </section>
