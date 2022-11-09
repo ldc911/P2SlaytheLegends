@@ -1,7 +1,7 @@
-import "@assets/css/Footer/Footer.css";
-import LogoFooter from "@assets/img/Footer/logoLolFooter.png";
-import LogoTeam from "@assets/img/Footer/logoUndefined.png";
-import LogoWildCodeSchool from "@assets/img/Footer/Wildcodeschool.png";
+import "../../assets/css/Footer/Footer.css";
+import LogoFooter from "../../assets/img/Footer/logoLolFooter.png";
+import LogoTeam from "../../assets/img/Footer/logoUndefined.png";
+import LogoWildCodeSchool from "../../assets/img/Footer/Wildcodeschool.png";
 
 function Footer() {
   return (
@@ -29,6 +29,8 @@ function Footer() {
         <ul className="liste-namecreators-footer">
           <li className="name-creators-footer">Yannick</li>
           <li className="name-creators-footer">Rosbain</li>
+        </ul>
+        <ul className="liste-namecreators-footer">
           <li className="name-creators-footer">Laurent</li>
           <li className="name-creators-footer">Romain</li>
         </ul>

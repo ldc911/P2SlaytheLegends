@@ -1,3 +1,11 @@
+.libWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+}
+
 .Library-filterbar {
   display: flex;
   justify-content: space-around;
@@ -18,7 +26,7 @@
   border-radius: 5px;
   margin-right: 0.1rem;
   padding-left: 5px;
-  cursor: url('../cursor/text.cur'), auto;
+  cursor: url("../cursor/text.cur"), auto;
 }
 
 /* .Search-menu {
@@ -133,12 +141,21 @@
     font-weight: bold;
   }
 }
-
+/*Affichage des cartes dans la bibliothèque*/
 .libDisplay {
-  margin: 5vh;
-  margin-top: 8vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1vw;
+  border-top: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 4vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
 }
