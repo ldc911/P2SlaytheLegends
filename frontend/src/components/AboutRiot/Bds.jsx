@@ -4,7 +4,7 @@ export default function Bds() {
   return (
     <div className="Bds-wiki">
       <section>
-        <h1>Les Bandes Déssinées</h1>
+        <h1>Les Bandes Dessinées</h1>
         <hr />
         <br />
         <p>
@@ -18,12 +18,12 @@ export default function Bds() {
               alt="BD Riot games"
             />
           </a>
-          
-          Riot possèdes aussi tout un univers de bandes déssinées et de récits
-          basé autour de chaque champions.
-        </p><p>
-          Ils ont même une Newsletter à la quelle vous pouvez vous abonner pour
-          connaitre les sorties des dernieres BDs.
+          Riot a créé un univers complet de bandes dessinées et de récits basés
+          autour de chaque champion.
+        </p>
+        <p>
+          Un abonnement à une newsletter permet également de connaitre les
+          sorties des dernieres BDs.
         </p>
 
         <button type="button">Plus d'informations</button>

@@ -23,7 +23,7 @@ export default function AboutRiot() {
                 type="button"
                 onClick={() => setContentLoad("enterprise")}
               >
-                Enterprise
+                Entreprise
               </button>
             </li>
           )}
