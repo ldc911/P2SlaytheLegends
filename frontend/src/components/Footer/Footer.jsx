@@ -1,7 +1,7 @@
-import "@assets/css/Footer/Footer.css";
-import LogoFooter from "@assets/img/Footer/logoLolFooter.png";
-import LogoTeam from "@assets/img/Footer/logoUndefined.png";
-import LogoWildCodeSchool from "@assets/img/Footer/Wildcodeschool.png";
+import "../../assets/css/Footer/Footer.css";
+import LogoFooter from "../../assets/img/Footer/logoLolFooter.png";
+import LogoTeam from "../../assets/img/Footer/logoUndefined.png";
+import LogoWildCodeSchool from "../../assets/img/Footer/Wildcodeschool.png";
 
 function Footer() {
   return (
