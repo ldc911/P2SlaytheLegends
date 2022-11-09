@@ -13,7 +13,7 @@ export default function Library() {
   const [champMana, setChampMana] = useState("");
   const [classMenuHover, setClassMenuHover] = useState(false);
   const [manaMenuHover, setManaMenuHover] = useState(false);
-  const [isUpTo1024px, setIsUpTo1024px] = useState(false);
+  const [isUpTo800px, setIsUpTo800px] = useState(false);
   const [champions, setChampions] = useState([]);
   const [isMounting, setIsMounting] = useState(true);
   const [filteredChamp, setFilteredChamp] = useState([]);
@@ -24,7 +24,7 @@ export default function Library() {
   useEffect(() => {
     const handleResize = () => {
       // eslint-disable-next-line no-unused-expressions
-      window.innerWidth > 1024 ? setIsUpTo1024px(true) : setIsUpTo1024px(false);
+      window.innerWidth > 800 ? setIsUpTo800px(true) : setIsUpTo800px(false);
     };
 
     handleResize();
@@ -117,7 +117,7 @@ export default function Library() {
             </button>
           </div>
           <div
-            className={isUpTo1024px ? "Filter-list-widescreen" : isClassHover()}
+            className={isUpTo800px ? "Filter-list-widescreen" : isClassHover()}
           >
             <button
               type="button"
@@ -193,7 +193,7 @@ export default function Library() {
             </button>
           </div>
           <div
-            className={isUpTo1024px ? "Filter-list-widescreen" : isManaHover()}
+            className={isUpTo800px ? "Filter-list-widescreen" : isManaHover()}
           >
             <button
               type="button"

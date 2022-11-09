@@ -24,20 +24,26 @@ function Navbar() {
     };
   }, []);
   return (
-    <nav className="main-navbar">
+    <nav className={toggleMenu ? "main-navbar" : "not-selected"}>
       {(toggleMenu || largeur > 800) && (
         <ul className="liste-navbar">
           <li className="items">
-            <Link to="/library">LIBRARY</Link>
+            <Link to="/library" onClick={toggleMenu}>
+              LIBRARY
+            </Link>
           </li>
           <span className="spannav" />
           <li className="items">
-            <Link to="/game">GAME</Link>
+            <Link to="/game" onClick={toggleMenu}>
+              GAME
+            </Link>
           </li>
           <span className="spannav" />
 
           <li className="items">
-            <Link to="/about-riot">ABOUT RIOT</Link>
+            <Link to="/about-riot" onClick={toggleMenu}>
+              ABOUT RIOT
+            </Link>
           </li>
         </ul>
       )}
