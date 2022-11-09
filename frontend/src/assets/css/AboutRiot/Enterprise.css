@@ -1,0 +1,6 @@
+.Enterprise-wiki img {
+  width: 40%;
+  float: left;
+  padding-right: 3%;
+  content: var(--logo-riot);
+}

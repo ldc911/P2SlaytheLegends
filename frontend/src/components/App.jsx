@@ -1,5 +1,11 @@
-import React from "react";
+import * as React from "react";
+import { Routes, Route, matchPath, useLocation } from "react-router-dom";
+import HeaderHome from "./Header/HeaderHome";
 import Home from "../pages/Home";
+import Game from "../pages/Game";
+import Library from "../pages/Library";
+import AboutRiot from "../pages/AboutRiot";
+import Footer from "./Footer/Footer";
 import "../assets/css/App.css";
 import api from "../services/api";
 
@@ -20,9 +26,23 @@ const pic = () => {
 pic();
 
 export default function App() {
+  const location = useLocation();
+  const match = matchPath({ path: "/" }, location.pathname);
+
   return (
     <div className="App">
-      <Home />
+      <HeaderHome />
+      <main className={match ? "" : "pagecontent"}>
+        <div className="main-content">
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/library" element={<Library />} />
+            <Route path="/game" element={<Game />} />
+            <Route path="/about-riot" element={<AboutRiot />} />
+          </Routes>
+        </div>
+      </main>
+      <Footer />
     </div>
   );
 }

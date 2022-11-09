@@ -52,6 +52,7 @@ input:checked + .slider:before {
 
 .slider.round {
   border-radius: 34px;
+  cursor: url("../../cursor/cursor.cur"), auto;
 }
 
 .slider.round:before {
