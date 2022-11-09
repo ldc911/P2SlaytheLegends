@@ -106,58 +106,116 @@ export default function Library() {
         {/* menu déroulant classes */}
         <div>
           <div className="Filter-head">
-            <span onClick={() => setClassMenuHover(!classMenuHover)}>
+            <button
+              type="button"
+              onClick={() => setClassMenuHover(!classMenuHover)}
+            >
               {!champClass ? "CLASSES" : champClass}
-            </span>
+            </button>
           </div>
-          <ul className={isUpTo1024px ? "Filter-list-flat" : isClassHover()}>
-            <li>
-              <span onClick={() => setChampClass("")}>TOUTES</span>
-            </li>
-            <li>
-              <span onClick={() => setChampClass("Assassin")}>ASSASSIN</span>
-            </li>
-            <li>
-              <span onClick={() => setChampClass("Mage")}>MAGE</span>
-            </li>
-            <li>
-              <span onClick={() => setChampClass("Fighter")}>COMBATTANT</span>
-            </li>
-            <li>
-              <span onClick={() => setChampClass("Marksman")}>TIREUR</span>
-            </li>
-            <li>
-              <span onClick={() => setChampClass("Support")}>SUPPORT</span>
-            </li>
-            <li>
-              <span onClick={() => setChampClass("Tank")}>TANK</span>
-            </li>
-          </ul>
+          <div
+            className={isUpTo1024px ? "Filter-list-widescreen" : isClassHover()}
+          >
+            <button
+              type="button"
+              onClick={() => setChampClass("")}
+              className={!champClass && "Filter-selected"}
+            >
+              TOUTES
+            </button>
+            <button
+              type="button"
+              onClick={() => setChampClass("Assassin")}
+              className={champClass === "Assassin" && "Filter-selected"}
+            >
+              ASSASSIN
+            </button>
+            <button
+              type="button"
+              onClick={() => setChampClass("Mage")}
+              className={champClass === "Mage" && "Filter-selected"}
+            >
+              MAGE
+            </button>
+            <button
+              type="button"
+              onClick={() => setChampClass("Fighter")}
+              className={champClass === "Fighter" && "Filter-selected"}
+            >
+              COMBATTANT
+            </button>
+            <button
+              type="button"
+              onClick={() => setChampClass("Marksman")}
+              className={champClass === "Marksman" && "Filter-selected"}
+            >
+              TIREUR
+            </button>
+            <button
+              type="button"
+              onClick={() => setChampClass("Support")}
+              className={champClass === "Support" && "Filter-selected"}
+            >
+              SUPPORT
+            </button>
+            <button
+              type="button"
+              onClick={() => setChampClass("Tank")}
+              className={champClass === "Tank" && "Filter-selected"}
+            >
+              TANK
+            </button>
+          </div>
         </div>
         {/* menu déroulant niveau */}
         <div>
           <div className="Filter-head">
-            <span onClick={() => setManaMenuHover(!manaMenuHover)}>
+            <button
+              type="button"
+              onClick={() => setManaMenuHover(!manaMenuHover)}
+            >
               {!champMana ? "MANA" : champMana}
-            </span>
+            </button>
           </div>
-          <ul className={isUpTo1024px ? "Filter-list-flat" : isManaHover()}>
-            <li>
-              <span onClick={() => setChampMana("")}>TOUT NIVEAU</span>
-            </li>
-            <li>
-              <span onClick={() => setChampMana("0")}>0</span>
-            </li>
-            <li>
-              <span onClick={() => setChampMana("1")}>1</span>
-            </li>
-            <li>
-              <span onClick={() => setChampMana("2")}>2</span>
-            </li>
-            <li>
-              <span onClick={() => setChampMana("3")}>3</span>
-            </li>
-          </ul>
+          <div
+            className={isUpTo1024px ? "Filter-list-widescreen" : isManaHover()}
+          >
+            <button
+              type="button"
+              onClick={() => setChampMana("")}
+              className={!champMana && "Filter-selected"}
+            >
+              TOUT NIVEAU
+            </button>
+            <button
+              type="button"
+              onClick={() => setChampMana("0")}
+              className={champMana === "0" && "Filter-selected"}
+            >
+              0
+            </button>
+            <button
+              type="button"
+              onClick={() => setChampMana("1")}
+              className={champMana === "1" && "Filter-selected"}
+            >
+              1
+            </button>
+            <button
+              type="button"
+              onClick={() => setChampMana("2")}
+              className={champMana === "2" && "Filter-selected"}
+            >
+              2
+            </button>
+            <button
+              type="button"
+              onClick={() => setChampMana("3")}
+              className={champMana === "3" && "Filter-selected"}
+            >
+              3
+            </button>
+          </div>
         </div>
       </div>
       {isMounting ? (
