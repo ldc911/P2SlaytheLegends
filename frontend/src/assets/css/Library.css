@@ -86,7 +86,7 @@
   font-size: medium;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 800px) {
   #search {
     height: 2rem;
     width: 20vw;
