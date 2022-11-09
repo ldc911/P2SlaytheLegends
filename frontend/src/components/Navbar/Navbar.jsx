@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../../assets/css/Navbar/Navbar.css";
+import { Link } from "react-router-dom";
 import poro from "../../assets/img/Navbar/poro.png";
+
 // Gestion du menu burger avec bouton //
 function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -12,7 +14,7 @@ function Navbar() {
     const changeWidth = () => {
       setLargeur(window.innerWidth);
 
-      if (window.innerWidth > 500) {
+      if (window.innerWidth > 800) {
         setToggleMenu(false);
       }
     };
@@ -23,11 +25,20 @@ function Navbar() {
   }, []);
   return (
     <nav className="main-navbar">
-      {(toggleMenu || largeur > 500) && (
+      {(toggleMenu || largeur > 800) && (
         <ul className="liste-navbar">
-          <li className="items">ACCUEIL</li>
-          <li className="items">GAME</li>
-          <li className="items">ABOUT RIOT</li>
+          <li className="items">
+            <Link to="/library">LIBRARY</Link>
+          </li>
+          <span className="spannav" />
+          <li className="items">
+            <Link to="/game">GAME</Link>
+          </li>
+          <span className="spannav" />
+
+          <li className="items">
+            <Link to="/about-riot">ABOUT RIOT</Link>
+          </li>
         </ul>
       )}
 
