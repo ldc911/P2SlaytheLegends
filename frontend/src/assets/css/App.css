@@ -4,16 +4,11 @@
 @font-face {
   font-family: "BeaufortforLOL-Bold";
   src: url("../fonts/beaufort-for-lol/12420e8c141ca7c3dff41de2d59df13e.eot");
-  src: url("../fonts/beaufort-for-lol/12420e8c141ca7c3dff41de2d59df13e.eot?#iefix")
-      format("embedded-opentype"),
-    url("../fonts/beaufort-for-lol/12420e8c141ca7c3dff41de2d59df13e.woff2")
-      format("woff2"),
-    url("../fonts/beaufort-for-lol/12420e8c141ca7c3dff41de2d59df13e.woff")
-      format("woff"),
-    url("../fonts/beaufort-for-lol/12420e8c141ca7c3dff41de2d59df13e.ttf")
-      format("truetype"),
-    url("//db.onlinewebfonts.com/t/12420e8c141ca7c3dff41de2d59df13e.svg#BeaufortforLOL-Bold")
-      format("svg");
+  src: url("../fonts/beaufort-for-lol/12420e8c141ca7c3dff41de2d59df13e.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/beaufort-for-lol/12420e8c141ca7c3dff41de2d59df13e.woff2") format("woff2"),
+    url("../fonts/beaufort-for-lol/12420e8c141ca7c3dff41de2d59df13e.woff") format("woff"),
+    url("../fonts/beaufort-for-lol/12420e8c141ca7c3dff41de2d59df13e.ttf") format("truetype"),
+    url("//db.onlinewebfonts.com/t/12420e8c141ca7c3dff41de2d59df13e.svg#BeaufortforLOL-Bold") format("svg");
 }
 
 @font-face {
@@ -103,9 +98,9 @@ main {
 main.pagecontent {
   background-color: var(--bg-color-opacity);
   width: 90vw;
-  height: calc(90vh - 140px);
+  height: calc(97vh - 140px);
   padding: 2vw;
-  margin: 5vh auto 5vh auto;
+  margin: 2vh auto 2vh auto;
   border-radius: 15px;
 }
 
@@ -126,25 +121,23 @@ h1 {
   left: 0;
   width: 100%;
   height: 20%;
-  background: linear-gradient(
-    to bottom,
-    hsla(var(--bg-color-hsla), 0) 0%,
-    hsla(var(--bg-color-hsla), 0.013) 8.1%,
-    hsla(var(--bg-color-hsla), 0.049) 15.5%,
-    hsla(var(--bg-color-hsla), 0.104) 22.5%,
-    hsla(var(--bg-color-hsla), 0.175) 29%,
-    hsla(var(--bg-color-hsla), 0.259) 35.3%,
-    hsla(var(--bg-color-hsla), 0.352) 41.2%,
-    hsla(var(--bg-color-hsla), 0.45) 47.1%,
-    hsla(var(--bg-color-hsla), 0.55) 52.9%,
-    hsla(var(--bg-color-hsla), 0.648) 58.8%,
-    hsla(var(--bg-color-hsla), 0.741) 64.7%,
-    hsla(var(--bg-color-hsla), 0.825) 71%,
-    hsla(var(--bg-color-hsla), 0.896) 77.5%,
-    hsla(var(--bg-color-hsla), 0.951) 84.5%,
-    hsla(var(--bg-color-hsla), 0.987) 91.9%,
-    hsl(var(--bg-color-hsla)) 100%
-  );
+  background: linear-gradient(to bottom,
+      hsla(var(--bg-color-hsla), 0) 0%,
+      hsla(var(--bg-color-hsla), 0.013) 8.1%,
+      hsla(var(--bg-color-hsla), 0.049) 15.5%,
+      hsla(var(--bg-color-hsla), 0.104) 22.5%,
+      hsla(var(--bg-color-hsla), 0.175) 29%,
+      hsla(var(--bg-color-hsla), 0.259) 35.3%,
+      hsla(var(--bg-color-hsla), 0.352) 41.2%,
+      hsla(var(--bg-color-hsla), 0.45) 47.1%,
+      hsla(var(--bg-color-hsla), 0.55) 52.9%,
+      hsla(var(--bg-color-hsla), 0.648) 58.8%,
+      hsla(var(--bg-color-hsla), 0.741) 64.7%,
+      hsla(var(--bg-color-hsla), 0.825) 71%,
+      hsla(var(--bg-color-hsla), 0.896) 77.5%,
+      hsla(var(--bg-color-hsla), 0.951) 84.5%,
+      hsla(var(--bg-color-hsla), 0.987) 91.9%,
+      hsl(var(--bg-color-hsla)) 100%);
 }
 
 .backgrount-image-body::after {
@@ -155,30 +148,28 @@ h1 {
   left: 0;
   width: 100%;
   height: 15%;
-  background: linear-gradient(
-    to top,
-    hsla(var(--bg-color-hsla), 0) 0%,
-    hsla(var(--bg-color-hsla), 0.013) 8.1%,
-    hsla(var(--bg-color-hsla), 0.049) 15.5%,
-    hsla(var(--bg-color-hsla), 0.104) 22.5%,
-    hsla(var(--bg-color-hsla), 0.175) 29%,
-    hsla(var(--bg-color-hsla), 0.259) 35.3%,
-    hsla(var(--bg-color-hsla), 0.352) 41.2%,
-    hsla(var(--bg-color-hsla), 0.45) 47.1%,
-    hsla(var(--bg-color-hsla), 0.55) 52.9%,
-    hsla(var(--bg-color-hsla), 0.648) 58.8%,
-    hsla(var(--bg-color-hsla), 0.741) 64.7%,
-    hsla(var(--bg-color-hsla), 0.825) 71%,
-    hsla(var(--bg-color-hsla), 0.896) 77.5%,
-    hsla(var(--bg-color-hsla), 0.951) 84.5%,
-    hsla(var(--bg-color-hsla), 0.987) 91.9%,
-    hsl(var(--bg-color-hsla)) 100%
-  );
+  background: linear-gradient(to top,
+      hsla(var(--bg-color-hsla), 0) 0%,
+      hsla(var(--bg-color-hsla), 0.013) 8.1%,
+      hsla(var(--bg-color-hsla), 0.049) 15.5%,
+      hsla(var(--bg-color-hsla), 0.104) 22.5%,
+      hsla(var(--bg-color-hsla), 0.175) 29%,
+      hsla(var(--bg-color-hsla), 0.259) 35.3%,
+      hsla(var(--bg-color-hsla), 0.352) 41.2%,
+      hsla(var(--bg-color-hsla), 0.45) 47.1%,
+      hsla(var(--bg-color-hsla), 0.55) 52.9%,
+      hsla(var(--bg-color-hsla), 0.648) 58.8%,
+      hsla(var(--bg-color-hsla), 0.741) 64.7%,
+      hsla(var(--bg-color-hsla), 0.825) 71%,
+      hsla(var(--bg-color-hsla), 0.896) 77.5%,
+      hsla(var(--bg-color-hsla), 0.951) 84.5%,
+      hsla(var(--bg-color-hsla), 0.987) 91.9%,
+      hsl(var(--bg-color-hsla)) 100%);
 }
 
 button {
   font-family: var(--font-primary);
-  font-size: calc(0.5rem + 0.5vw);
+  font-size: calc(0.6rem + 1vw);
   color: var(--font-color);
   white-space: nowrap;
   background: none;

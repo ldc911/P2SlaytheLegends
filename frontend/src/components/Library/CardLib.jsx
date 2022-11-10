@@ -1,8 +1,7 @@
-import React from "react";
 import PropTypes from "prop-types";
-import "@assets/css/Card.css";
+import "../../assets/css/CardLib.css";
 
-function Card({ cardChampion }) {
+function CardLib({ cardChampion, setModalOpen, setModalChamp }) {
   const manaCost = (champ) => {
     // console.log(cardChampion.info.difficulty);
     switch (champ) {
@@ -26,32 +25,32 @@ function Card({ cardChampion }) {
     }
   };
   // test function to assign card skill 1 based on the champ class 1
-  function skill1(champ) {
+  const skill1 = (champ) => {
     switch (champ.tags[0]) {
       case "Tank":
         return `Gain ${(
-          7 *
-          (parseInt(manaCost(champ.info.difficulty), 10) + 1)
+          7 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+          parseInt(manaCost(champ.info.difficulty), 10)
         ).toString()} Block`;
       case "Fighter":
         return `Deal ${(
-          7 *
-          (parseInt(manaCost(champ.info.difficulty), 10) + 1)
+          7 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+          parseInt(manaCost(champ.info.difficulty), 10)
         ).toString()} Phys Damage`;
       case "Support":
         return `Heal ${(
-          4 *
-          (parseInt(manaCost(champ.info.difficulty), 10) + 1)
+          4 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+          parseInt(manaCost(champ.info.difficulty), 10)
         ).toString()} HP`;
       case "Mage":
         return champ.tags.length === 2
           ? `Deal ${(
-              7 *
-              (parseInt(manaCost(champ.info.difficulty), 10) + 1)
+              7 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+              parseInt(manaCost(champ.info.difficulty), 10)
             ).toString()} Magic Damage`
           : `cards damage value + ${(
-              1 *
-              (parseInt(manaCost(champ.info.difficulty), 10) + 1)
+              1 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+              parseInt(manaCost(champ.info.difficulty), 10)
             ).toString()}`;
       case "Marksman":
         return `Apply ${(
@@ -61,27 +60,27 @@ function Card({ cardChampion }) {
       case "Assassin":
         return champ.tags.length === 2
           ? `Apply ${(
-              4 *
-              (parseInt(manaCost(champ.info.difficulty), 10) + 1)
+              4 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+              parseInt(manaCost(champ.info.difficulty), 10)
             ).toString()} Poison`
           : "double ennemy Poison";
       default:
         return "TBD";
     }
-  }
+  };
 
   // test function to assign card skill 2 based on the champ class 2
-  function skill2(champ) {
+  const skill2 = (champ) => {
     switch (champ.tags[1]) {
       case "Tank":
         return `Gain ${(
-          7 *
-          (parseInt(manaCost(champ.info.difficulty), 10) + 1)
+          7 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+          parseInt(manaCost(champ.info.difficulty), 10)
         ).toString()} Block`;
       case "Fighter":
         return `cards block value + ${(
-          1 *
-          (parseInt(manaCost(champ.info.difficulty), 10) + 1)
+          1 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+          parseInt(manaCost(champ.info.difficulty), 10)
         ).toString()}`;
       case "Support":
         return `gain ${
@@ -93,7 +92,7 @@ function Card({ cardChampion }) {
           (parseInt(manaCost(champ.info.difficulty), 10) + 1)
         ).toString()} Weak`;
       case "Marksman":
-        return "Apply 2 Vulnerability";
+        return "Ignore next attack";
       case "Assassin":
         return `Draw ${
           parseInt(manaCost(champ.info.difficulty), 10) < 2 ? "1" : "2"
@@ -101,10 +100,21 @@ function Card({ cardChampion }) {
       default:
         return "TBD";
     }
-  }
+  };
+
+  const loadModal = () => {
+    setModalChamp(cardChampion.id);
+    setModalOpen(true);
+  };
 
   return (
-    <div className="champCard">
+    <button
+      type="button"
+      className="champCard"
+      onClick={() => {
+        loadModal();
+      }}
+    >
       {cardChampion ? (
         <div className="cardContainer">
           <div className="manaCard">
@@ -114,7 +124,7 @@ function Card({ cardChampion }) {
             <h3>{cardChampion.name}</h3>
           </div>
           <div
-            className="picContainer"
+            className="cardPicContainer"
             style={{
               backgroundImage: `url(http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${cardChampion.id}_0.jpg)`,
             }}
@@ -127,13 +137,13 @@ function Card({ cardChampion }) {
       ) : (
         "TBD"
       )}
-    </div>
+    </button>
   );
 }
 
-export default Card;
+export default CardLib;
 
-Card.propTypes = {
+CardLib.propTypes = {
   cardChampion: PropTypes.shape({
     id: PropTypes.string,
     name: PropTypes.string,
@@ -142,9 +152,11 @@ Card.propTypes = {
       difficulty: PropTypes.number,
     }),
   }),
+  setModalOpen: PropTypes.func,
+  setModalChamp: PropTypes.func,
 };
 
-Card.defaultProps = {
+CardLib.defaultProps = {
   cardChampion: {
     id: "",
     tags: [""],
@@ -153,4 +165,6 @@ Card.defaultProps = {
     },
     name: "",
   },
+  setModalOpen: () => {},
+  setModalChamp: () => {},
 };

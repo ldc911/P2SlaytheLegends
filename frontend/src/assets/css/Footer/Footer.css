@@ -6,6 +6,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin: 0.5rem;
+  z-index: -1;
 }
 
 .colonne-footer {
@@ -18,11 +20,13 @@
 }
 
 .liste-namecreators-footer {
+  padding: 1vh;
   list-style-type: none;
   font-family: "Beaufort for LOL", Arial;
 }
 .name-creators-footer {
   font-size: 1.5rem;
+  font-family: var(--font-heading);
 }
 
 .image-footer {

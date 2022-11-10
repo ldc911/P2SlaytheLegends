@@ -1,7 +1,9 @@
 .champCard {
+  background-color: transparent;
   background-image: url("@assets/img/Card/card.png");
   background-size: contain;
   background-repeat: no-repeat;
+  border: none;
   width: 20%;
   height: calc(1.2 * 20vw);
   min-height: 206px;
@@ -9,6 +11,7 @@
   max-height: 412px;
   max-width: 302px;
   /*margin:2px;*/
+  white-space: normal;
 }
 
 .cardContainer {
@@ -48,7 +51,7 @@
   line-height: calc(0.5rem + 1.2vw);
 }
 
-.picContainer {
+.cardPicContainer {
   margin: auto;
   height: 40%;
   width: 70%;
@@ -75,5 +78,6 @@
   font-size: 16px;
   font-size: calc(50% + 0.5vw);
   line-height: calc(55% + 0.5vw);
+  margin: 0px;
   margin-left: 5%;
 }
