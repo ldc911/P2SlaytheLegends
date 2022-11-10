@@ -92,7 +92,7 @@ function CardLib({ cardChampion, setModalOpen, setModalChamp }) {
           (parseInt(manaCost(champ.info.difficulty), 10) + 1)
         ).toString()} Weak`;
       case "Marksman":
-        return "Apply 2 Vulnerability";
+        return "Ignore next attack";
       case "Assassin":
         return `Draw ${
           parseInt(manaCost(champ.info.difficulty), 10) < 2 ? "1" : "2"
