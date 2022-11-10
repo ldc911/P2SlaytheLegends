@@ -20,6 +20,7 @@
     "husky": "^7.0.0"
   },
   "dependencies": {
+    "@minoru/react-dnd-treeview": "^3.2.0-alpha.5",
     "react-router-dom": "^6.4.3",
     "use-local-storage": "^2.3.6"
   }
