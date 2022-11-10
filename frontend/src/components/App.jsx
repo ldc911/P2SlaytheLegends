@@ -27,12 +27,13 @@ pic();
 
 export default function App() {
   const location = useLocation();
-  const match = matchPath({ path: "/" }, location.pathname);
+  const acceuil = matchPath({ path: "/" }, location.pathname);
+  const game = matchPath({ path: "/game" }, location.pathname);
 
   return (
     <div className="App">
       <HeaderHome />
-      <main className={match ? "" : "pagecontent"}>
+      <main className={acceuil || game ? "" : "pagecontent"}>
         <div className="main-content">
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -42,7 +43,7 @@ export default function App() {
           </Routes>
         </div>
       </main>
-      <Footer />
+      {game ? "" : <Footer />}
     </div>
   );
 }
