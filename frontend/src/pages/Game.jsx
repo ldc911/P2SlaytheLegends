@@ -73,20 +73,19 @@ export default function Game() {
           <img src={backCard} width="auto" alt="Deck" />
         </div>
         {list &&
-          list.map((item) => {
-            const { id } = item;
+          list.map((item, index) => {
             return (
               <div
+                key={item.id}
                 style={{
                   backgroundColor: "lightblue",
                   margin: "20px auto",
                   textAlign: "center",
                   fontSize: "40px",
                 }}
-                onDragStart={(e) => dragStart(e, id)}
-                onDragEnter={(e) => dragEnter(e, id)}
+                onDragStart={(e) => dragStart(e, index)}
+                onDragEnter={(e) => dragEnter(e, index)}
                 onDragEnd={drop}
-                key={id}
                 draggable
               >
                 {item}
