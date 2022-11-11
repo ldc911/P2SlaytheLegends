@@ -5,7 +5,7 @@
   background-repeat: no-repeat;
   border: none;
   width: 20%;
-  height: calc(1.2 * 20vw);
+  height: calc(1.37 * 17vw);
   min-height: 206px;
   min-width: 151px;
   max-height: 412px;
@@ -17,6 +17,7 @@
 .cardContainer {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 .manaCard {
   display: flex;
@@ -36,29 +37,42 @@
 }
 
 .champCardName {
-  background-color: #c89d3e;
+  background: rgb(238,226,174);
+  background: radial-gradient(circle, rgba(238,226,174,1) 0%, rgba(200,157,62,1) 100%);
   margin: auto;
-  width: 70%;
+  width: 55%;
   font-family: "BeaufortforLOL-Bold";
   border-radius: 10px;
-  margin-top: 3%;
+  border-style: double;
+  border-color: hwb(0 6% 94%);
+  margin-bottom: 2px;
+  position: absolute;
+  left: 24%;
+  bottom: 74%;
+  z-index:1;  
 }
 .champCardName h3 {
   margin: auto;
   color: black;
   text-align: center;
-  font-size: calc(0.5rem + 1.2vw);
-  line-height: calc(0.5rem + 1.2vw);
+  font-size: calc(0.8vw + 1vh);
+  line-height: calc(1vw + 1vh);
 }
 
 .cardPicContainer {
   margin: auto;
-  height: 40%;
-  width: 70%;
+  background-color: hsla(0, 0%, 0%, 0.85);
+  height: 45%;
+  width: 80%;
   background-position: top;
   background-repeat: no-repeat;
-  background-size: 70%;
-  border-radius: 60px;
+  background-size: 60%;
+  border-radius: 30%;
+  position: absolute;
+  left: 11%;
+  bottom: 30%;
+  border-style: double;
+  border-color: hwb(41 24% 22%);
 }
 
 .skillsCard {
@@ -66,18 +80,25 @@
   font-weight: 200;
   display: block;
   background: #c89d3e;
+  /*background-image: linear-gradient(to bottom right, #a56010, #c89d3e);*/
+  /*background: rgb(238,226,174);
+  background: radial-gradient(circle, rgba(238,226,174,1) 0%, rgba(200,157,62,1) 100%);*/
   align-items: center;
-  width: 80%;
-  margin-left: 7%;
-  margin-top: 5%;
-  padding-bottom: 2%;
-  border-radius: 5px;
+  width: 88%;
+  margin-left: 5%;
+  border-radius: 10px 5px 5px 5px;
+  bottom: 4%;
+  position: absolute;
+  height: 24%;
+  border-style: double;
+  border-color: hwb(0 6% 94%);
 }
 .skillsCard p {
   font-family: "BeaufortforLOL-Bold";
   font-size: 16px;
-  font-size: calc(50% + 0.5vw);
-  line-height: calc(55% + 0.5vw);
+  font-size: calc((0.6rem + 1vw)*0.7);
+  line-height: 82%;  
   margin: 0px;
   margin-left: 5%;
+  margin-top: 2%;
 }
