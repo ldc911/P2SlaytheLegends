@@ -62,3 +62,9 @@
     opacity: 10;
   }
 }
+
+@media screen and (max-height: 500px) {
+  .main-footer {
+    display: none;
+  }
+}

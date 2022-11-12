@@ -179,3 +179,9 @@ button {
   overflow: hidden;
   outline: none;
 }
+
+@media screen and (max-height: 500px) {
+  main.pagecontent {
+    height: calc(97vh - 70px);
+  }
+}

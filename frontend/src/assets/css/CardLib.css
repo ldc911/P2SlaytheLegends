@@ -101,3 +101,13 @@
   margin-left: 2%;
   margin-top: 2%;
 }
+
+@media screen and (max-width: 875px) {
+  .skillsCard p {    
+    font-size: 12px;    
+  }
+  .champCardName h3 {    
+    font-size: 12px;
+    line-height: 12px;
+  }
+}
