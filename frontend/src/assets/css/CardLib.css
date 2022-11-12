@@ -9,8 +9,7 @@
   min-height: 206px;
   min-width: 151px;
   max-height: 412px;
-  max-width: 302px;
-  /*margin:2px;*/
+  max-width: 302px; 
   white-space: normal;
 }
 
@@ -61,7 +60,7 @@
 
 .cardPicContainer {
   margin: auto;
-  background-color: hsla(0, 0%, 0%, 0.85);
+  background-color: hsla(0, 9.1%, 2.2%, 0.85);
   height: 45%;
   width: 80%;
   background-position: top;
@@ -80,9 +79,6 @@
   font-weight: 200;
   display: block;
   background: #c89d3e;
-  /*background-image: linear-gradient(to bottom right, #a56010, #c89d3e);*/
-  /*background: rgb(238,226,174);
-  background: radial-gradient(circle, rgba(238,226,174,1) 0%, rgba(200,157,62,1) 100%);*/
   align-items: center;
   width: 88%;
   margin-left: 5%;
@@ -92,6 +88,9 @@
   height: 24%;
   border-style: double;
   border-color: hwb(0 6% 94%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .skillsCard p {
   font-family: "BeaufortforLOL-Bold";
@@ -99,6 +98,6 @@
   font-size: calc((0.6rem + 1vw)*0.7);
   line-height: 82%;  
   margin: 0px;
-  margin-left: 5%;
+  margin-left: 2%;
   margin-top: 2%;
 }

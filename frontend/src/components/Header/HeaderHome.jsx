@@ -1,9 +1,8 @@
 import React from "react";
-import "@assets/css/Header/Header.css";
-import logoHeader from "@assets/img/Header/logoLolHeader.png";
-// eslint-disable-next-line import/no-unresolved
-import Navbar from "@components/Navbar/Navbar";
 import { matchPath, useLocation } from "react-router-dom";
+import "../../assets/css/Header/Header.css";
+import Navbar from "../Navbar/Navbar";
+import logoHeader from "../../assets/img/Header/logoLolHeader.png";
 import ThemeButton from "./ThemeButton";
 
 export default function HeaderHome() {
