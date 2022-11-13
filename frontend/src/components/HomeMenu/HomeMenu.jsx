@@ -1,4 +1,4 @@
-import "@assets/css/HomeMenu/HomeMenu.css";
+import "../../assets/css/HomeMenu/HomeMenu.css";
 import { Link } from "react-router-dom";
 
 function HomeMenu() {
