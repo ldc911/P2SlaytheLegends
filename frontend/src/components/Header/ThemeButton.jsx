@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "@assets/css/Header/ThemeButton.css";
+import "../../assets/css/Header/ThemeButton.css";
 
 export default function ThemeButton() {
   const [toggleSwitch, setToggleSwitch] = useState(true);

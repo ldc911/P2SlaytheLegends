@@ -58,6 +58,7 @@
   flex-direction: column;
   background-color: var(--bg-color-opacity);
   width: 22vw;
+  z-index: 5;
 }
 
 .Filter-list-none {
@@ -90,7 +91,7 @@
 @media screen and (min-width: 800px) {
   #search {
     height: 2rem;
-    width: 20vw;
+    width: 12vw;
     min-width: 5vw;
     max-width: 10rem;
     border: none;
@@ -127,6 +128,7 @@
     padding-left: 0.5vw;
     padding-right: 0.5vw;
     padding-bottom: 0.2rem;
+    font-size: calc(0.6rem + 0.4vw);
   }
 
   .Filter-list-widescreen button:last-child {

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import "../../assets/css/Library/ModalLib.css";
 import apiChamp from "../../services/apiChamp";
 
@@ -66,3 +66,13 @@ function ModalLib({ setOpenModal, modalChamp }) {
 }
 
 export default ModalLib;
+
+ModalLib.propTypes = {
+  setOpenModal: PropTypes.func,
+  modalChamp: PropTypes.string,
+};
+
+ModalLib.defaultProps = {
+  setOpenModal: () => {},
+  modalChamp: "",
+};

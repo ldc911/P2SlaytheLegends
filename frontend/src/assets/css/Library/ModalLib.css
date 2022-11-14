@@ -9,6 +9,7 @@
   top: 0px;
   border: none;
   white-space: normal;
+  z-index: 15;
 }
 
 .modalLibContainer {
