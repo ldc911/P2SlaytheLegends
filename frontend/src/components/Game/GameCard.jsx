@@ -1,6 +1,4 @@
-/* eslint-disable prefer-const */
 /* eslint-disable consistent-return */
-/* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import "../../assets/css/CardLib.css";
@@ -8,13 +6,13 @@ import "../../assets/css/CardLib.css";
 function GameCard({
   cardChampion,
   cardPlayed,
+  setCardPlayed,
   playerStats,
   setPlayerStats,
   enemyStats,
   setEnemyStats,
-  /* setDrawCard, */
 }) {
-  const [cardManaCost, setCardManaCost] = useState(0);
+  const [cardEnergyCost, setCardEnergyCost] = useState(0);
   const [magicAttack, setMagicAttack] = useState(0);
   const [physAttack, setPhysAttack] = useState(0);
   const [block, setBlock] = useState(0);
@@ -213,32 +211,121 @@ function GameCard({
   };
 
   useEffect(() => {
-    setCardManaCost(parseInt(manaCost(cardChampion.info.difficulty), 10));
+    setCardEnergyCost(parseInt(manaCost(cardChampion.info.difficulty), 10));
     skillValues1(cardChampion);
     if (cardChampion.tags[1]) skillValues2(cardChampion);
   }, []);
 
   useEffect(() => {
-    let playerCopy = playerStats;
-    let enemyCopy = enemyStats;
     if (cardPlayed) {
-      playerCopy.currentMana -= cardManaCost;
-      if (magicAttack > 0) enemyCopy.currentLife -= magicAttack;
-      if (physAttack > 0) enemyCopy.currentLife -= physAttack;
+      const playerCopy = playerStats;
+      const enemyCopy = enemyStats;
+      playerCopy.currentEnergy -= cardEnergyCost;
+      /* magic Attack action */
+      if (magicAttack > 0) {
+        if (enemyCopy.tempBuff.avoidAttack === 0) {
+          let damage = Math.round(
+            (magicAttack + playerCopy.fullCombatBuff.attackBuff) *
+              (enemyCopy.debuff.vulnerable > 0 ? 1.25 : 1) *
+              (playerCopy.debuff.weak > 0 ? 0.75 : 1)
+          );
+          damage -= enemyCopy.resistMag;
+          if (enemyCopy.tempBuff.block > 0) {
+            if (damage > enemyCopy.tempBuff.block) {
+              damage -= enemyCopy.tempBuff.block;
+              enemyCopy.tempBuff.block = 0;
+              enemyCopy.currentLife -= damage;
+            } else {
+              enemyCopy.tempBuff.block -= damage;
+            }
+          } else enemyCopy.currentLife -= damage;
+        } else enemyCopy.tempBuff.avoidAttack -= 1;
+      }
+      /* physique Attack action */
+      if (physAttack > 0) {
+        if (enemyCopy.tempBuff.avoidAttack === 0) {
+          let damage = Math.round(
+            (physAttack + playerCopy.fullCombatBuff.attackBuff) *
+              (enemyCopy.debuff.vulnerable ? 1.25 : 1) *
+              (playerCopy.debuff.weak > 0 ? 0.75 : 1)
+          );
+          damage -= enemyCopy.resistPhys;
+          if (enemyCopy.tempBuff.block > 0) {
+            if (damage > enemyCopy.tempBuff.block) {
+              damage -= enemyCopy.tempBuff.block;
+              enemyCopy.tempBuff.block = 0;
+              enemyCopy.currentLife -= damage;
+            } else {
+              enemyCopy.tempBuff.block -= damage;
+              damage = 0;
+            }
+          } else enemyCopy.currentLife -= damage;
+        } else enemyCopy.tempBuff.avoidAttack -= 1;
+      }
+      /* block action */
+      if (block > 0) {
+        playerCopy.tempBuff.block +=
+          block + playerCopy.fullCombatBuff.blockBuff;
+      }
+      /* poison action */
+      if (poison > 0) {
+        enemyCopy.debuff.poison += poison;
+      }
+      /* double poison action */
+      if (doublePoison) {
+        enemyCopy.debuff.poison *= 2;
+      }
+      /* dodge action */
+      if (dodge > 0) {
+        playerCopy.tempBuff.avoidAttack += dodge;
+      }
+      /* Attack buff action */
+      if (playerAttackBuff > 0) {
+        playerCopy.fullCombatBuff.attackBuff += playerAttackBuff;
+      }
+      /* Block buff action */
+      if (playerBlockBuff > 0) {
+        playerCopy.fullCombatBuff.blockBuff += playerBlockBuff;
+      }
+      /* vulnerability action */
+      if (vulnerability > 0) {
+        enemyCopy.debuff.vulnerable += vulnerability;
+      }
+      /* weak action */
+      if (weak > 0) {
+        enemyCopy.debuff.weak += weak;
+      }
+      /* energy recover action */
+      if (energy > 0) {
+        playerCopy.currentEnergy += energy;
+      }
+      /* heal action */
+      if (heal > 0) {
+        playerCopy.currentLife += heal;
+        if (playerCopy.currentLife > playerCopy.maxLife) {
+          playerCopy.currentLife = playerCopy.maxLife;
+        }
+      }
+      /* draw card(s) action */
+      if (draw > 0) {
+        playerCopy.drawCard += draw;
+      }
       setEnemyStats(enemyCopy);
       setPlayerStats(playerCopy);
-      /* console.log(enemyCopy.currentLife); */
+      setCardPlayed(false);
     }
   }, [cardPlayed]);
-  /* console.log("voici cardChampion"+cardChampion); */
   return (
     <div>
-      <button type="button" className="champCard" onClick={() => {}}>
+      <button
+        type="button"
+        className="champCard"
+        style={{ height: `calc(1.37 * 20vw)` }}
+      >
         {cardChampion ? (
           <div className="cardContainer">
             <div className="manaCard">
-              {/* <h3>{manaCost(cardChampion.info.difficulty)}</h3> */}
-              <h3>{cardManaCost}</h3>
+              <h3>{manaCost(cardChampion.info.difficulty)}</h3>
             </div>
             <div className="champCardName">
               <h3>{cardChampion.name}</h3>
@@ -258,22 +345,6 @@ function GameCard({
           "TBD"
         )}
       </button>
-      <div style={{ display: "flex" }}>
-        <p>magicAttack {magicAttack}</p>
-        <p>physAttack {physAttack}</p>
-        <p>block {block}</p>
-        <p>poison {poison}</p>
-        <p>double poison{doublePoison ? " yes" : " no"}</p>
-        <p>dodge {dodge}</p>
-        <p>playerAttackBuff {playerAttackBuff}</p>
-        <p>playerBlockBuff {playerBlockBuff}</p>
-        <p>vulnerability {vulnerability}</p>
-        <p>weak {weak}</p>
-        <p>draw {draw}</p>
-        <p>energy {energy}</p>
-        <p>heal {heal}</p>
-        <p>boss life {enemyStats.currentLife}</p>
-      </div>
     </div>
   );
 }
@@ -289,6 +360,49 @@ GameCard.propTypes = {
       difficulty: PropTypes.number,
     }),
   }),
+  cardPlayed: PropTypes.bool,
+  setCardPlayed: PropTypes.func,
+  playerStats: PropTypes.shape({
+    currentLife: PropTypes.number,
+    maxLife: PropTypes.number,
+    currentEnergy: PropTypes.number,
+    maxEnergy: PropTypes.number,
+    tempBuff: PropTypes.shape({
+      block: PropTypes.number,
+      avoidAttack: PropTypes.number,
+    }),
+    fullCombatBuff: PropTypes.shape({
+      attackBuff: PropTypes.number,
+      blockBuff: PropTypes.number,
+    }),
+    debuff: PropTypes.shape({
+      vulnerable: PropTypes.number,
+      weak: PropTypes.number,
+      poison: PropTypes.number,
+    }),
+    drawCard: PropTypes.number,
+  }),
+  setPlayerStats: PropTypes.func,
+  enemyStats: PropTypes.shape({
+    currentLife: PropTypes.number,
+    maxLife: PropTypes.number,
+    resistPhys: PropTypes.number,
+    resistMag: PropTypes.number,
+    tempBuff: PropTypes.shape({
+      block: PropTypes.number,
+      avoidAttack: PropTypes.number,
+    }),
+    fullCombatBuff: PropTypes.shape({
+      attackBuff: PropTypes.number,
+      blockBuff: PropTypes.number,
+    }),
+    debuff: PropTypes.shape({
+      vulnerable: PropTypes.number,
+      weak: PropTypes.number,
+      poison: PropTypes.number,
+    }),
+  }),
+  setEnemyStats: PropTypes.func,
 };
 
 GameCard.defaultProps = {
@@ -300,4 +414,47 @@ GameCard.defaultProps = {
     },
     name: "",
   },
+  cardPlayed: false,
+  setCardPlayed: () => {},
+  playerStats: {
+    currentLife: 100,
+    maxLife: 100,
+    currentEnergy: 3,
+    maxEnergy: 3,
+    tempBuff: {
+      block: 0,
+      avoidAttack: 0,
+    },
+    fullCombatBuff: {
+      attackBuff: 0,
+      blockBuff: 0,
+    },
+    debuff: {
+      vulnerable: 0,
+      weak: 0,
+      poison: 0,
+    },
+    drawCard: 0,
+  },
+  setPlayerStats: () => {},
+  enemyStats: {
+    currentLife: 1000,
+    maxLife: 1000,
+    resistPhys: 0,
+    resistMag: 0,
+    tempBuff: {
+      block: 0,
+      avoidAttack: 0,
+    },
+    fullCombatBuff: {
+      attackBuff: 0,
+      blockBuff: 0,
+    },
+    debuff: {
+      vulnerable: 0,
+      weak: 0,
+      poison: 0,
+    },
+  },
+  setEnemyStats: () => {},
 };

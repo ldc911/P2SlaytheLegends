@@ -18,18 +18,19 @@ export default function GameTest() {
     maxLife: 1000,
     resistPhys: 0,
     resistMag: 0,
-    tempBuff: { block: 0, avoidAttack: 0 },
-    fullCombatbuff: { attackBuff: 0, defenseBuff: 0 },
-    debuff: { vulnerable: 0, weak: 0, poison: 0 },
+    tempBuff: { block: 20, avoidAttack: 0 },
+    fullCombatBuff: { attackBuff: 0, blockBuff: 0 },
+    debuff: { vulnerable: 1, weak: 0, poison: 5 },
   });
   const [playerStats, setPlayerStats] = useState({
-    currentLife: 100,
+    currentLife: 90,
     maxLife: 100,
-    currentMana: 3,
-    manaMax: 3,
+    currentEnergy: 3,
+    maxEnergy: 3,
     tempBuff: { block: 0, avoidAttack: 0 },
-    fullCombatbuff: { attackBuff: 0, defenseBuff: 0 },
+    fullCombatBuff: { attackBuff: 3, blockBuff: 10 },
     debuff: { vulnerable: 0, weak: 0, poison: 0 },
+    drawCard: 0,
   });
 
   const dragItem = useRef();
@@ -102,8 +103,9 @@ export default function GameTest() {
       <div>
         {filteredChamp[0] ? (
           <GameCard
-            cardChampion={filteredChamp[57][1]}
+            cardChampion={filteredChamp[11][1]}
             cardPlayed={cardPlayed}
+            setCardPlayed={setCardPlayed}
             enemyStats={enemyStats}
             setEnemyStats={setEnemyStats}
             playerStats={playerStats}
@@ -120,8 +122,21 @@ export default function GameTest() {
         >
           play card: {cardPlayed ? "true" : "false"}
         </button>
-        <p>Boss Life {enemyStats.currentLife}</p>
-        <p>playerMana {playerStats.currentMana}</p>
+        <p>
+          Boss Life {enemyStats.currentLife} / Block
+          {enemyStats.tempBuff.block} / vul {enemyStats.debuff.vulnerable} /
+          weak {enemyStats.debuff.weak} / poison {enemyStats.debuff.poison} /
+        </p>
+        <p>
+          player Energy {playerStats.currentEnergy} / Block{" "}
+          {playerStats.tempBuff.block} / attack buff{" "}
+          {playerStats.fullCombatBuff.attackBuff} / defense buff{" "}
+          {playerStats.fullCombatBuff.blockBuff} / draw card{" "}
+          {playerStats.drawCard} / Avoid {playerStats.tempBuff.avoidAttack}{" "}
+        </p>
+        <p>
+          Player Life: {playerStats.currentLife} / {playerStats.maxLife}
+        </p>
         <div
           className="drag-drop-zone"
           onDrop={(e) => dropEnnemy(e)}
