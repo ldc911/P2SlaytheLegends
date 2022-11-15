@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../assets/css/Game.css";
-import backCard from "@assets/img/Card/card.png";
+import backCard from "../assets/img/Card/card.png";
+import ModalDraft from "../components/Game/ModalDraft";
 
 export default function Game() {
   const dragItem = useRef();
@@ -57,6 +58,7 @@ export default function Game() {
   return (
     <>
       <div>
+        <ModalDraft />
         <div
           className="drag-drop-zone"
           onDrop={(e) => dropEnnemy(e)}
