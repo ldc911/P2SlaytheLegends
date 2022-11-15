@@ -72,11 +72,14 @@ export default function ModalDraft(setDeckJeu, setLvlGame) {
       setCardSelected(0);
     }
   };
+
+  // remontée des states
   const validateDeck = () => {
     setDeckJeu(deckDepart);
     setLvlGame(1);
   };
 
+  // a faire : la fct qui reset selected card si up, a passer en props
   return (
     <div className="Modale-wrapper">
       <div className="Card-display">
@@ -91,11 +94,15 @@ export default function ModalDraft(setDeckJeu, setLvlGame) {
         })}
       </div>
       {deckDepart.length < 12 ? (
-        <button type="button" onClick={buttonClick}>
+        <button className="Modale-validate" type="button" onClick={buttonClick}>
           valider
         </button>
       ) : (
-        <button type="button" onClick={validateDeck}>
+        <button
+          className="Modale-validate"
+          type="button"
+          onClick={validateDeck}
+        >
           Valider votre deck
         </button>
       )}

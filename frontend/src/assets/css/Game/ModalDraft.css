@@ -4,12 +4,25 @@
     background-color: var(--bg-color-opacity);
     position: fixed;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     top: 0px;
     border: none;
     white-space: normal;
     z-index: 15;
+}
+
+.Modale-validate{
+    background-color: var(--bg-color);
+    border-radius: 5px;
+    margin-top : 1vw;
+    padding: 1vw;
+    box-shadow: 0 3px 3px black;
+}
+
+.Modale-validate:hover{
+    transform: scale(1.1);
 }
 
 .Card-display {
