@@ -14,8 +14,9 @@ export default function ModalDraft({ setDeckJeu, setLvlGame, setStartGame }) {
   const [isMounting, setIsMounting] = useState(true);
   const [turnOver, setTurnOver] = useState(false);
   const [propositions, setPropositions] = useState([]);
-  const [cardSelected, setCardSelected] = useState(0);
+  const [cardSelected, setCardSelected] = useState({});
   const [champArray, setChampArray] = useState([]);
+  const [idSelectedCard, setIdSelectedCard] = useState("");
 
   // appel Service API
   useEffect(() => {
@@ -70,7 +71,7 @@ export default function ModalDraft({ setDeckJeu, setLvlGame, setStartGame }) {
       deckDepart.push(cardSelected);
       setTurnOver(!turnOver);
       setPropositions([]);
-      setCardSelected(0);
+      setCardSelected({});
     }
   };
 
@@ -79,7 +80,6 @@ export default function ModalDraft({ setDeckJeu, setLvlGame, setStartGame }) {
     setDeckJeu(deckDepart);
     setLvlGame(1);
   };
-
   // a faire : la fct qui reset selected card si up, a passer en props
   return (
     <div className="Modale-choice">
@@ -97,6 +97,8 @@ export default function ModalDraft({ setDeckJeu, setLvlGame, setStartGame }) {
               key={champion[1].id}
               cardChampion={champion[1]}
               setCardSelected={setCardSelected}
+              setIdSelectedCard={setIdSelectedCard}
+              idSelectedCard={idSelectedCard}
             />
           );
         })}

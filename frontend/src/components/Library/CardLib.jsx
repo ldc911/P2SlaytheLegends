@@ -7,6 +7,8 @@ function CardLib({
   setModalOpen,
   setModalChamp,
   setCardSelected,
+  setIdSelectedCard,
+  idSelectedCard,
 }) {
   const manaCost = (champ) => {
     // console.log(cardChampion.info.difficulty);
@@ -118,13 +120,18 @@ function CardLib({
       setModalOpen(true);
     } else {
       setCardSelected({ champion: cardChampion, isPlayed: false });
+      setIdSelectedCard(cardChampion.id);
     }
   };
 
   return (
     <button
       type="button"
-      className="champCard"
+      className={
+        idSelectedCard === cardChampion.id
+          ? "champCard cardSelected"
+          : "champCard"
+      }
       onClick={() => {
         handleClick();
       }}
@@ -169,6 +176,8 @@ CardLib.propTypes = {
   setModalOpen: PropTypes.func,
   setModalChamp: PropTypes.func,
   setCardSelected: PropTypes.func,
+  setIdSelectedCard: PropTypes.func,
+  idSelectedCard: PropTypes.string,
 };
 
 CardLib.defaultProps = {
@@ -183,4 +192,6 @@ CardLib.defaultProps = {
   setModalOpen: () => {},
   setModalChamp: () => {},
   setCardSelected: () => {},
+  setIdSelectedCard: () => {},
+  idSelectedCard: "",
 };

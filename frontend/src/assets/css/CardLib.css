@@ -100,6 +100,10 @@
   margin-left: 2%;
   margin-top: 2%;
 }
+.cardSelected{
+  transform: scale(1.1);
+  box-shadow: 0 10px 6px var(--bg-color);
+}
 
 @media screen and (max-width: 875px) {
   .skillsCard p {    
