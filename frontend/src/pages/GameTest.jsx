@@ -13,6 +13,11 @@ export default function GameTest() {
   const [isMounting, setIsMounting] = useState(true);
   const [filteredChamp, setFilteredChamp] = useState([]);
   const [cardPlayed, setCardPlayed] = useState(false);
+  const [cardManager, setCardManager] = useState({
+    index: -1,
+    isPlayed: false,
+    actionDone: false,
+  });
   const [enemyStats, setEnemyStats] = useState({
     currentLife: 1000,
     maxLife: 1000,
@@ -33,6 +38,7 @@ export default function GameTest() {
     drawCard: 0,
   });
 
+  const [render, setRender] = useState(false);
   const dragItem = useRef();
   const dragOverItem = useRef();
   /// HAND
@@ -84,6 +90,16 @@ export default function GameTest() {
     setIdPlayedCard(dragItem.current);
   };
 
+  const playCard = () => {
+    const cardManagercopy = { index: 2, isPlayed: true, actionDone: false };
+    setCardManager(cardManagercopy);
+  };
+  const renderReset = () => {
+    console.log(cardManager);
+    const cardManagercopy2 = { index: -1, isPlayed: false, actionDone: false };
+    setCardManager(cardManagercopy2);
+    setRender((rend) => !rend);
+  };
   // appel Service API
   useEffect(() => {
     api.getChampions().then((json) => {
@@ -103,8 +119,9 @@ export default function GameTest() {
       <div>
         {filteredChamp[0] ? (
           <GameCard
-            cardChampion={filteredChamp[11][1]}
-            cardPlayed={cardPlayed}
+            cardChampion={filteredChamp[14][1]}
+            cardManager={cardManager}
+            setCardManager={setCardManager}
             setCardPlayed={setCardPlayed}
             enemyStats={enemyStats}
             setEnemyStats={setEnemyStats}
@@ -114,13 +131,19 @@ export default function GameTest() {
         ) : (
           "TBD"
         )}
+        <button type="button" onClick={playCard}>
+          play card: {cardPlayed ? "true " : "false "}
+        </button>
+        <br />
         <button
           type="button"
           onClick={() => {
-            setCardPlayed(true);
+            renderReset();
           }}
         >
-          play card: {cardPlayed ? "true" : "false"}
+          render: {render ? "true" : "false"} / CM Index: {cardManager.index} /
+          CM isPlayed: {cardManager.isPlayed ? "True" : "False"} / CM action
+          done: {cardManager.actiondone ? "True" : "False"}
         </button>
         <p>
           Boss Life {enemyStats.currentLife} / Block

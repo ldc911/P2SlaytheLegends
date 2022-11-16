@@ -5,8 +5,8 @@ import "../../assets/css/CardLib.css";
 
 function GameCard({
   cardChampion,
-  cardPlayed,
-  setCardPlayed,
+  cardManager,
+  setCardManager,
   playerStats,
   setPlayerStats,
   enemyStats,
@@ -217,7 +217,7 @@ function GameCard({
   }, []);
 
   useEffect(() => {
-    if (cardPlayed) {
+    if (cardManager.isPlayed) {
       const playerCopy = playerStats;
       const enemyCopy = enemyStats;
       playerCopy.currentEnergy -= cardEnergyCost;
@@ -310,11 +310,16 @@ function GameCard({
       if (draw > 0) {
         playerCopy.drawCard += draw;
       }
+      // console.log(cardManager.isPlayed);
       setEnemyStats(enemyCopy);
       setPlayerStats(playerCopy);
-      setCardPlayed(false);
+      // setCardPlayed(false);
+      const cardManagerCopy = cardManager;
+      cardManagerCopy.isPlayed = false;
+      cardManagerCopy.actionDone = true;
+      setCardManager(cardManagerCopy);
     }
-  }, [cardPlayed]);
+  }, [cardManager.isPlayed]);
   return (
     <div>
       <button
@@ -360,8 +365,12 @@ GameCard.propTypes = {
       difficulty: PropTypes.number,
     }),
   }),
-  cardPlayed: PropTypes.bool,
-  setCardPlayed: PropTypes.func,
+  cardManager: PropTypes.shape({
+    index: PropTypes.number,
+    isPlayed: PropTypes.bool,
+    actionDone: PropTypes.bool,
+  }),
+  setCardManager: PropTypes.func,
   playerStats: PropTypes.shape({
     currentLife: PropTypes.number,
     maxLife: PropTypes.number,
@@ -414,8 +423,12 @@ GameCard.defaultProps = {
     },
     name: "",
   },
-  cardPlayed: false,
-  setCardPlayed: () => {},
+  cardManager: {
+    index: -1,
+    isPlayed: false,
+    actionDone: false,
+  },
+  setCardManager: () => {},
   playerStats: {
     currentLife: 100,
     maxLife: 100,
