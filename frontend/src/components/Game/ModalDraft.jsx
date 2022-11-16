@@ -8,7 +8,7 @@ import "../../assets/css/Game/ModalDraft.css";
 
 const deckDepart = [];
 
-export default function ModalDraft(setDeckJeu, setLvlGame) {
+export default function ModalDraft(setDeckJeu, setLvlGame, setStartGame) {
   const [champions, setChampions] = useState([]);
   const [isMounting, setIsMounting] = useState(true);
   const [turnOver, setTurnOver] = useState(false);
@@ -81,7 +81,7 @@ export default function ModalDraft(setDeckJeu, setLvlGame) {
 
   // a faire : la fct qui reset selected card si up, a passer en props
   return (
-    <div className="Modale-wrapper">
+    <div className="Modale-choice">
       <div className="Card-display">
         {propositions.map((champion) => {
           return (

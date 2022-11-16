@@ -5,13 +5,13 @@ function HomeMenu() {
   return (
     <div className="Button-container">
       <div className="wrap Button-logo">
-        <Link to="/game">
+        <Link className="Home-a Home-game" to="/game">
           <div />
         </Link>
-        <Link to="/about-riot">
+        <Link className="Home-a Home-riot" to="/about-riot">
           <div />
         </Link>
-        <Link to="/library">
+        <Link className="Home-a Home-lib" to="/library">
           <div />
         </Link>
         <div className="Home-button">
