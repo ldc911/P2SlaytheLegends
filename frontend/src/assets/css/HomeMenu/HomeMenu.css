@@ -45,7 +45,7 @@ button {
   transition: transform 0.5s;
 }
 
-a,
+.Home-a,
 .Home-button,
 .Home-button-logo {
   position: absolute;
@@ -57,7 +57,7 @@ a,
   transform: scale(0.5) translateZ(0px);
 }
 
-a div,
+.Home-a div,
 .Home-button div {
   height: 100%;
   background-size: cover;
@@ -65,35 +65,35 @@ a div,
   border-radius: inherit;
 }
 
-a:nth-child(1) {
+.Home-game {
   border-radius: 40vmin 0 0 0;
   transform-origin: 110% 110%;
   transition: transform 0.4s 0.15s;
 }
 
-a:nth-child(1) div {
+.Home-game div {
   background-image: url("./src/assets/img/HomeMenu/milieu.png");
 }
 
-a:nth-child(2) {
+.Home-riot {
   border-radius: 0 40vmin 0 0;
   left: 52.5%;
   transform-origin: -10% 110%;
   transition: transform 0.4s 0.2s;
 }
 
-a:nth-child(2) div {
+.Home-riot div {
   background-image: url("./src/assets/img/HomeMenu/droite.png");
 }
 
-a:nth-child(3) {
+.Home-lib {
   border-radius: 0 0 0 40vmin;
   top: 52.5%;
   transform-origin: 110% -10%;
   transition: transform 0.4s 0.25s;
 }
 
-a:nth-child(3) div {
+.Home-lib div {
   background-image: url("./src/assets/img/HomeMenu/gauche.png");
 }
 

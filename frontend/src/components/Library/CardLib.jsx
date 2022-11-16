@@ -1,7 +1,15 @@
+import { matchPath, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import "../../assets/css/CardLib.css";
 
-function CardLib({ cardChampion, setModalOpen, setModalChamp }) {
+function CardLib({
+  cardChampion,
+  setModalOpen,
+  setModalChamp,
+  setCardSelected,
+  setIdSelectedCard,
+  idSelectedCard,
+}) {
   const manaCost = (champ) => {
     // console.log(cardChampion.info.difficulty);
     switch (champ) {
@@ -102,17 +110,30 @@ function CardLib({ cardChampion, setModalOpen, setModalChamp }) {
     }
   };
 
-  const loadModal = () => {
-    setModalChamp(cardChampion.id);
-    setModalOpen(true);
+  // gestion du click en fonction de l'emplacement de l'appel de la carte
+  const location = useLocation();
+  const library = matchPath({ path: "/library" }, location.pathname);
+
+  const handleClick = () => {
+    if (library) {
+      setModalChamp(cardChampion.id);
+      setModalOpen(true);
+    } else {
+      setCardSelected({ champion: cardChampion, isPlayed: false });
+      setIdSelectedCard(cardChampion.id);
+    }
   };
 
   return (
     <button
       type="button"
-      className="champCard"
+      className={
+        idSelectedCard === cardChampion.id
+          ? "champCard cardSelected"
+          : "champCard"
+      }
       onClick={() => {
-        loadModal();
+        handleClick();
       }}
     >
       {cardChampion ? (
@@ -154,6 +175,9 @@ CardLib.propTypes = {
   }),
   setModalOpen: PropTypes.func,
   setModalChamp: PropTypes.func,
+  setCardSelected: PropTypes.func,
+  setIdSelectedCard: PropTypes.func,
+  idSelectedCard: PropTypes.string,
 };
 
 CardLib.defaultProps = {
@@ -167,4 +191,7 @@ CardLib.defaultProps = {
   },
   setModalOpen: () => {},
   setModalChamp: () => {},
+  setCardSelected: () => {},
+  setIdSelectedCard: () => {},
+  idSelectedCard: "",
 };
