@@ -2,13 +2,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import CardLib from "../Library/CardLib";
 import api from "../../services/api";
 import "../../assets/css/Game/ModalDraft.css";
 
 const deckDepart = [];
 
-export default function ModalDraft(setDeckJeu, setLvlGame, setStartGame) {
+export default function ModalDraft({ setDeckJeu, setLvlGame, setStartGame }) {
   const [champions, setChampions] = useState([]);
   const [isMounting, setIsMounting] = useState(true);
   const [turnOver, setTurnOver] = useState(false);
@@ -82,6 +83,13 @@ export default function ModalDraft(setDeckJeu, setLvlGame, setStartGame) {
   // a faire : la fct qui reset selected card si up, a passer en props
   return (
     <div className="Modale-choice">
+      <button
+        type="button"
+        className="Modale-close"
+        onClick={() => setStartGame(0)}
+      >
+        X
+      </button>
       <div className="Card-display">
         {propositions.map((champion) => {
           return (
@@ -109,3 +117,14 @@ export default function ModalDraft(setDeckJeu, setLvlGame, setStartGame) {
     </div>
   );
 }
+ModalDraft.propTypes = {
+  setDeckJeu: PropTypes.func,
+  setLvlGame: PropTypes.func,
+  setStartGame: PropTypes.func,
+};
+
+ModalDraft.defaultProps = {
+  setStartGame: () => {},
+  setLvlGame: () => {},
+  setDeckJeu: () => {},
+};
