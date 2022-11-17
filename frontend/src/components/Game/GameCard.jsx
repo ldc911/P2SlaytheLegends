@@ -5,6 +5,7 @@ import "../../assets/css/CardLib.css";
 
 function GameCard({
   cardChampion,
+  cardIndex,
   cardManager,
   setCardManager,
   playerStats,
@@ -217,7 +218,7 @@ function GameCard({
   }, []);
 
   useEffect(() => {
-    if (cardManager.isPlayed) {
+    if (cardManager.isPlayed && cardManager.index === cardIndex) {
       const playerCopy = playerStats;
       const enemyCopy = enemyStats;
       playerCopy.currentEnergy -= cardEnergyCost;
@@ -310,10 +311,8 @@ function GameCard({
       if (draw > 0) {
         playerCopy.drawCard += draw;
       }
-      // console.log(cardManager.isPlayed);
       setEnemyStats(enemyCopy);
       setPlayerStats(playerCopy);
-      // setCardPlayed(false);
       const cardManagerCopy = cardManager;
       cardManagerCopy.isPlayed = false;
       cardManagerCopy.actionDone = true;
@@ -365,6 +364,7 @@ GameCard.propTypes = {
       difficulty: PropTypes.number,
     }),
   }),
+  cardIndex: PropTypes.number,
   cardManager: PropTypes.shape({
     index: PropTypes.number,
     isPlayed: PropTypes.bool,
@@ -423,6 +423,7 @@ GameCard.defaultProps = {
     },
     name: "",
   },
+  cardIndex: -2,
   cardManager: {
     index: -1,
     isPlayed: false,

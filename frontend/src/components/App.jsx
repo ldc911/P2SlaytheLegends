@@ -2,8 +2,7 @@ import * as React from "react";
 import { Routes, Route, matchPath, useLocation } from "react-router-dom";
 import HeaderHome from "./Header/HeaderHome";
 import Home from "../pages/Home";
-// import Game from "../pages/Game";
-import GameTest from "../pages/GameTest";
+import Game from "../pages/Game";
 import Library from "../pages/Library";
 import AboutRiot from "../pages/AboutRiot";
 import Footer from "./Footer/Footer";
@@ -39,7 +38,7 @@ export default function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/library" element={<Library />} />
-            <Route path="/game" element={<GameTest />} />
+            <Route path="/game" element={<Game />} />
             <Route path="/about-riot" element={<AboutRiot />} />
           </Routes>
         </div>
