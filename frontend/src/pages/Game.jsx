@@ -5,7 +5,7 @@ import "../assets/css/Game.css";
 export default function Game() {
   // eslint-disable-next-line no-unused-vars
   const [deckJeu, setDeckJeu] = useState([]);
-  const [lvlGame, setLvlGame] = useState(0);
+  const [lvlGame, setLvlGame] = useState(-1);
 
   return (
     <div>
