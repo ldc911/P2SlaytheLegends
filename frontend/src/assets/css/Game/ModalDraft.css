@@ -30,6 +30,8 @@
     gap: 1vw;
     width: 90%;
     padding: 2vw;
+    padding-bottom: 0;
+    padding-top: 2vh;
 }
 
 .Modale-choice{
@@ -60,3 +62,8 @@
 .Modale-validation{
     margin-bottom: 2vh;
 }
+
+.Modale-deck {
+    width: 7vw;
+}
+

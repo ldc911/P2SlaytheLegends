@@ -131,13 +131,14 @@ export default function ModalDraft({
           Valider votre deck
         </button>
       )}
-      <div>
+      <div className="Modale-deckContainer">
         Votre deck : <br />
         {deckDepart.length >= 1 &&
           deckDepart.map((item) => {
             return (
               <>
                 <img
+                  className="Modale-deck"
                   key={item.champion.id}
                   src={`http://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/${item.champion.id}.png`}
                   alt="champ img"
