@@ -21,6 +21,108 @@ export default function ModalDraft({
   const [champArray, setChampArray] = useState([]);
   const [idSelectedCard, setIdSelectedCard] = useState("");
 
+  // fonctions calcul Mana cost et stats cartes------------
+  const manaCost = (champ) => {
+    // console.log(cardChampion.info.difficulty);
+    switch (champ) {
+      case 0:
+      case 1:
+      case 2:
+      case 3:
+        return "0";
+      case 4:
+      case 5:
+      case 6:
+        return "1";
+      case 7:
+      case 8:
+        return "2";
+      case 9:
+      case 10:
+        return "3";
+      default:
+        return "TBD";
+    }
+  };
+  // test function to assign card skill 1 based on the champ class 1
+  const skill1 = (champ) => {
+    switch (champ.tags[0]) {
+      case "Tank":
+        return `${(
+          7 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+          parseInt(manaCost(champ.info.difficulty), 10)
+        ).toString()} Blk`;
+      case "Fighter":
+        return `${(
+          7 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+          parseInt(manaCost(champ.info.difficulty), 10)
+        ).toString()} PhysD`;
+      case "Support":
+        return `Heal ${(
+          4 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+          parseInt(manaCost(champ.info.difficulty), 10)
+        ).toString()} HP`;
+      case "Mage":
+        return champ.tags.length === 2
+          ? `${(
+              7 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+              parseInt(manaCost(champ.info.difficulty), 10)
+            ).toString()} MagicD`
+          : `dam + ${(
+              1 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+              parseInt(manaCost(champ.info.difficulty), 10)
+            ).toString()}`;
+      case "Marksman":
+        return `${(
+          1 *
+          (parseInt(manaCost(champ.info.difficulty), 10) + 1)
+        ).toString()} Vul`;
+      case "Assassin":
+        return champ.tags.length === 2
+          ? `${(
+              4 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+              parseInt(manaCost(champ.info.difficulty), 10)
+            ).toString()} Pois`
+          : "Pois*2";
+      default:
+        return "TBD";
+    }
+  };
+
+  // test function to assign card skill 2 based on the champ class 2
+  const skill2 = (champ) => {
+    switch (champ.tags[1]) {
+      case "Tank":
+        return `${(
+          7 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+          parseInt(manaCost(champ.info.difficulty), 10)
+        ).toString()} Blk`;
+      case "Fighter":
+        return `blk + ${(
+          1 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
+          parseInt(manaCost(champ.info.difficulty), 10)
+        ).toString()}`;
+      case "Support":
+        return `${
+          parseInt(manaCost(champ.info.difficulty), 10) < 2 ? "1" : "2"
+        } En`;
+      case "Mage":
+        return `${(
+          1 *
+          (parseInt(manaCost(champ.info.difficulty), 10) + 1)
+        ).toString()} Weak`;
+      case "Marksman":
+        return "Dodge";
+      case "Assassin":
+        return `Draw ${
+          parseInt(manaCost(champ.info.difficulty), 10) < 2 ? "1" : "2"
+        }C`;
+      default:
+        return "TBD";
+    }
+  };
+  // fin fonctions calcul Mana cost et stats cartes-----------
+
   // appel Service API
   useEffect(() => {
     api.getChampions().then((json) => {
@@ -133,19 +235,35 @@ export default function ModalDraft({
       )}
       <div className="Modale-deckContainer">
         Votre deck : <br />
-        {deckDepart.length >= 1 &&
-          deckDepart.map((item) => {
-            return (
-              <>
-                <img
-                  className="Modale-deck"
-                  key={item.champion.id}
-                  src={`http://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/${item.champion.id}.png`}
-                  alt="champ img"
-                />{" "}
-              </>
-            );
-          })}
+        <div className="stats-deck">
+          {deckDepart.length >= 1 &&
+            deckDepart.map((item) => {
+              return (
+                <div
+                  style={{
+                    display: `flex`,
+                    flexDirection: `column`,
+                    width: `7vw`,
+                    position: `relative`,
+                  }}
+                >
+                  <img
+                    className="Modale-deck"
+                    key={item.champion.id}
+                    src={`http://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/${item.champion.id}.png`}
+                    alt="champ img"
+                  />{" "}
+                  <p className="mana-text">
+                    {manaCost(item.champion.info.difficulty)}
+                  </p>
+                  <p className="skill-text">{skill1(item.champion)}</p>
+                  <p className="skill-text">
+                    {item.champion.tags[1] ? skill2(item.champion) : null}
+                  </p>
+                </div>
+              );
+            })}
+        </div>
       </div>
     </div>
   );
