@@ -7,9 +7,12 @@ import CardLib from "../Library/CardLib";
 import api from "../../services/api";
 import "../../assets/css/Game/ModalDraft.css";
 
-const deckDepart = [];
-
-export default function ModalDraft({ setDeckJeu, setLvlGame, setStartGame }) {
+export default function ModalDraft({
+  setDeckJeu,
+  setLvlGame,
+  setStartGame,
+  deckDepart,
+}) {
   const [champions, setChampions] = useState([]);
   const [isMounting, setIsMounting] = useState(true);
   const [turnOver, setTurnOver] = useState(false);
@@ -66,8 +69,13 @@ export default function ModalDraft({ setDeckJeu, setLvlGame, setStartGame }) {
     }
   }, [turnOver, champArray]);
 
+  // fonction de check d'objet vide
+  const emptyCheck = (objet) => {
+    return Object.keys(objet).length !== 0;
+  };
+
   const buttonClick = () => {
-    if (cardSelected !== 0 && deckDepart.length < 12) {
+    if (emptyCheck(cardSelected) && deckDepart.length < 12) {
       deckDepart.push(cardSelected);
       setTurnOver(!turnOver);
       setPropositions([]);
@@ -80,7 +88,7 @@ export default function ModalDraft({ setDeckJeu, setLvlGame, setStartGame }) {
     setDeckJeu(deckDepart);
     setLvlGame(1);
   };
-  // a faire : la fct qui reset selected card si up, a passer en props
+
   return (
     <div className="Modale-choice">
       <button
@@ -104,9 +112,16 @@ export default function ModalDraft({ setDeckJeu, setLvlGame, setStartGame }) {
         })}
       </div>
       {deckDepart.length < 12 ? (
-        <button className="Modale-validate" type="button" onClick={buttonClick}>
-          valider
-        </button>
+        <div className="Modale-validation">
+          <button
+            className="Modale-validate"
+            type="button"
+            onClick={buttonClick}
+          >
+            valider
+          </button>
+          <span className="Modale-compteur">{deckDepart.length}/12</span>
+        </div>
       ) : (
         <button
           className="Modale-validate"
@@ -116,6 +131,21 @@ export default function ModalDraft({ setDeckJeu, setLvlGame, setStartGame }) {
           Valider votre deck
         </button>
       )}
+      <div>
+        Votre deck : <br />
+        {deckDepart.length >= 1 &&
+          deckDepart.map((item) => {
+            return (
+              <>
+                <img
+                  key={item.champion.id}
+                  src={`http://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/${item.champion.id}.png`}
+                  alt="champ img"
+                />{" "}
+              </>
+            );
+          })}
+      </div>
     </div>
   );
 }
@@ -123,10 +153,12 @@ ModalDraft.propTypes = {
   setDeckJeu: PropTypes.func,
   setLvlGame: PropTypes.func,
   setStartGame: PropTypes.func,
+  deckDepart: PropTypes.arrayOf,
 };
 
 ModalDraft.defaultProps = {
   setStartGame: () => {},
   setLvlGame: () => {},
   setDeckJeu: () => {},
+  deckDepart: [],
 };
