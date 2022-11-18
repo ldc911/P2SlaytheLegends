@@ -56,18 +56,18 @@ export default function ModalDraft({
         return `${(
           7 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
           parseInt(manaCost(champ.info.difficulty), 10)
-        ).toString()} PhysD`;
+        ).toString()} PDam`;
       case "Support":
         return `Heal ${(
           4 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
           parseInt(manaCost(champ.info.difficulty), 10)
-        ).toString()} HP`;
+        ).toString()}`;
       case "Mage":
         return champ.tags.length === 2
           ? `${(
               7 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
               parseInt(manaCost(champ.info.difficulty), 10)
-            ).toString()} MagicD`
+            ).toString()} MDam`
           : `dam + ${(
               1 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
               parseInt(manaCost(champ.info.difficulty), 10)

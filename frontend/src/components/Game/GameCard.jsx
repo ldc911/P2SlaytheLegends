@@ -309,7 +309,7 @@ function GameCard({
       }
       /* draw card(s) action */
       if (draw > 0) {
-        playerCopy.drawCard += draw;
+        playerCopy.drawCard = draw;
       }
       setEnemyStats(enemyCopy);
       setPlayerStats(playerCopy);

@@ -32,7 +32,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <HeaderHome />
+      {!game && <HeaderHome />}
       <main className={acceuil || game ? "" : "pagecontent"}>
         <div className="main-content">
           <Routes>
