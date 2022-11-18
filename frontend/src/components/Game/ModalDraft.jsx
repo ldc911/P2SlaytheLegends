@@ -99,17 +99,18 @@ export default function ModalDraft({
         X
       </button>
       <div className="Card-display">
-        {propositions.map((champion) => {
-          return (
-            <CardLib
-              key={champion[1].id}
-              cardChampion={champion[1]}
-              setCardSelected={setCardSelected}
-              setIdSelectedCard={setIdSelectedCard}
-              idSelectedCard={idSelectedCard}
-            />
-          );
-        })}
+        {propositions &&
+          propositions.map((champion) => {
+            return (
+              <CardLib
+                key={champion[1].id}
+                cardChampion={champion[1]}
+                setCardSelected={setCardSelected}
+                setIdSelectedCard={setIdSelectedCard}
+                idSelectedCard={idSelectedCard}
+              />
+            );
+          })}
       </div>
       {deckDepart.length < 12 ? (
         <div className="Modale-validation">
@@ -154,7 +155,7 @@ ModalDraft.propTypes = {
   setDeckJeu: PropTypes.func,
   setLvlGame: PropTypes.func,
   setStartGame: PropTypes.func,
-  deckDepart: PropTypes.arrayOf,
+  deckDepart: PropTypes.arrayOf(PropTypes.shape),
 };
 
 ModalDraft.defaultProps = {

@@ -119,7 +119,7 @@ function CardLib({
       setModalChamp(cardChampion.id);
       setModalOpen(true);
     } else {
-      setCardSelected({ champion: cardChampion, isPlayed: false });
+      setCardSelected({ champion: cardChampion });
       setIdSelectedCard(cardChampion.id);
     }
   };
