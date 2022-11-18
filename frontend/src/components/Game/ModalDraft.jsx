@@ -1,6 +1,3 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import CardLib from "../Library/CardLib";
@@ -46,7 +43,7 @@ export default function ModalDraft({
       while (currentIndex !== 0) {
         // Pick a remaining element.
         randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
+        currentIndex -= 1;
 
         // And swap it with the current element.
         [champArray[currentIndex], champArray[randomIndex]] = [
@@ -61,7 +58,7 @@ export default function ModalDraft({
   useEffect(() => {
     if (champArray.length !== 0) {
       const myArr = [];
-      for (let i = 0; i < 3; i++) {
+      for (let i = 0; i < 3; i += 1) {
         myArr.push(champArray[0]);
         champArray.splice(0, 1); // retrait de la carte présentée de la liste des possibles
       }
@@ -91,6 +88,7 @@ export default function ModalDraft({
 
   return (
     <div className="Modale-choice">
+      {isMounting} ? (<p>En cours de chargement =P</p>) : (
       <button
         type="button"
         className="Modale-close"
@@ -148,6 +146,7 @@ export default function ModalDraft({
             );
           })}
       </div>
+      )
     </div>
   );
 }

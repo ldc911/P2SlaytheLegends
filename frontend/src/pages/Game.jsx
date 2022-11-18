@@ -1,5 +1,6 @@
 import Deck from "@components/Game/Deck";
 import ModalDisplay from "@components/Game/ModalDisplay";
+import Deck from "@components/Game/Deck";
 import React, { useState } from "react";
 import "../assets/css/Game.css";
 
@@ -33,15 +34,6 @@ export default function Game() {
       {lvlGame === 0 && (
         <ModalDisplay setDeckJeu={setDeckJeu} setLvlGame={setLvlGame} />
       )}
-      {lvlGame > 0 && deckJeu ? (
-        <Deck
-          champions={deckJeu}
-          setEnemyStats={setEnemyStats}
-          setPlayerStats={setPlayerStats}
-          playerStats={playerStats}
-          enemyStats={enemyStats}
-        />
-      ) : null}
     </div>
   );
 }
