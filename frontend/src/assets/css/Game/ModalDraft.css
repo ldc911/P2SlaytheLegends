@@ -39,6 +39,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 5vh;
+    position: relative;
 }
 
 .Modale-start {
@@ -83,8 +84,7 @@
         border-right: 1px solid #bb8127;
         
     } 
-    .Modale-choice{
-        position: relative;
+    .Modale-choice{       
         width: 100%;
         height: 100%;
     } 
@@ -115,3 +115,82 @@
     width: 7vw;
 }
 
+.energy-Stats{
+    position: absolute;    
+    left:78%;     
+    border: none;
+    width: 20%;
+    height: calc(1.37 * 17vw);
+    min-height: 155px;
+    min-width: 115px;
+    max-height: 412px;
+    max-width: 302px; 
+    white-space: normal;    
+}
+
+.energy-Stats-Container{
+    position: relative;    
+    width: 100%;
+    height: 100%;
+}
+
+.energy-Stats-Numbers{
+    position: absolute;
+    left:10%;
+    bottom:0%;
+    display: flex; 
+    justify-content: space-evenly;
+    width:60%;
+    height:10%;
+}
+
+.energy-Stats-Numbers-text{
+    display:flex;
+    background-color: rgb(20, 69, 92);
+    color:#c89d3e;
+    width:20%;
+    height:100%;
+    font-weight: 600;    
+    justify-content:center;
+    align-items:center;
+    border-radius: 50%;
+} 
+
+.energy-Stats-Numbers-text p{
+    margin:0;
+    width:100%;
+    text-align: center;
+}
+
+.energy-Bars-Container{ 
+    position: absolute;
+    left:10%;
+    bottom:11%;
+    display: flex; 
+    justify-content: space-evenly;
+    width:60%;
+    height:60%;
+    border-bottom: 1px solid #c89d3e;
+}
+
+.energy-Bar{
+    position:absolute;
+    bottom:0%;
+    width:20%;
+    background-color: #c89d3e;    
+}
+
+@media screen and (min-width: 1001px) {
+    .energy-Stats{
+        top:8%;
+    }
+}
+
+.Deck-Complete {    
+    gap: 1vw;
+    width: 90%;
+    padding: 2vw;
+    padding-bottom: 0;
+    padding-top: 2vh;
+    height: calc(1.37 * 17vw);
+}

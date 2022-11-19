@@ -20,6 +20,7 @@ export default function ModalDraft({
   const [cardSelected, setCardSelected] = useState({});
   const [champArray, setChampArray] = useState([]);
   const [idSelectedCard, setIdSelectedCard] = useState("");
+  const [energyStats, setEnergyStats] = useState([0, 0, 0, 0]);
 
   // fonctions calcul Mana cost et stats cartes------------
   const manaCost = (champ) => {
@@ -179,6 +180,11 @@ export default function ModalDraft({
   const buttonClick = () => {
     if (emptyCheck(cardSelected) && deckDepart.length < 12) {
       deckDepart.push(cardSelected);
+      const energyStatsCopy = energyStats;
+      energyStatsCopy[
+        parseInt(manaCost(cardSelected.champion.info.difficulty), 10)
+      ] += 1;
+      setEnergyStats(energyStatsCopy);
       setTurnOver(!turnOver);
       setPropositions([]);
       setCardSelected({});
@@ -193,6 +199,42 @@ export default function ModalDraft({
 
   return (
     <div className="Modale-choice">
+      <div className="energy-Stats">
+        <div className="energy-Stats-Container">
+          <div className="energy-Bars-Container">
+            <div
+              className="energy-Bar"
+              style={{ height: `${energyStats[0] * 8}%`, left: `4%` }}
+            />
+            <div
+              className="energy-Bar"
+              style={{ height: `${energyStats[1] * 8}%`, left: `28%` }}
+            />
+            <div
+              className="energy-Bar"
+              style={{ height: `${energyStats[2] * 8}%`, left: `53%` }}
+            />
+            <div
+              className="energy-Bar"
+              style={{ height: `${energyStats[3] * 8}%`, left: `77%` }}
+            />
+          </div>
+          <div className="energy-Stats-Numbers">
+            <div className="energy-Stats-Numbers-text">
+              <p>0</p>
+            </div>
+            <div className="energy-Stats-Numbers-text">
+              <p>1</p>
+            </div>
+            <div className="energy-Stats-Numbers-text">
+              <p>2</p>
+            </div>
+            <div className="energy-Stats-Numbers-text">
+              <p>3</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <button
         type="button"
         className="Modale-close"
@@ -201,17 +243,21 @@ export default function ModalDraft({
         X
       </button>
       <div className="Card-display">
-        {propositions.map((champion) => {
-          return (
-            <CardLib
-              key={champion[1].id}
-              cardChampion={champion[1]}
-              setCardSelected={setCardSelected}
-              setIdSelectedCard={setIdSelectedCard}
-              idSelectedCard={idSelectedCard}
-            />
-          );
-        })}
+        {deckDepart.length < 12 ? (
+          propositions.map((champion) => {
+            return (
+              <CardLib
+                key={champion[1].id}
+                cardChampion={champion[1]}
+                setCardSelected={setCardSelected}
+                setIdSelectedCard={setIdSelectedCard}
+                idSelectedCard={idSelectedCard}
+              />
+            );
+          })
+        ) : (
+          <div className="Deck-Complete" />
+        )}
       </div>
       {deckDepart.length < 12 ? (
         <div className="Modale-validation">
@@ -230,7 +276,7 @@ export default function ModalDraft({
           type="button"
           onClick={validateDeck}
         >
-          Valider votre deck
+          Valider le deck
         </button>
       )}
       <div className="Modale-deckContainer">

@@ -324,7 +324,7 @@ function GameCard({
       <button
         type="button"
         className="champCard"
-        style={{ height: `calc(1.37 * 20vw)` }}
+        /* style={{ height: `calc(1.37 * 20vw)` }} */
       >
         {cardChampion ? (
           <div className="cardContainer">
