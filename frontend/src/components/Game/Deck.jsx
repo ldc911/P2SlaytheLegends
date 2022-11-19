@@ -12,6 +12,8 @@ export default function Deck({
   setPlayerStats,
   enemyStats,
   setEnemyStats,
+  render,
+  setRender,
 }) {
   // Les States
   const [deck, setDeck] = useState({
@@ -188,6 +190,8 @@ export default function Deck({
                   setPlayerStats={setPlayerStats}
                   setEnemyStats={setEnemyStats}
                   setCardManager={setCardManager}
+                  setRender={setRender}
+                  render={render}
                 />
               </div>
             );
@@ -282,6 +286,8 @@ Deck.propTypes = {
   setEnemyStats: PropTypes.func,
   startPlayerTurn: PropTypes.bool,
   setStartPlayerTurn: PropTypes.func,
+  setRender: PropTypes.func,
+  render: PropTypes.bool,
 };
 
 Deck.defaultProps = {
@@ -341,4 +347,6 @@ Deck.defaultProps = {
   setEnemyStats: () => {},
   startPlayerTurn: false,
   setStartPlayerTurn: () => {},
+  setRender: () => {},
+  render: false,
 };
