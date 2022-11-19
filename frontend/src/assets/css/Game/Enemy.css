@@ -1,0 +1,36 @@
+.enemy-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.entoure-barredevie-enemy {
+  text-align: center;
+  border-color: black;
+  height: 7vh;
+  width: 30vw;
+  position: relative;
+  border-radius: 2rem;
+}
+.vie-enemy {
+  top: 0;
+  width: 20vw;
+  position: absolute;
+  height: 6.5vh;
+  border-radius: 2rem;
+  background: linear-gradient(blue, red);
+}
+.vie-text-enemy {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  margin: -15px;
+}
+
+.buff {
+  color: blue;
+}
+.fa-duotone {
+  color: blue;
+}

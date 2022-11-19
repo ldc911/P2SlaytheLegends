@@ -1,0 +1,39 @@
+.entoure-barredevie-player {
+  text-align: center;
+  border-color: black;
+  height: 7vh;
+  width: 15vw;
+  position: relative;
+  border-radius: 2rem;
+}
+.vie-player {
+  top: 0;
+  width: 20vw;
+  position: absolute;
+  height: 6.5vh;
+  border-radius: 2rem;
+  background: linear-gradient(blue, red);
+}
+.vie-text-player {
+  z-index: 1;
+  /* La largeur de l’élément */
+  /* La hauteur de l’élément */
+  /* Centrer verticalement et horizontalement */
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  margin: -15px; /* Appliquer des marges négatives aux propriétés top et left pour centrer parfaitement l’élément */
+}
+
+.player-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.block-player {
+  width: 15vw;
+  text-align: center;
+}
+.paragraph-player {
+}
