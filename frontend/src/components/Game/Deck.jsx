@@ -80,14 +80,14 @@ export default function Deck({
         actionDone: false,
       });
     }
-    setDeck(deck);
+    // setDeck(deck);
     setHand(deck.hand);
   }, [cardManager]);
 
   // Condition 1 (Nouveau Tour) => If startPlayerTurn
   useEffect(() => {
+    // console.log(deck);
     if (startPlayerTurn) {
-      const deckCopy = deck;
       // Si DrawPile n'est pas suffisant < 5
       if (deck.drawPile.length < 5) {
         deck.cimetery.unshift(...deck.hand);
@@ -101,8 +101,8 @@ export default function Deck({
         );
         deck.drawPile.splice(deck.drawPile.length - 5, deck.drawPile.length);
       }
-      setHand(deckCopy.hand);
-      setDeck(deckCopy);
+      setHand(deck.hand);
+      setDeck(deck);
       setStartPlayerTurn(false);
     }
   }, [startPlayerTurn]);
@@ -149,7 +149,7 @@ export default function Deck({
           onDrop={(e) => dropEnnemy(e)}
           onDragOver={(e) => allowDrop(e)}
         >
-          <p>Attack le mechant !</p>
+          <p>Attack le mechant ! {deck.hand[0]}</p>
         </div>
       </div>
       <div className="game-bottom">
