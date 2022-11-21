@@ -8,6 +8,7 @@ export default function Board({
   enemyActions,
   setEndPlayerTurn,
   fightTurns,
+  playerLifeChange,
 }) {
   return (
     <div className="stats-wrapper">
@@ -33,7 +34,8 @@ export default function Board({
           {playerStats.currentEnergy} / {playerStats.maxEnergy} / vulne:{" "}
           {playerStats.debuff.vulnerable} / weak: {playerStats.debuff.weak} /
           poison: {playerStats.debuff.poison} / distrib down:{" "}
-          {playerStats.debuff.distribDown}
+          {playerStats.debuff.distribDown} / last heal or damage:
+          {playerLifeChange}
         </p>
       </div>
     </div>
