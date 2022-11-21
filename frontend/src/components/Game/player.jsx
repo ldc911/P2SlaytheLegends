@@ -7,9 +7,7 @@ export default function player({ player }) {
   return (
     <div className="player-stat">
       <div className="block-player">
-        {" "}
-        <i className="fa-solid fa-shield buff" />
-        {player.tempBuff.block > 0 && ` ${player.tempBuff.block} `}
+        {player.tempBuff.block > 0 && `B: ${player.tempBuff.block} `}
       </div>
       <div className="entoure-barredevie-player">
         <div

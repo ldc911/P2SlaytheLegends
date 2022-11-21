@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "../../assets/css/Game/Board.css";
 import Enemy from "./Enemy";
+// eslint-disable-next-line import/no-unresolved
 import Player from "./Player";
 
 export default function Board({ enemy, player }) {

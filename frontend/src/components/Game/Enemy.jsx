@@ -2,14 +2,14 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useRef, useEffect } from "react";
 import "../../assets/css/Game/Enemy.css";
-import BLOCK from "../../assets/img/Board/Block.webp";
+// import BLOCK from "../../assets/img/Board/Block.webp";
+// import {GiBuffaloHead} from "react-icons/Gi";
 
 export default function Enemy({ enemy }) {
   return (
     <div className="enemy-stat">
       <div className="block-enemy">
-        <i className="fa-solid fa-shield buff" />
-        {enemy.tempBuff.block > 0 && ` ${enemy.tempBuff.block}  `}
+        {enemy.tempBuff.block > 0 && `B: ${enemy.tempBuff.block}  `}
       </div>
       <div className="entoure-barredevie-enemy">
         <div
@@ -25,17 +25,19 @@ export default function Enemy({ enemy }) {
 
       <div>
         <span>
-          {enemy.tempBuff.avoidAttack > 0 && `${enemy.tempBuff.avoidAttack}`}{" "}
+          {enemy.tempBuff.avoidAttack > 0 &&
+            `BAA:${enemy.tempBuff.avoidAttack}`}{" "}
         </span>
         <span>
+          {" "}
           {enemy.fullCombatBuff.attackBuff > 0 &&
             `BAB: ${enemy.fullCombatBuff.attackBuff}`}{" "}
         </span>
 
         <div>
           <span>
-            <i className="fa-duotone fa-axe-battle buff" />{" "}
-            {enemy.fullCombatBuff.defenseBuff > 0 &&
+            {" "}
+            {enemy.fullCombatBuff.blockBuff > 0 &&
               `DEB: ${enemy.fullCombatBuff.blockBuff}`}{" "}
             {enemy.debuff.vulnerable > 0 && `DV: ${enemy.debuff.vulnerable}`}{" "}
             {enemy.debuff.weak > 0 && `DW: ${enemy.debuff.weak}`}{" "}

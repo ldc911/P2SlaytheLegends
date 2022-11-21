@@ -21,6 +21,7 @@ export default function Game() {
     drawCard: 10,
     startDistrib: 5,
   });
+  const [nombreTour, setNombreTour] = useState();
 
   const [enemy, setEnemy] = useState({
     currentLife: 1000,

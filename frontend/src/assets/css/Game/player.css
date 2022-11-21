@@ -28,7 +28,8 @@
 .player-stat {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  position: relative;
+  left: 10vw;
 }
 
 .block-player {
