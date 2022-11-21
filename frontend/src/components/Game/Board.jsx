@@ -9,6 +9,7 @@ export default function Board({
   setEndPlayerTurn,
   fightTurns,
   playerLifeChange,
+  enemyLifeChange,
 }) {
   return (
     <div className="stats-wrapper">
@@ -21,7 +22,8 @@ export default function Board({
           Boss: Life: {enemyStats.currentLife} / vulnerable:{" "}
           {enemyStats.debuff.vulnerable} / weak: {enemyStats.debuff.weak} /
           poison: {enemyStats.debuff.poison} / Next Action:{" "}
-          {enemyActions.displayedActions} / Block: {enemyStats.tempBuff.block}
+          {enemyActions.displayedActions} / Block: {enemyStats.tempBuff.block} /
+          last heal or damage:{enemyLifeChange}
         </p>
       </div>
       <div>
