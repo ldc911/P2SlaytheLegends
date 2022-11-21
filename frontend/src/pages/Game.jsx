@@ -17,7 +17,7 @@ export default function Game() {
   const [totalTurns, setTotalTurns] = useState(1);
   const [playerLifeChange, setPlayerLifeChange] = useState(0);
   const [enemyLifeChange, setEnemyLifeChange] = useState(0);
-  // Objet représentant le joueur
+  // Objet représentant le joueur test
   const [playerStats, setPlayerStats] = useState({
     currentLife: 100,
     maxLife: 100,
