@@ -1,11 +1,8 @@
-/* eslint-disable no-unused-expressions */
-import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import rewards from "../../../services/rewards";
-import CardReward from "./CardReward";
-import "../../../assets/css/Game/CardReward.css";
+import lvlUp from "../../../assets/img/Game/lvlup.png";
+import "../../../assets/css/Game/ModalReward.css";
 
-export default function ModalFirstReward({
+export default function ModalSecondReward({
   setLvlGame,
   setStartPlayerTurn,
   setEndPlayerTurn,
@@ -19,48 +16,14 @@ export default function ModalFirstReward({
   setIndexActionList,
   setEnemyActions,
   setEnemyActionList,
-  enemyLvl3,
-  actionEnemyLvl3,
+  enemyLvl5,
+  actionEnemyLvl5,
 }) {
-  const [selected, setSelected] = useState({});
-  const [idSelectedCard, setIdSelectedCard] = useState();
-  const [isMounted, setIsMounted] = useState(false);
-
-  // shuffle et random du tableau des récompenses
-  useEffect(() => {
-    let currentIndex = rewards.length;
-    let randomIndex;
-    // While there remain elements to shuffle.
-    // eslint-disable-next-line no-unreachable-loop
-    while (currentIndex !== 0) {
-      // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      // And swap it with the current element.
-      [rewards[currentIndex], rewards[randomIndex]] = [
-        rewards[randomIndex],
-        rewards[currentIndex],
-      ];
-    }
-    rewards.splice(3);
-    setIsMounted(true);
-  }, []);
-
   const modifyPlayer = (player) => {
     const newPlayerStats = player;
-    Object.keys(newPlayerStats).includes(selected.firstBuff)
-      ? (newPlayerStats[selected.firstBuff] += selected.value1)
-      : (newPlayerStats.fullGameBuff[selected.firstBuff] += selected.value1);
-    Object.keys(newPlayerStats).includes(selected.secondBuff)
-      ? (newPlayerStats[selected.secondBuff] += selected.value2)
-      : (newPlayerStats.fullGameBuff[selected.secondBuff] += selected.value2);
-    if (selected.thirdBuff) {
-      Object.keys(newPlayerStats).includes(selected.thirdBuff)
-        ? (newPlayerStats[selected.thirdBuff] += selected.value3)
-        : (newPlayerStats.fullGameBuff[selected.thirdBuff] += selected.value3);
-    }
-    newPlayerStats.currentEnergy = 3;
+    newPlayerStats.currentEnergy = 4;
+    newPlayerStats.maxLife += 50;
+    newPlayerStats.currentLife += 50;
     newPlayerStats.tempBuff.block = 0;
     newPlayerStats.tempBuff.avoidAttack = 0;
     newPlayerStats.fullCombatBuff.attackBuff = 0;
@@ -72,47 +35,31 @@ export default function ModalFirstReward({
     newPlayerStats.drawCard = 0;
     return newPlayerStats;
   };
-
   const validReward = () => {
     setPlayerStats(modifyPlayer(playerStats));
-    setSelected({});
-    setIdSelectedCard();
     setStartPlayerTurn(false);
     setEndPlayerTurn(false);
     setEnemyActionsResolution(false);
     setFightTurns(1);
     setPlayerLifeChange(0);
     setEnemyLifeChange(0);
-    setEnemyStats(enemyLvl3);
+    setEnemyStats(enemyLvl5);
     setIndexActionList(1);
-    setEnemyActions(actionEnemyLvl3[0]);
-    setEnemyActionList(actionEnemyLvl3);
-    setLvlGame(3);
+    setEnemyActions(actionEnemyLvl5[0]);
+    setEnemyActionList(actionEnemyLvl5);
+    setLvlGame(5);
   };
 
   return (
     <div className="Modale-reward">
-      <h1> Félicitations, vous êtes venu à bout du premier Boss ! </h1>
-      <h2>
-        Choisissez parmi ces trois récompenses, vous allez en avoir besoin...
-      </h2>
-      <div className="Card-display">
-        {isMounted ? (
-          rewards.map((reward) => {
-            return (
-              <CardReward
-                key={reward.id}
-                rewards={reward}
-                setSelected={setSelected}
-                setIdSelectedCard={setIdSelectedCard}
-                idSelectedCard={idSelectedCard}
-              />
-            );
-          })
-        ) : (
-          <p>Loading</p>
-        )}
+      <h1> Félicitations, le second Boss est tombé ! </h1>
+      <h2>Voici un petit coup de pouce pour l'épreuve finale...</h2>
+      <div className="ModalReward-lvlUp">
+        <h3>HEAL 50 PV</h3>
+        <img src={lvlUp} alt="lvlup_pic" />
+        <h3>+50 MAX PV</h3>
       </div>
+      <h3>+1 ENERGIE</h3>
 
       <button
         type="button"
@@ -125,7 +72,7 @@ export default function ModalFirstReward({
   );
 }
 
-ModalFirstReward.propTypes = {
+ModalSecondReward.propTypes = {
   reward: PropTypes.shape({
     id: PropTypes.number,
     pic: PropTypes.string,
@@ -135,6 +82,8 @@ ModalFirstReward.propTypes = {
     value2: PropTypes.number,
   }),
   playerStats: PropTypes.shape({
+    maxLife: PropTypes.number,
+    currentLife: PropTypes.number,
     currentEnergy: PropTypes.number,
     tempBuff: PropTypes.shape({
       block: PropTypes.number,
@@ -160,7 +109,7 @@ ModalFirstReward.propTypes = {
     drawCard: PropTypes.number,
     startDistrib: PropTypes.number,
   }),
-  enemyLvl3: PropTypes.shape({
+  enemyLvl5: PropTypes.shape({
     currentLife: PropTypes.number,
     maxLife: PropTypes.number,
     resistPhys: PropTypes.number,
@@ -179,7 +128,7 @@ ModalFirstReward.propTypes = {
       poison: PropTypes.number,
     }),
   }),
-  actionEnemyLvl3: PropTypes.arrayOf(
+  actionEnemyLvl5: PropTypes.arrayOf(
     PropTypes.arrayOf(
       PropTypes.shape(
         {
@@ -269,7 +218,7 @@ ModalFirstReward.propTypes = {
   setLvlGame: PropTypes.func,
   setPlayerStats: PropTypes.func,
 };
-ModalFirstReward.defaultProps = {
+ModalSecondReward.defaultProps = {
   reward: {
     id: 0,
     pic: "",
@@ -279,6 +228,8 @@ ModalFirstReward.defaultProps = {
     value2: 0,
   },
   playerStats: {
+    maxLife: 0,
+    currentLife: 0,
     currentEnergy: 0,
     tempBuff: {
       block: 0,
@@ -304,7 +255,7 @@ ModalFirstReward.defaultProps = {
     drawCard: 0,
     startDistrib: 0,
   },
-  enemyLvl3: {
+  enemyLvl5: {
     currentLife: 1000,
     maxLife: 1000,
     resistPhys: 0,
@@ -323,24 +274,10 @@ ModalFirstReward.defaultProps = {
       poison: 0,
     },
   },
-  actionEnemyLvl3: [
+  actionEnemyLvl5: [
     [
       {
-        attack: 25,
-        poison: 0,
-        block: 0,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `25 Damages`,
-      },
-      {
-        attack: 15,
+        attack: 30,
         poison: 0,
         block: 15,
         avoidAttack: 0,
@@ -351,26 +288,12 @@ ModalFirstReward.defaultProps = {
         drawDebuff: 0,
         leech: false,
         distribDown: 0,
-        displayedActions: `15 Damages / 15 Block`,
+        displayedActions: `30 Damages / 15 Block`,
       },
       {
         attack: 0,
-        poison: 0,
-        block: 25,
-        avoidAttack: 0,
-        vulne: 1,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `25 Block / 1 Vulne`,
-      },
-      {
-        attack: 30,
-        poison: 0,
-        block: 10,
+        poison: 5,
+        block: 15,
         avoidAttack: 0,
         vulne: 0,
         weak: 0,
@@ -379,10 +302,10 @@ ModalFirstReward.defaultProps = {
         drawDebuff: 0,
         leech: false,
         distribDown: 0,
-        displayedActions: `30 Damages / 10 Block`,
+        displayedActions: `5 Poison / 15 Block`,
       },
       {
-        attack: 25,
+        attack: 40,
         poison: 0,
         block: 0,
         avoidAttack: 0,
@@ -393,7 +316,35 @@ ModalFirstReward.defaultProps = {
         drawDebuff: 0,
         leech: true,
         distribDown: 0,
-        displayedActions: `25 Damages / Leech Life`,
+        displayedActions: `40 Damages / Leech Life`,
+      },
+      {
+        attack: 0,
+        poison: 0,
+        block: 0,
+        avoidAttack: 1,
+        vulne: 0,
+        weak: 1,
+        attackBuff: 0,
+        blockBuff: 0,
+        drawDebuff: 0,
+        leech: false,
+        distribDown: 0,
+        displayedActions: `1 Dodge / 1 Weak`,
+      },
+      {
+        attack: 30,
+        poison: 0,
+        block: 20,
+        avoidAttack: 0,
+        vulne: 0,
+        weak: 0,
+        attackBuff: 0,
+        blockBuff: 0,
+        drawDebuff: 0,
+        leech: false,
+        distribDown: 0,
+        displayedActions: `30 Damages / 20 Block`,
       },
     ],
   ],

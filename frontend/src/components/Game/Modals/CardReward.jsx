@@ -2,49 +2,46 @@ import PropTypes from "prop-types";
 import "../../../assets/css/Game/CardReward.css";
 
 export default function CardReward({
-  reward,
+  rewards,
   setSelected,
   setIdSelectedCard,
   idSelectedCard,
 }) {
   const handleClick = () => {
-    setSelected(reward);
-    setIdSelectedCard(reward.id);
+    setSelected(rewards);
+    setIdSelectedCard(rewards.id);
   };
 
   return (
     <div
       className={
-        idSelectedCard === reward.id
+        idSelectedCard === rewards.id
           ? "CardReward-item cardSelected"
           : "CardReward-item"
       }
     >
       <button type="button" onClick={handleClick}>
-        <img src={reward.pic} alt="reward_pic" className="CardReward-pic" />
+        <img src={rewards.pic} alt="reward_pic" className="CardReward-pic" />
       </button>
-      <div>
-        {reward.firstBuff} + {reward.value1}
-      </div>
-      <div>
-        {reward.secondBuff} + {reward.value2}
-      </div>
-      {reward.thirdBuff && (
+      <div className="CardReward-stats">
         <div>
-          {reward.thirdBuff} + {reward.value3}
+          {rewards.firstBuff} + {rewards.value1}
         </div>
-      )}
-      {reward.fourthBuff && (
         <div>
-          {reward.fourthBuff} + {reward.value4}
+          {rewards.secondBuff} + {rewards.value2}
         </div>
-      )}
+        {rewards.thirdBuff && (
+          <div>
+            {rewards.thirdBuff} + {rewards.value3}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
 
 CardReward.propTypes = {
-  reward: PropTypes.shape({
+  rewards: PropTypes.shape({
     id: PropTypes.number,
     pic: PropTypes.string,
     firstBuff: PropTypes.string,
@@ -53,15 +50,13 @@ CardReward.propTypes = {
     value2: PropTypes.number,
     thirdBuff: PropTypes.string,
     value3: PropTypes.number,
-    fourthBuff: PropTypes.string,
-    value4: PropTypes.number,
   }),
   setIdSelectedCard: PropTypes.func,
   idSelectedCard: PropTypes.number,
   setSelected: PropTypes.func,
 };
 CardReward.defaultProps = {
-  reward: {
+  rewards: {
     id: 0,
     pic: "",
     firstBuff: "",
@@ -70,8 +65,6 @@ CardReward.defaultProps = {
     value2: 0,
     thirdBuff: "",
     value3: 0,
-    fourthBuff: "",
-    value4: 0,
   },
   setIdSelectedCard: () => {},
   idSelectedCard: 0,
