@@ -47,7 +47,7 @@ export default function Game() {
     fullCombatBuff: { attackBuff: 0, blockBuff: 0 },
     debuff: { vulnerable: 0, weak: 0, poison: 0 },
   });
-  /*
+  /* 123
   const [enemyStats, setEnemyStats] = useState({
     currentLife: 200,
     maxLife: 200,
