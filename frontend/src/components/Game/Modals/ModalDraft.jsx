@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import CardLib from "../Library/CardLib";
-import api from "../../services/api";
-import "../../assets/css/Game/ModalDraft.css";
+import CardLib from "../../Library/CardLib";
+import api from "../../../services/api";
+import "../../../assets/css/Game/ModalDraft.css";
 
 export default function ModalDraft({
   setDeckJeu,
@@ -254,7 +254,10 @@ export default function ModalDraft({
             );
           })
         ) : (
-          <div className="Deck-Complete" />
+          <div className="Deck-Complete">
+            <h1>PREPAREZ-VOUS</h1>
+            <h1>LE PREMIER ADVERSAIRE VOUS ATTEND</h1>
+          </div>
         )}
       </div>
       {deckDepart.length < 12 ? (

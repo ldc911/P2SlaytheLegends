@@ -22,6 +22,10 @@
   transform: scale(1.1);
 }
 
+.Modale-rewardValidate {
+    max-width: fit-content;
+}
+
 .Card-display {
   display: flex;
   flex-wrap: nowrap;
@@ -59,8 +63,15 @@
   margin-left: 1vw;
 }
 
-.Modale-validation {
-  margin-bottom: 2vh;
+.Modale-reward{
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-bottom: 2vh;
+}
+
+.Modale-validation{
+    margin-bottom: 2vh;
 }
 
 .stats-deck {
@@ -93,19 +104,20 @@
     padding-top: 0vh;
   }
 }
-.mana-text {
-  font-size: larger;
-  width: 7vw;
-  padding: 0px;
-  padding-top: 5%;
-  margin: 0px;
-  position: absolute;
-  color: #c89d3e;
-  left: 75%;
-  top: 2%;
-  font-weight: 600;
-  text-shadow: 2px 2px 2px black;
+.mana-text{        
+    font-size: larger;   
+    width: 7vw; 
+    padding:0px;
+    padding-top:5%;
+    margin:0px; 
+    position:absolute;
+    color:#c89d3e;
+    left: 75%;
+    top: 2%;
+    font-weight: 600;
+    text-shadow: 2px 2px 2px black;
 }
+
 .Modale-deck {
   width: 7vw;
 }
@@ -168,11 +180,11 @@
   border-bottom: 1px solid #c89d3e;
 }
 
-.energy-Bar {
-  position: absolute;
-  bottom: 0%;
-  width: 20%;
-  background-color: #c89d3e;
+.energy-Bar{
+    position:absolute;
+    bottom:0%;
+    width:20%;
+    background-color: #c89d3e;    
 }
 
 @media screen and (min-width: 1001px) {
@@ -181,11 +193,18 @@
   }
 }
 
-.Deck-Complete {
-  gap: 1vw;
-  width: 90%;
-  padding: 2vw;
-  padding-bottom: 0;
-  padding-top: 2vh;
-  height: calc(1.37 * 17vw);
+.Deck-Complete {    
+    gap: 1vw;
+    width: 90%;
+    padding: 2vw;
+    padding-bottom: 0;
+    padding-top: 2vh;
+    height: calc(1.37 * 17vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Deck-Complete h1{
+    text-shadow: 1px 1px 3px var(--font-color);
 }
