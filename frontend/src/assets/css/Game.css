@@ -50,3 +50,19 @@
   max-width: 302px; 
   /*white-space: normal;*/
 }
+.Game-Arena{
+  width:100vw;
+  height:100vh;
+  background-image: url("../img/Game/arena.png");  
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 100% auto;
+}
+.Game-Over{
+  width:100vw;
+  height:100vh;
+  background-image: url("../img/Game/defeat.png");  
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 50% auto;
+}

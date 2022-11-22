@@ -18,7 +18,6 @@ export default function Game() {
   const [enemyLifeChange, setEnemyLifeChange] = useState(0);
   const [prevPlayerLife, setPrevPlayerLife] = useState(100);
   const [prevEnemyLife, setPrevEnemyLife] = useState(200);
-  // eslint-disable-next-line no-unused-vars
   const [item, setItem] = useState({});
   // Objet représentant le joueur test
   const [playerStats, setPlayerStats] = useState({
@@ -492,6 +491,7 @@ export default function Game() {
     }
   }, [playerStats.currentLife]);
   // affichage changement de vie pour le joueur et l'ennemi
+
   return (
     <div>
       {(lvlGame === 0 || lvlGame === 2 || lvlGame === 4 || lvlGame === 6) && (
@@ -530,6 +530,8 @@ export default function Game() {
             fightTurns={fightTurns}
             playerLifeChange={playerLifeChange}
             enemyLifeChange={enemyLifeChange}
+            item={item}
+            lvlGame={lvlGame}
           />
           <Deck
             champions={deckJeu}
@@ -548,8 +550,14 @@ export default function Game() {
       {lvlGame === 4 && <div>Victoire le boss est vaincu 2!!!</div>}
       {lvlGame === 7 && (
         <div className="Game-Over">
-          <p style={{ paddingTop: "2%", paddingLeft: "2%" }}>
-            vous avez échoué après {totalTurns} tours
+          <p
+            style={{
+              paddingTop: "2%",
+              paddingLeft: "2%",
+              color: "#c89d3e",
+            }}
+          >
+            Vous avez échoué après {totalTurns} tours
           </p>
           <Link className="Modale-link" to="/">
             <button
