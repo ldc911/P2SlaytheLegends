@@ -9,7 +9,7 @@ export default function Game() {
   const [render, setRender] = useState(false);
   const [deckJeu, setDeckJeu] = useState([]);
   const [lvlGame, setLvlGame] = useState(0);
-  const [startPlayerTurn, setStartPlayerTurn] = useState(false);
+  const [startPlayerTurn, setStartPlayerTurn] = useState(true);
   const [endPlayerTurn, setEndPlayerTurn] = useState(false);
   const [enemyActionsResolution, setEnemyActionsResolution] = useState(false);
   const [fightTurns, setFightTurns] = useState(1);

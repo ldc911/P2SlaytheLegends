@@ -3,12 +3,12 @@
   background-size: contain;
   background-repeat: no-repeat;
   border: none;
-  width: 20%;
-  height: calc(1.37 * 17vw);
+  width: 12%;
+  height: calc(1.37 * 11vw);
   min-height: 206px;
   min-width: 151px;
-  max-height: 412px;
-  max-width: 302px; 
+  max-height: 206px;
+  max-width: 151px;
   white-space: normal;
 }
 
@@ -33,10 +33,17 @@
   margin: 5%;
   border-radius: 10px;
 }
+.manared .manaCard h3 {
+  color: red;
+}
 
 .champCardName {
-  background: rgb(238,226,174);
-  background: radial-gradient(circle, rgba(238,226,174,1) 0%, rgba(200,157,62,1) 100%);
+  background: rgb(238, 226, 174);
+  background: radial-gradient(
+    circle,
+    rgba(238, 226, 174, 1) 0%,
+    rgba(200, 157, 62, 1) 100%
+  );
   margin: auto;
   width: 55%;
   font-family: "BeaufortforLOL-Bold";
@@ -47,13 +54,14 @@
   position: absolute;
   left: 24%;
   bottom: 74%;
-  z-index:1;  
+  z-index: 1;
 }
-.champCardName h3 {  
+.champCardName h3 {
   margin: auto;
   color: black;
   text-align: center;
-  font-size: calc(0.8vw + 1vh);
+  font-size: 0.8rem;
+  font-weight: 900;
   line-height: calc(1vw + 1vh);
 }
 
@@ -94,21 +102,31 @@
 .skillsCard p {
   font-family: "BeaufortforLOL-Bold";
   font-size: 16px;
-  font-size: calc((0.6rem + 1vw)*0.7);
-  line-height: 82%;  
+  font-size: calc((0.6rem + 1vw) * 0.7);
+  line-height: 82%;
   margin: 0px;
   margin-left: 2%;
   margin-top: 2%;
 }
+.cardSelected {
+  transform: scale(1.1);
+  box-shadow: 0 10px 6px var(--bg-color);
+}
 
 
 @media screen and (max-width: 875px) {
-  .skillsCard p {    
-    font-size: 12px;    
+  .skillsCard p {
+    font-size: 0.6rem;
   }
-  .champCardName h3 {    
-    font-size: 12px;
+  .champCardName h3 {
+    font-size: 0.6rem;
     line-height: 12px;
     font-weight: 500;
+  }
+  .champCard {
+    min-height: 140px;
+    min-width: 102px;
+    max-height: 206px;
+    max-width: 151px;
   }
 }

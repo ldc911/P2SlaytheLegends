@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 import React, { useState, useRef, useEffect } from "react";
 import GameCard from "./GameCard";
-import backCard from "../../assets/img/Card/card.png";
-import "../../assets/css/Game.css";
+import backCard from "../../assets/img/Game/back.png";
+import "../../assets/css/Game/Deck.css";
 
 export default function Deck({
   champions,
@@ -16,9 +16,11 @@ export default function Deck({
   setRender,
 }) {
   // Les States
+  const firstCard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]; // default deck
+  firstCard.sort(() => Math.random() - 0.5); // melange le deck default
   const [deck, setDeck] = useState({
-    drawPile: [0, 1, 2, 3, 4, 5, 6],
-    hand: [7, 8, 9, 10, 11],
+    drawPile: [...firstCard.splice(5)],
+    hand: [...firstCard.splice(0, 5)],
     cimetery: [],
   });
   const [cardManager, setCardManager] = useState({
@@ -153,51 +155,83 @@ export default function Deck({
         </div>
       </div>
       <div className="game-bottom">
-        <div>
-          <img src={backCard} width="auto" alt="Deck" />
+        <div className="dumpcard">
+          <div className="drawpile">
+            <img src={backCard} alt="Deck" draggable="false" />
+          </div>
+          <div className="cimetery">
+            <img src={backCard} alt="Cemetery" draggable="false" />
+          </div>
         </div>
-        {champions &&
-          hand.map((item, index) => {
-            return (
-              <div
-                className="Card-Zone"
-                key={champions[item].champion.id}
-                style={{
-                  backgroundColor: "lightblue",
-                  /* margin: "20px auto",
+        <div className="hand">
+          {champions &&
+            hand.map((item, index) => {
+              // Check Mana
+              const manaCost = (champ) => {
+                // console.log(cardChampion.info.difficulty);
+                switch (champ) {
+                  case 0:
+                  case 1:
+                  case 2:
+                  case 3:
+                    return "0";
+                  case 4:
+                  case 5:
+                  case 6:
+                    return "1";
+                  case 7:
+                  case 8:
+                    return "2";
+                  case 9:
+                  case 10:
+                    return "3";
+                  default:
+                    return "TBD";
+                }
+              };
+              const cardEnergy = parseInt(
+                manaCost(champions[item].champion.info.difficulty),
+                10
+              );
+              return (
+                <div
+                  className={`Card-Zone${
+                    cardEnergy > playerStats.currentEnergy ? " manared" : ""
+                  }`}
+                  key={champions[item].champion.id}
+                  style={{
+                    /* margin: "20px auto",
                   textAlign: "center",
                   fontSize: "40px", */
-                  animate: false,
-                  sticky: false,
-                  dragx: true,
-                  dragy: true,
-                  rotate: false,
-                  resort: true,
-                  scale: false,
-                }}
-                onDragStart={(e) => dragStart(e, index)}
-                onDragEnter={(e) => dragEnter(e, index)}
-                onDragEnd={drop}
-                draggable
-              >
-                <GameCard
-                  key={champions[item].champion.id}
-                  cardChampion={champions[item].champion}
-                  cardIndex={item}
-                  cardManager={cardManager}
-                  playerStats={playerStats}
-                  enemyStats={enemyStats}
-                  setPlayerStats={setPlayerStats}
-                  setEnemyStats={setEnemyStats}
-                  setCardManager={setCardManager}
-                  setRender={setRender}
-                  render={render}
-                />
-              </div>
-            );
-          })}
-        <div>
-          <img src={backCard} width="auto" alt="Cemetery" />
+                    animate: false,
+                    sticky: false,
+                    dragx: true,
+                    dragy: true,
+                    rotate: false,
+                    resort: true,
+                    scale: false,
+                  }}
+                  onDragStart={(e) => dragStart(e, index)}
+                  onDragEnter={(e) => dragEnter(e, index)}
+                  onDragEnd={drop}
+                  draggable={cardEnergy <= playerStats.currentEnergy}
+                >
+                  <GameCard
+                    key={champions[item].champion.id}
+                    cardChampion={champions[item].champion}
+                    cardIndex={item}
+                    cardManager={cardManager}
+                    playerStats={playerStats}
+                    enemyStats={enemyStats}
+                    setPlayerStats={setPlayerStats}
+                    setEnemyStats={setEnemyStats}
+                    setCardManager={setCardManager}
+                    setRender={setRender}
+                    render={render}
+                  />
+                </div>
+              );
+            })}
         </div>
       </div>
     </>
