@@ -113,6 +113,7 @@ function CardLib({
   // gestion du click en fonction de l'emplacement de l'appel de la carte
   const location = useLocation();
   const library = matchPath({ path: "/library" }, location.pathname);
+  const game = matchPath({ path: "/game" }, location.pathname);
 
   const handleClick = () => {
     if (library) {
@@ -131,6 +132,12 @@ function CardLib({
         idSelectedCard === cardChampion.id
           ? "champCard cardSelected"
           : "champCard"
+      }
+      style={
+        game && {
+          minHeight: `155px`,
+          minWidth: `115px`,
+        }
       }
       onClick={() => {
         handleClick();

@@ -12,6 +12,8 @@ function GameCard({
   setPlayerStats,
   enemyStats,
   setEnemyStats,
+  setRender,
+  render,
 }) {
   const [cardEnergyCost, setCardEnergyCost] = useState(0);
   const [magicAttack, setMagicAttack] = useState(0);
@@ -226,9 +228,11 @@ function GameCard({
       if (magicAttack > 0) {
         if (enemyCopy.tempBuff.avoidAttack === 0) {
           let damage = Math.round(
-            (magicAttack + playerCopy.fullCombatBuff.attackBuff) *
+            (magicAttack +
+              playerCopy.fullCombatBuff.attackBuff +
+              playerCopy.fullGameBuff.magicBuff) *
               (enemyCopy.debuff.vulnerable > 0 ? 1.25 : 1) *
-              (playerCopy.debuff.weak > 0 ? 0.75 : 1)
+              (playerCopy.debuff.weak > 0 ? 0.5 : 1)
           );
           damage -= enemyCopy.resistMag;
           if (enemyCopy.tempBuff.block > 0) {
@@ -246,9 +250,11 @@ function GameCard({
       if (physAttack > 0) {
         if (enemyCopy.tempBuff.avoidAttack === 0) {
           let damage = Math.round(
-            (physAttack + playerCopy.fullCombatBuff.attackBuff) *
+            (physAttack +
+              playerCopy.fullCombatBuff.attackBuff +
+              playerCopy.fullGameBuff.physBuff) *
               (enemyCopy.debuff.vulnerable ? 1.25 : 1) *
-              (playerCopy.debuff.weak > 0 ? 0.75 : 1)
+              (playerCopy.debuff.weak > 0 ? 0.5 : 1)
           );
           damage -= enemyCopy.resistPhys;
           if (enemyCopy.tempBuff.block > 0) {
@@ -266,11 +272,13 @@ function GameCard({
       /* block action */
       if (block > 0) {
         playerCopy.tempBuff.block +=
-          block + playerCopy.fullCombatBuff.blockBuff;
+          block +
+          playerCopy.fullCombatBuff.blockBuff +
+          playerCopy.fullGameBuff.defenseBuff;
       }
       /* poison action */
       if (poison > 0) {
-        enemyCopy.debuff.poison += poison;
+        enemyCopy.debuff.poison += poison + playerCopy.fullGameBuff.poisonBuff;
       }
       /* double poison action */
       if (doublePoison) {
@@ -302,7 +310,7 @@ function GameCard({
       }
       /* heal action */
       if (heal > 0) {
-        playerCopy.currentLife += heal;
+        playerCopy.currentLife += heal + playerCopy.fullGameBuff.healBuff;
         if (playerCopy.currentLife > playerCopy.maxLife) {
           playerCopy.currentLife = playerCopy.maxLife;
         }
@@ -311,6 +319,8 @@ function GameCard({
       if (draw > 0) {
         playerCopy.drawCard = draw;
       }
+      // console.log(playerCopy);
+      setRender(!render);
       setEnemyStats(enemyCopy);
       setPlayerStats(playerCopy);
       const cardManagerCopy = cardManager;
@@ -324,7 +334,7 @@ function GameCard({
       <button
         type="button"
         className="champCard"
-        style={{ height: `calc(1.37 * 20vw)` }}
+        /* style={{ height: `calc(1.37 * 20vw)` }} */
       >
         {cardChampion ? (
           <div className="cardContainer">
@@ -412,6 +422,8 @@ GameCard.propTypes = {
     }),
   }),
   setEnemyStats: PropTypes.func,
+  setRender: PropTypes.func,
+  render: PropTypes.bool,
 };
 
 GameCard.defaultProps = {
@@ -471,4 +483,6 @@ GameCard.defaultProps = {
     },
   },
   setEnemyStats: () => {},
+  setRender: () => {},
+  render: false,
 };

@@ -1,0 +1,88 @@
+/* /// Drop Zone */
+.drag-drop-zone button {
+  position: fixed;
+  right: 5vw;
+  bottom: 30vh;
+}
+.drag-drop-zone {
+  top: 0;
+  border: red solid 1px;
+  position: fixed;
+  margin: calc(30vh - 100px) 25vw;
+  width: 50vw;
+  height: 30vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+.drag-drop-zone.lvl1 {
+  background-image: url("../../img/Game/dragon.png");
+}
+.drag-drop-zone.lvl1.lvl2 {
+  background-image: url("../../img/Game/herald2.png");
+}
+.drag-drop-zone.lvl1.lvl3 {
+  background-image: url("../../img/Game/nashor.png");
+}
+.drag-drop-zone p {
+  color: #fff;
+}
+.drag-drop-zone.inside-drag-area {
+  opacity: 0.7;
+}
+
+/* /// Containt Bottom */
+.game-bottom {
+  position: fixed;
+  bottom: 5vh;
+  height: 20vh;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+}
+
+/* // CARTE dans Hand */
+.hand {
+  width: 90vw;
+  flex: 1;
+  padding: 0.5vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1vw;
+}
+
+.Card-Zone {
+}
+
+/* /// DrawPile et cimetery img */
+.dumpcard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+}
+
+.drawpile img,
+.cimetery img {
+  height: 15vh;
+}
+
+.drawpile .cimetery {
+  height: 100%;
+  flex: 1;
+  padding: 2vw;
+  width: 10vw;
+}
+
+@media screen and (max-width: 875px) {
+  .hand {
+    flex-wrap: wrap;
+  }
+}
