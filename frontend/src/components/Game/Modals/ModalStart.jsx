@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import "../../assets/css/Game/ModalDraft.css";
+import "../../../assets/css/Game/ModalDraft.css";
 
 export default function ModalStart({ setStartGame }) {
   return (

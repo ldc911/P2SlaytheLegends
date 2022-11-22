@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ModalDisplay from "../components/Game/ModalDisplay";
@@ -164,153 +163,149 @@ export default function Game() {
   };
   // objet représentant les actions possibles de l'ennemi 2
   const actionEnemyLvl3 = [
-    [
-      {
-        attack: 25,
-        poison: 0,
-        block: 0,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `25 Damages`,
-      },
-      {
-        attack: 15,
-        poison: 0,
-        block: 15,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `15 Damages / 15 Block`,
-      },
-      {
-        attack: 0,
-        poison: 0,
-        block: 25,
-        avoidAttack: 0,
-        vulne: 1,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `25 Block / 1 Vulne`,
-      },
-      {
-        attack: 30,
-        poison: 0,
-        block: 10,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `30 Damages / 10 Block`,
-      },
-      {
-        attack: 25,
-        poison: 0,
-        block: 0,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: true,
-        distribDown: 0,
-        displayedActions: `25 Damages / Leech Life`,
-      },
-    ],
+    {
+      attack: 25,
+      poison: 0,
+      block: 0,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `25 Damages`,
+    },
+    {
+      attack: 15,
+      poison: 0,
+      block: 15,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `15 Damages / 15 Block`,
+    },
+    {
+      attack: 0,
+      poison: 0,
+      block: 25,
+      avoidAttack: 0,
+      vulne: 1,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `25 Block / 1 Vulne`,
+    },
+    {
+      attack: 30,
+      poison: 0,
+      block: 10,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `30 Damages / 10 Block`,
+    },
+    {
+      attack: 25,
+      poison: 0,
+      block: 0,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: true,
+      distribDown: 0,
+      displayedActions: `25 Damages / Leech Life`,
+    },
   ];
   // objet représentant les actions possibles de l'ennemi 3
   const actionEnemyLvl5 = [
-    [
-      {
-        attack: 30,
-        poison: 0,
-        block: 15,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `30 Damages / 15 Block`,
-      },
-      {
-        attack: 0,
-        poison: 5,
-        block: 15,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `5 Poison / 15 Block`,
-      },
-      {
-        attack: 40,
-        poison: 0,
-        block: 0,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: true,
-        distribDown: 0,
-        displayedActions: `40 Damages / Leech Life`,
-      },
-      {
-        attack: 0,
-        poison: 0,
-        block: 0,
-        avoidAttack: 1,
-        vulne: 0,
-        weak: 1,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `1 Dodge / 1 Weak`,
-      },
-      {
-        attack: 30,
-        poison: 0,
-        block: 20,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `30 Damages / 20 Block`,
-      },
-    ],
+    {
+      attack: 30,
+      poison: 0,
+      block: 15,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `30 Damages / 15 Block`,
+    },
+    {
+      attack: 0,
+      poison: 5,
+      block: 15,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `5 Poison / 15 Block`,
+    },
+    {
+      attack: 40,
+      poison: 0,
+      block: 0,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: true,
+      distribDown: 0,
+      displayedActions: `40 Damages / Leech Life`,
+    },
+    {
+      attack: 0,
+      poison: 0,
+      block: 0,
+      avoidAttack: 1,
+      vulne: 0,
+      weak: 1,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `1 Dodge / 1 Weak`,
+    },
+    {
+      attack: 30,
+      poison: 0,
+      block: 20,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `30 Damages / 20 Block`,
+    },
   ];
   // fonctions--------------------------------------------------
   const startPlayerTurnActionsForPlayer = (player) => {
@@ -498,9 +493,32 @@ export default function Game() {
   // affichage changement de vie pour le joueur et l'ennemi
 
   return (
-    <div className="Game-Arena">
-      {lvlGame === 0 && (
-        <ModalDisplay setDeckJeu={setDeckJeu} setLvlGame={setLvlGame} />
+    <div>
+      {(lvlGame === 0 || lvlGame === 2 || lvlGame === 4 || lvlGame === 6) && (
+        <ModalDisplay
+          setDeckJeu={setDeckJeu}
+          setLvlGame={setLvlGame}
+          lvlGame={lvlGame}
+          setStartPlayerTurn={setStartPlayerTurn}
+          setEndPlayerTurn={setEndPlayerTurn}
+          setEnemyActionsResolution={setEnemyActionsResolution}
+          setFightTurns={setFightTurns}
+          setPlayerLifeChange={setPlayerLifeChange}
+          setEnemyLifeChange={setEnemyLifeChange}
+          playerStats={playerStats}
+          setPlayerStats={setPlayerStats}
+          setEnemyStats={setEnemyStats}
+          setIndexActionList={setIndexActionList}
+          setEnemyActions={setEnemyActions}
+          setEnemyActionList={setEnemyActionList}
+          enemyLvl3={enemyLvl3}
+          actionEnemyLvl3={actionEnemyLvl3}
+          actionEnemyLvl5={actionEnemyLvl5}
+          enemyLvl5={enemyLvl5}
+          setPrevPlayerLife={setPrevPlayerLife}
+          setPrevEnemyLife={setPrevEnemyLife}
+          setItem={setItem}
+        />
       )}
       {(lvlGame === 1 || lvlGame === 3 || lvlGame === 5) && deckJeu && (
         <>
