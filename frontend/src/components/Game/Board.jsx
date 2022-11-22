@@ -6,18 +6,32 @@ import Enemy from "./Enemy";
 // eslint-disable-next-line import/no-unresolved
 import Player from "./Player";
 
-export default function Board({ enemy, player }) {
+export default function Board({
+  enemy,
+  player,
+  setEndPlayerTurn,
+  fightTurns,
+  playerLifeChange,
+  enemyLifeChange,
+}) {
   return (
     <div className="board-container">
-      <Enemy enemy={enemy} />
-      <Player player={player} />
+      <Enemy enemy={enemy} enemyLifeChange={enemyLifeChange} />
+      <Player player={player} playerLifeChange={playerLifeChange} />
       <div className="mana-game">
-        {player.currentEnergy} / {player.maxEnergy}
+        {player.currentEnergy}/{player.maxEnergy}
       </div>
-      <button className="findetour-game" type="button">
+      <button
+        className="findetour-game"
+        type="button"
+        onClick={() => setEndPlayerTurn(true)}
+      >
         {" "}
-        END TOUR{" "}
+        END TURN{" "}
       </button>
+      <div className="">
+        <div />
+      </div>
     </div>
   );
 }

@@ -1,3 +1,9 @@
+.player-stat {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 10vw;
+}
 .entoure-barredevie-player {
   text-align: center;
   border-color: black;
@@ -5,6 +11,8 @@
   width: 15vw;
   position: relative;
   border-radius: 2rem;
+  border: 1px solid var(--secondary-color);
+  background-color: var(--bg-color-opacity);
 }
 .vie-player {
   top: 0;
@@ -20,21 +28,44 @@
   /* La hauteur de l’élément */
   /* Centrer verticalement et horizontalement */
   position: absolute;
-  top: 50%;
-  left: 45%;
+  top: 55%;
+  left: 40%;
+  font-weight: bold;
+  font-size: 0.8rem;
   margin: -15px; /* Appliquer des marges négatives aux propriétés top et left pour centrer parfaitement l’élément */
 }
 
-.player-stat {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  left: 10vw;
+.block-player {
+  color: cadetblue;
+  left: -6%;
+  font-weight: bold;
 }
 
-.block-player {
-  width: 15vw;
-  text-align: center;
+.avoidAttack {
+  font-weight: bold;
 }
-.paragraph-player {
+.attackBuff {
+  color: greenyellow;
+  font-weight: bold;
+}
+.distribDown {
+  font-weight: Bold;
+}
+.playerLifeChange {
+  color: greenyellow;
+  left: 12%;
+  font-weight: bold;
+  position: relative;
+  top: 5vh;
+}
+.playerinferieur {
+  color: red;
+  left: 12%;
+  font-weight: bold;
+  position: relative;
+  top: 5vh;
+}
+
+.inLineBlockPlayer {
+  display: inline-block;
 }

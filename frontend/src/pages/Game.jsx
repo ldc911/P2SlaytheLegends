@@ -9,6 +9,8 @@ export default function Game() {
   // eslint-disable-next-line no-unused-vars
   const [deckJeu, setDeckJeu] = useState([]);
   const [lvlGame, setLvlGame] = useState(-1);
+  const [playerLifeChange, setPlayerLifeChange] = useState(10);
+  const [enemyLifeChange, setEnemyLifeChange] = useState(5);
 
   const [player, setPlayer] = useState({
     currentLife: 100,
@@ -21,13 +23,13 @@ export default function Game() {
     drawCard: 10,
     startDistrib: 5,
   });
-  const [nombreTour, setNombreTour] = useState();
 
   const [enemy, setEnemy] = useState({
-    currentLife: 1000,
+    currentLife: 500,
     maxLife: 1000,
     resistPhys: 0,
     resistMag: 0,
+    resistPoison: 10,
     tempBuff: { block: 10, avoidAttack: 10 },
     fullCombatBuff: { attackBuff: 10, blockBuff: 10 },
     debuff: { vulnerable: 10, weak: 10, poison: 10 },
@@ -39,7 +41,12 @@ export default function Game() {
 
   return (
     <div>
-      <Board player={player} enemy={enemy} />
+      <Board
+        player={player}
+        enemy={enemy}
+        enemyLifeChange={enemyLifeChange}
+        playerLifeChange={playerLifeChange}
+      />
       {lvlGame === 0 && (
         <ModalDisplay setDeckJeu={setDeckJeu} setLvlGame={setLvlGame} />
       )}
