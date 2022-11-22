@@ -3,9 +3,9 @@
 /* eslint-disable no-undef */
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import CardLib from "../Library/CardLib";
-import api from "../../services/api";
-import "../../assets/css/Game/ModalDraft.css";
+import CardLib from "../../Library/CardLib";
+import api from "../../../services/api";
+import "../../../assets/css/Game/ModalDraft.css";
 
 export default function ModalDraft({
   setDeckJeu,
