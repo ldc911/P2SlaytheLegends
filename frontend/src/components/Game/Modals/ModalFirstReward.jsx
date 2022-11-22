@@ -21,6 +21,8 @@ export default function ModalFirstReward({
   setEnemyActionList,
   enemyLvl3,
   actionEnemyLvl3,
+  setPrevPlayerLife,
+  setPrevEnemyLife,
 }) {
   const [selected, setSelected] = useState({});
   const [idSelectedCard, setIdSelectedCard] = useState();
@@ -88,6 +90,8 @@ export default function ModalFirstReward({
     setEnemyActions(actionEnemyLvl3[0]);
     setEnemyActionList(actionEnemyLvl3);
     setLvlGame(3);
+    setPrevPlayerLife(playerStats.currentLife);
+    setPrevEnemyLife(enemyLvl3.currentLife);
   };
 
   return (
@@ -135,6 +139,7 @@ ModalFirstReward.propTypes = {
     value2: PropTypes.number,
   }),
   playerStats: PropTypes.shape({
+    currentLife: PropTypes.number,
     currentEnergy: PropTypes.number,
     tempBuff: PropTypes.shape({
       block: PropTypes.number,
@@ -268,6 +273,8 @@ ModalFirstReward.propTypes = {
   setEnemyActionList: PropTypes.func,
   setLvlGame: PropTypes.func,
   setPlayerStats: PropTypes.func,
+  setPrevPlayerLife: PropTypes.func,
+  setPrevEnemyLife: PropTypes.func,
 };
 ModalFirstReward.defaultProps = {
   reward: {
@@ -279,6 +286,7 @@ ModalFirstReward.defaultProps = {
     value2: 0,
   },
   playerStats: {
+    currentLife: 0,
     currentEnergy: 0,
     tempBuff: {
       block: 0,
@@ -409,4 +417,7 @@ ModalFirstReward.defaultProps = {
   setEnemyActionList: () => {},
   setLvlGame: () => {},
   setPlayerStats: () => {},
+  setPrevPlayerLife: () => {},
+  setPrevEnemyLife: () => {},
+
 };

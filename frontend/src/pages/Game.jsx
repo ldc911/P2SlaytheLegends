@@ -17,6 +17,8 @@ export default function Game() {
   const [totalTurns, setTotalTurns] = useState(1);
   const [playerLifeChange, setPlayerLifeChange] = useState(0);
   const [enemyLifeChange, setEnemyLifeChange] = useState(0);
+  const [prevPlayerLife, setPrevPlayerLife] = useState(100);
+  const [prevEnemyLife, setPrevEnemyLife] = useState(200);
   // Objet représentant le joueur test
   const [playerStats, setPlayerStats] = useState({
     currentLife: 100,
@@ -465,6 +467,21 @@ export default function Game() {
     }
   }, [enemyActionsResolution]);
 
+  // derniers dégats/heal subis par player
+  useEffect(() => {
+    if (lvlGame === 1 || lvlGame === 3 || lvlGame === 5) {
+      setPlayerLifeChange(playerStats.currentLife - prevPlayerLife);
+      setPrevPlayerLife(playerStats.currentLife);
+    }
+  }, [playerStats.currentLife]);
+
+  useEffect(() => {
+    if (lvlGame === 1 || lvlGame === 3 || lvlGame === 5) {
+      setEnemyLifeChange(enemyStats.currentLife - prevEnemyLife);
+      setPrevEnemyLife(enemyStats.currentLife);
+    }
+  }, [enemyStats.currentLife]);
+
   // victoire et level up
   useEffect(() => {
     if (enemyStats.currentLife < 1) {
@@ -479,7 +496,6 @@ export default function Game() {
   }, [playerStats.currentLife]);
   // affichage changement de vie pour le joueur et l'ennemi
 
-  // console.log(render);
   return (
     <div>
       {(lvlGame === 0 || lvlGame === 2 || lvlGame === 4 || lvlGame === 6) && (
@@ -502,6 +518,8 @@ export default function Game() {
           actionEnemyLvl3={actionEnemyLvl3}
           actionEnemyLvl5={actionEnemyLvl5}
           enemyLvl5={enemyLvl5}
+          setPrevPlayerLife={setPrevPlayerLife}
+          setPrevEnemyLife={setPrevEnemyLife}
         />
       )}
       {(lvlGame === 1 || lvlGame === 3 || lvlGame === 5) && deckJeu && (
@@ -512,6 +530,8 @@ export default function Game() {
             enemyActions={enemyActions}
             setEndPlayerTurn={setEndPlayerTurn}
             fightTurns={fightTurns}
+            playerLifeChange={playerLifeChange}
+            enemyLifeChange={enemyLifeChange}
           />
           <Deck
             champions={deckJeu}
@@ -526,14 +546,30 @@ export default function Game() {
           />
         </>
       )}
+      {lvlGame === 2 && <div>Victoire le boss est vaincu 1!!!</div>}
+      {lvlGame === 4 && <div>Victoire le boss est vaincu 2!!!</div>}
       {lvlGame === 7 && (
-        <div>
-          <p>Game Over !!!</p>
+        <div className="Game-Over">
+          <p style={{ paddingTop: "2%", paddingLeft: "2%" }}>
+            vous avez échoué après {totalTurns} tours
+          </p>
           <Link className="Modale-link" to="/">
-            <button type="button" className="Modale-validate">
-              QUIT GAME
+            <button
+              type="button"
+              className="Modale-validate"
+              style={{ marginLeft: "10%", marginTop: "5%" }}
+            >
+              Quitter
             </button>
           </Link>
+          <button
+            type="button"
+            className="Modale-validate"
+            style={{ marginLeft: "5%", marginTop: "5%" }}
+            onClick={() => window.location.reload(false)}
+          >
+            Rejouer
+          </button>
         </div>
       )}
     </div>

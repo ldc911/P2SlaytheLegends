@@ -18,6 +18,8 @@ export default function ModalSecondReward({
   setEnemyActionList,
   enemyLvl5,
   actionEnemyLvl5,
+  setPrevPlayerLife,
+  setPrevEnemyLife,
 }) {
   const modifyPlayer = (player) => {
     const newPlayerStats = player;
@@ -48,6 +50,8 @@ export default function ModalSecondReward({
     setEnemyActions(actionEnemyLvl5[0]);
     setEnemyActionList(actionEnemyLvl5);
     setLvlGame(5);
+    setPrevPlayerLife(playerStats.currentLife);
+    setPrevEnemyLife(enemyLvl5.currentLife);
   };
 
   return (
@@ -217,6 +221,8 @@ ModalSecondReward.propTypes = {
   setEnemyActionList: PropTypes.func,
   setLvlGame: PropTypes.func,
   setPlayerStats: PropTypes.func,
+  setPrevPlayerLife: PropTypes.func,
+  setPrevEnemyLife: PropTypes.func,
 };
 ModalSecondReward.defaultProps = {
   reward: {
@@ -360,4 +366,6 @@ ModalSecondReward.defaultProps = {
   setEnemyActionList: () => {},
   setLvlGame: () => {},
   setPlayerStats: () => {},
+  setPrevPlayerLife: () => {},
+  setPrevEnemyLife: () => {},
 };
