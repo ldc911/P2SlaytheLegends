@@ -419,5 +419,4 @@ ModalFirstReward.defaultProps = {
   setPlayerStats: () => {},
   setPrevPlayerLife: () => {},
   setPrevEnemyLife: () => {},
-
 };
