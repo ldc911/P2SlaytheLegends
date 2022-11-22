@@ -497,6 +497,90 @@ export default function Game() {
   }, [playerStats.currentLife]);
   // affichage changement de vie pour le joueur et l'ennemi
 
+  // actions de enemy
+  useEffect(() => {
+    if (enemyActionsResolution) {
+      const playerCopy = playerStats;
+      const enemyCopy = enemyStats;
+      /* Attack action */
+      if (enemyActions.attack > 0) {
+        if (playerCopy.tempBuff.avoidAttack === 0) {
+          let damage = Math.round(
+            (enemyActions.attack + enemyCopy.fullCombatBuff.attackBuff) *
+              (playerCopy.debuff.vulnerable > 0 ? 1.25 : 1) *
+              (enemyCopy.debuff.weak > 0 ? 0.5 : 1)
+          );
+          if (playerCopy.tempBuff.block > 0) {
+            if (damage > playerCopy.tempBuff.block) {
+              damage -= playerCopy.tempBuff.block;
+              playerCopy.tempBuff.block = 0;
+              playerCopy.currentLife -= damage;
+              if (enemyActions.leech) {
+                enemyCopy.currentLife += damage;
+                if (enemyCopy.currentLife > enemyCopy.maxLife) {
+                  enemyCopy.currentLife = enemyCopy.maxLife;
+                }
+              }
+            } else {
+              playerCopy.tempBuff.block -= damage;
+            }
+          } else {
+            playerCopy.currentLife -= damage;
+            if (enemyActions.leech) {
+              enemyCopy.currentLife += damage;
+              if (enemyCopy.currentLife > enemyCopy.maxLife) {
+                enemyCopy.currentLife = enemyCopy.maxLife;
+              }
+            }
+          }
+        } else playerCopy.tempBuff.avoidAttack -= 1;
+      }
+      /* block action */
+      if (enemyActions.block > 0) {
+        enemyCopy.tempBuff.block +=
+          enemyActions.block + enemyCopy.fullCombatBuff.blockBuff;
+      }
+      /* poison action */
+      if (enemyActions.poison > 0) {
+        playerCopy.debuff.poison += enemyActions.poison;
+      }
+      /* dodge action */
+      if (enemyActions.dodge > 0) {
+        enemyCopy.tempBuff.avoidAttack += enemyActions.dodge;
+      }
+      /* vulnerability action */
+      if (enemyActions.vulnerability > 0) {
+        playerCopy.debuff.vulnerable += enemyActions.vulnerability;
+      }
+      /* weak action */
+      if (enemyActions.weak > 0) {
+        playerCopy.debuff.weak += enemyActions.weak;
+      }
+
+      setPlayerStats(playerCopy);
+      setEnemyStats(enemyCopy);
+      setFightTurns((prev) => prev + 1);
+      setTotalTurns((prev) => prev + 1);
+      setEnemyActionsResolution(false);
+      setStartPlayerTurn(true);
+    }
+  }, [enemyActionsResolution]);
+
+  // victoire et level up
+  useEffect(() => {
+    if (enemyStats.currentLife < 1) {
+      setLvlGame((prev) => prev + 1);
+    }
+  }, [enemyStats.currentLife]);
+  // Game Over
+  useEffect(() => {
+    if (playerStats.currentLife < 1) {
+      setLvlGame(7);
+    }
+  }, [playerStats.currentLife]);
+  // affichage changement de vie pour le joueur et l'ennemi
+
+  // console.log(render);
   return (
     <div>
       {(lvlGame === 0 || lvlGame === 2 || lvlGame === 4 || lvlGame === 6) && (
@@ -575,6 +659,30 @@ export default function Game() {
           </button>
         </div>
       )}
+      {(lvlGame === 1 || lvlGame === 3 || lvlGame === 5) && deckJeu && (
+        <>
+          <Board
+            playerStats={playerStats}
+            enemyStats={enemyStats}
+            enemyActions={enemyActions}
+            setEndPlayerTurn={setEndPlayerTurn}
+            fightTurns={fightTurns}
+          />
+          <Deck
+            champions={deckJeu}
+            startPlayerTurn={startPlayerTurn}
+            setStartPlayerTurn={setStartPlayerTurn}
+            setEnemyStats={setEnemyStats}
+            setPlayerStats={setPlayerStats}
+            playerStats={playerStats}
+            enemyStats={enemyStats}
+            setRender={setRender}
+            render={render}
+          />
+        </>
+      )}
+      {lvlGame === 2 && <div>Victoire le boss est vaincu !!!</div>}
+      {lvlGame === 7 && <div>Game Over !!!</div>}
     </div>
   );
 }
