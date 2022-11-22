@@ -1,0 +1,71 @@
+.player-stat {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 10vw;
+}
+.entoure-barredevie-player {
+  text-align: center;
+  border-color: black;
+  height: 7vh;
+  width: 15vw;
+  position: relative;
+  border-radius: 2rem;
+  border: 1px solid var(--secondary-color);
+  background-color: var(--bg-color-opacity);
+}
+.vie-player {
+  top: 0;
+  width: 20vw;
+  position: absolute;
+  height: 6.5vh;
+  border-radius: 2rem;
+  background: linear-gradient(blue, red);
+}
+.vie-text-player {
+  z-index: 1;
+  /* La largeur de l’élément */
+  /* La hauteur de l’élément */
+  /* Centrer verticalement et horizontalement */
+  position: absolute;
+  top: 55%;
+  left: 40%;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin: -15px; /* Appliquer des marges négatives aux propriétés top et left pour centrer parfaitement l’élément */
+}
+
+.block-player {
+  color: cadetblue;
+  left: -6%;
+  font-weight: bold;
+}
+
+.avoidAttack {
+  font-weight: bold;
+}
+.attackBuff {
+  color: greenyellow;
+  font-weight: bold;
+}
+.distribDown {
+  font-weight: Bold;
+}
+.playerLifeChange {
+  color: greenyellow;
+  left: 12%;
+  font-weight: bold;
+  position: relative;
+  top: 5vh;
+}
+.playerinferieur {
+  color: red;
+  left: 12%;
+  font-weight: bold;
+  position: relative;
+  top: 5vh;
+}
+
+.inLineBlockPlayer {
+  display: inline-block;
+}

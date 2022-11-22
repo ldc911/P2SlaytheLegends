@@ -4,6 +4,7 @@ import ModalDisplay from "../components/Game/ModalDisplay";
 import Deck from "../components/Game/Deck";
 import Board from "../components/Game/Board";
 import "../assets/css/Game.css";
+import Board from "../components/Game/Board";
 
 export default function Game() {
   const [render, setRender] = useState(false);
@@ -523,8 +524,8 @@ export default function Game() {
       {(lvlGame === 1 || lvlGame === 3 || lvlGame === 5) && deckJeu && (
         <>
           <Board
-            playerStats={playerStats}
-            enemyStats={enemyStats}
+            player={playerStats}
+            enemy={enemyStats}
             enemyActions={enemyActions}
             setEndPlayerTurn={setEndPlayerTurn}
             fightTurns={fightTurns}
@@ -546,9 +547,7 @@ export default function Game() {
           />
         </>
       )}
-      {lvlGame === 2 && <div>Victoire le boss est vaincu 1!!!</div>}
-      {lvlGame === 4 && <div>Victoire le boss est vaincu 2!!!</div>}
-      {lvlGame === 7 && (
+          {lvlGame === 7 && (
         <div className="Game-Over">
           <p
             style={{
