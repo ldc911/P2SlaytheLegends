@@ -4,7 +4,6 @@ import ModalDisplay from "../components/Game/ModalDisplay";
 import Deck from "../components/Game/Deck";
 import Board from "../components/Game/Board";
 import "../assets/css/Game.css";
-import Board from "../components/Game/Board";
 
 export default function Game() {
   const [render, setRender] = useState(false);
@@ -492,9 +491,8 @@ export default function Game() {
     }
   }, [playerStats.currentLife]);
   // affichage changement de vie pour le joueur et l'ennemi
-
   return (
-    <div>
+    <div className="Game-Arena">
       {(lvlGame === 0 || lvlGame === 2 || lvlGame === 4 || lvlGame === 6) && (
         <ModalDisplay
           setDeckJeu={setDeckJeu}
@@ -547,7 +545,7 @@ export default function Game() {
           />
         </>
       )}
-          {lvlGame === 7 && (
+      {lvlGame === 7 && (
         <div className="Game-Over">
           <p
             style={{
