@@ -19,6 +19,7 @@ export default function Game() {
   const [enemyLifeChange, setEnemyLifeChange] = useState(0);
   const [prevPlayerLife, setPrevPlayerLife] = useState(100);
   const [prevEnemyLife, setPrevEnemyLife] = useState(200);
+  const [item, setItem] = useState({});
   // Objet représentant le joueur test
   const [playerStats, setPlayerStats] = useState({
     currentLife: 100,
@@ -502,6 +503,7 @@ export default function Game() {
         <ModalDisplay
           setDeckJeu={setDeckJeu}
           setLvlGame={setLvlGame}
+          lvlGame={lvlGame}
           setStartPlayerTurn={setStartPlayerTurn}
           setEndPlayerTurn={setEndPlayerTurn}
           setEnemyActionsResolution={setEnemyActionsResolution}
@@ -520,6 +522,7 @@ export default function Game() {
           enemyLvl5={enemyLvl5}
           setPrevPlayerLife={setPrevPlayerLife}
           setPrevEnemyLife={setPrevEnemyLife}
+          setItem={setItem}
         />
       )}
       {(lvlGame === 1 || lvlGame === 3 || lvlGame === 5) && deckJeu && (

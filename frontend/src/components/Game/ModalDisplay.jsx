@@ -29,6 +29,7 @@ export default function ModalDisplay({
   actionEnemyLvl5,
   setPrevPlayerLife,
   setPrevEnemyLife,
+  setItem,
 }) {
   const [startGame, setStartGame] = useState(0);
   const deckDepart = [];
@@ -66,6 +67,7 @@ export default function ModalDisplay({
             actionEnemyLvl3={actionEnemyLvl3}
             setPrevPlayerLife={setPrevPlayerLife}
             setPrevEnemyLife={setPrevEnemyLife}
+            setitem={setItem}
           />
         </div>
       )}
@@ -334,6 +336,7 @@ ModalDisplay.propTypes = {
   setPlayerStats: PropTypes.func,
   setPrevPlayerLife: PropTypes.func,
   setPrevEnemyLife: PropTypes.func,
+  setItem: PropTypes.func,
 };
 
 ModalDisplay.defaultProps = {
@@ -565,4 +568,5 @@ ModalDisplay.defaultProps = {
   setPlayerStats: () => {},
   setPrevPlayerLife: () => {},
   setPrevEnemyLife: () => {},
+  setItem: () => {},
 };

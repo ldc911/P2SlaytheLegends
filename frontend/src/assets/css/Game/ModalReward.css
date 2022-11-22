@@ -24,3 +24,8 @@
   justify-content: center;
   margin-top: 10vh;
 }
+
+.ModalReward-winLogo {
+  max-height: 75vh;
+  cursor: url("../../cursor/cursor.cur"), auto;
+}

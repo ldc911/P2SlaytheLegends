@@ -23,6 +23,7 @@ export default function ModalFirstReward({
   actionEnemyLvl3,
   setPrevPlayerLife,
   setPrevEnemyLife,
+  setItem,
 }) {
   const [selected, setSelected] = useState({});
   const [idSelectedCard, setIdSelectedCard] = useState();
@@ -77,7 +78,7 @@ export default function ModalFirstReward({
 
   const validReward = () => {
     setPlayerStats(modifyPlayer(playerStats));
-    setSelected({});
+    setItem(selected);
     setIdSelectedCard();
     setStartPlayerTurn(false);
     setEndPlayerTurn(false);
@@ -275,6 +276,7 @@ ModalFirstReward.propTypes = {
   setPlayerStats: PropTypes.func,
   setPrevPlayerLife: PropTypes.func,
   setPrevEnemyLife: PropTypes.func,
+  setItem: PropTypes.func,
 };
 ModalFirstReward.defaultProps = {
   reward: {
@@ -419,4 +421,5 @@ ModalFirstReward.defaultProps = {
   setPlayerStats: () => {},
   setPrevPlayerLife: () => {},
   setPrevEnemyLife: () => {},
+  setItem: () => {},
 };

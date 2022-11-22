@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import lolLogo from "../../../assets/img/Game/lol_logo.png";
+import victoryLogo from "../../../assets/img/Game/victory.png";
 
 export default function ModalWin() {
   return (
@@ -7,7 +7,7 @@ export default function ModalWin() {
       <h1>FELICITATIONS !</h1>
       <h1>VOUS AVEZ VAINCU.</h1>
       <Link className="Modale-link" to="/">
-        <img src={lolLogo} alt="lol_logo" />
+        <img src={victoryLogo} alt="victory" className="ModalReward-winLogo" />
       </Link>
     </div>
   );

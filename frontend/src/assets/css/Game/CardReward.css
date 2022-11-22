@@ -24,4 +24,5 @@
   min-width: 75px;
   max-width: 125px;
   border : 1px solid var(--secondary-color);
+  cursor: url("../../cursor/cursor.cur"), auto;
 }
