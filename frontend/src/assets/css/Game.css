@@ -1,41 +1,34 @@
-.game-bottom {
-  position: fixed;
-  bottom: 0;
-  height: 20vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-.drag-drop-zone button {
-  position: fixed;
-  right: 5vw;
-  bottom: 30vh;
-}
+@media screen and (max-width: 875px) {
+  .landscape {
 
-.game-bottom img {
-  height: 15vh;
+  }
 }
-
-.drag-drop-zone {
-  padding: 2rem;
-  text-align: center;
-  background: #07f;
-  border-radius: 0.5rem;
-  box-shadow: 5px 5px 10px #c0c0c0;
-  backgroundcolor: transparent;
-  border: red solid 1px;
-  position: fixed;
-  margin: calc(30vh - 100px) 35vw;
-  width: 40vh;
-  height: 40vh;
-}
-.drag-drop-zone p {
-  color: #fff;
+.Game-Arena{
+  width:100vw;
+  height:100vh;
+  background-image: url("../img/Game/arena.png");  
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 100% auto;
 }
 .drag-drop-zone.inside-drag-area {
   opacity: 0.7;
+}
+
+
+.Game-Arena{
+  width:100vw;
+  height:100vh;
+  background-image: url("../img/Game/arena.png");  
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 100% auto;
+}
+.Game-Over{
+  width:100vw;
+  height:100vh;
+  background-image: url("../img/Game/defeat.png");  
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 50% auto;
 }

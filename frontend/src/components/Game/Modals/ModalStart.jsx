@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import "../../assets/css/Game/ModalDraft.css";
+import "../../../assets/css/Game/ModalDraft.css";
 
 export default function ModalStart({ setStartGame }) {
   return (
@@ -17,7 +17,7 @@ export default function ModalStart({ setStartGame }) {
           QUIT GAME
         </button>
       </Link>
-      <Link className="Modale-link" to="/score">
+      <Link className="Modale-link" to="/scores">
         <button type="button" className="Modale-validate">
           SCORE
         </button>
