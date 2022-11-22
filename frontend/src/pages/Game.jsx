@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ModalDisplay from "../components/Game/ModalDisplay";
@@ -19,6 +18,7 @@ export default function Game() {
   const [enemyLifeChange, setEnemyLifeChange] = useState(0);
   const [prevPlayerLife, setPrevPlayerLife] = useState(100);
   const [prevEnemyLife, setPrevEnemyLife] = useState(200);
+  // eslint-disable-next-line no-unused-vars
   const [item, setItem] = useState({});
   // Objet représentant le joueur test
   const [playerStats, setPlayerStats] = useState({
@@ -164,153 +164,149 @@ export default function Game() {
   };
   // objet représentant les actions possibles de l'ennemi 2
   const actionEnemyLvl3 = [
-    [
-      {
-        attack: 25,
-        poison: 0,
-        block: 0,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `25 Damages`,
-      },
-      {
-        attack: 15,
-        poison: 0,
-        block: 15,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `15 Damages / 15 Block`,
-      },
-      {
-        attack: 0,
-        poison: 0,
-        block: 25,
-        avoidAttack: 0,
-        vulne: 1,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `25 Block / 1 Vulne`,
-      },
-      {
-        attack: 30,
-        poison: 0,
-        block: 10,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `30 Damages / 10 Block`,
-      },
-      {
-        attack: 25,
-        poison: 0,
-        block: 0,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: true,
-        distribDown: 0,
-        displayedActions: `25 Damages / Leech Life`,
-      },
-    ],
+    {
+      attack: 25,
+      poison: 0,
+      block: 0,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `25 Damages`,
+    },
+    {
+      attack: 15,
+      poison: 0,
+      block: 15,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `15 Damages / 15 Block`,
+    },
+    {
+      attack: 0,
+      poison: 0,
+      block: 25,
+      avoidAttack: 0,
+      vulne: 1,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `25 Block / 1 Vulne`,
+    },
+    {
+      attack: 30,
+      poison: 0,
+      block: 10,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `30 Damages / 10 Block`,
+    },
+    {
+      attack: 25,
+      poison: 0,
+      block: 0,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: true,
+      distribDown: 0,
+      displayedActions: `25 Damages / Leech Life`,
+    },
   ];
   // objet représentant les actions possibles de l'ennemi 3
   const actionEnemyLvl5 = [
-    [
-      {
-        attack: 30,
-        poison: 0,
-        block: 15,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `30 Damages / 15 Block`,
-      },
-      {
-        attack: 0,
-        poison: 5,
-        block: 15,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `5 Poison / 15 Block`,
-      },
-      {
-        attack: 40,
-        poison: 0,
-        block: 0,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: true,
-        distribDown: 0,
-        displayedActions: `40 Damages / Leech Life`,
-      },
-      {
-        attack: 0,
-        poison: 0,
-        block: 0,
-        avoidAttack: 1,
-        vulne: 0,
-        weak: 1,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `1 Dodge / 1 Weak`,
-      },
-      {
-        attack: 30,
-        poison: 0,
-        block: 20,
-        avoidAttack: 0,
-        vulne: 0,
-        weak: 0,
-        attackBuff: 0,
-        blockBuff: 0,
-        drawDebuff: 0,
-        leech: false,
-        distribDown: 0,
-        displayedActions: `30 Damages / 20 Block`,
-      },
-    ],
+    {
+      attack: 30,
+      poison: 0,
+      block: 15,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `30 Damages / 15 Block`,
+    },
+    {
+      attack: 0,
+      poison: 5,
+      block: 15,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `5 Poison / 15 Block`,
+    },
+    {
+      attack: 40,
+      poison: 0,
+      block: 0,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: true,
+      distribDown: 0,
+      displayedActions: `40 Damages / Leech Life`,
+    },
+    {
+      attack: 0,
+      poison: 0,
+      block: 0,
+      avoidAttack: 1,
+      vulne: 0,
+      weak: 1,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `1 Dodge / 1 Weak`,
+    },
+    {
+      attack: 30,
+      poison: 0,
+      block: 20,
+      avoidAttack: 0,
+      vulne: 0,
+      weak: 0,
+      attackBuff: 0,
+      blockBuff: 0,
+      drawDebuff: 0,
+      leech: false,
+      distribDown: 0,
+      displayedActions: `30 Damages / 20 Block`,
+    },
   ];
   // fonctions--------------------------------------------------
   const startPlayerTurnActionsForPlayer = (player) => {
@@ -496,91 +492,6 @@ export default function Game() {
     }
   }, [playerStats.currentLife]);
   // affichage changement de vie pour le joueur et l'ennemi
-
-  // actions de enemy
-  useEffect(() => {
-    if (enemyActionsResolution) {
-      const playerCopy = playerStats;
-      const enemyCopy = enemyStats;
-      /* Attack action */
-      if (enemyActions.attack > 0) {
-        if (playerCopy.tempBuff.avoidAttack === 0) {
-          let damage = Math.round(
-            (enemyActions.attack + enemyCopy.fullCombatBuff.attackBuff) *
-              (playerCopy.debuff.vulnerable > 0 ? 1.25 : 1) *
-              (enemyCopy.debuff.weak > 0 ? 0.5 : 1)
-          );
-          if (playerCopy.tempBuff.block > 0) {
-            if (damage > playerCopy.tempBuff.block) {
-              damage -= playerCopy.tempBuff.block;
-              playerCopy.tempBuff.block = 0;
-              playerCopy.currentLife -= damage;
-              if (enemyActions.leech) {
-                enemyCopy.currentLife += damage;
-                if (enemyCopy.currentLife > enemyCopy.maxLife) {
-                  enemyCopy.currentLife = enemyCopy.maxLife;
-                }
-              }
-            } else {
-              playerCopy.tempBuff.block -= damage;
-            }
-          } else {
-            playerCopy.currentLife -= damage;
-            if (enemyActions.leech) {
-              enemyCopy.currentLife += damage;
-              if (enemyCopy.currentLife > enemyCopy.maxLife) {
-                enemyCopy.currentLife = enemyCopy.maxLife;
-              }
-            }
-          }
-        } else playerCopy.tempBuff.avoidAttack -= 1;
-      }
-      /* block action */
-      if (enemyActions.block > 0) {
-        enemyCopy.tempBuff.block +=
-          enemyActions.block + enemyCopy.fullCombatBuff.blockBuff;
-      }
-      /* poison action */
-      if (enemyActions.poison > 0) {
-        playerCopy.debuff.poison += enemyActions.poison;
-      }
-      /* dodge action */
-      if (enemyActions.dodge > 0) {
-        enemyCopy.tempBuff.avoidAttack += enemyActions.dodge;
-      }
-      /* vulnerability action */
-      if (enemyActions.vulnerability > 0) {
-        playerCopy.debuff.vulnerable += enemyActions.vulnerability;
-      }
-      /* weak action */
-      if (enemyActions.weak > 0) {
-        playerCopy.debuff.weak += enemyActions.weak;
-      }
-
-      setPlayerStats(playerCopy);
-      setEnemyStats(enemyCopy);
-      setFightTurns((prev) => prev + 1);
-      setTotalTurns((prev) => prev + 1);
-      setEnemyActionsResolution(false);
-      setStartPlayerTurn(true);
-    }
-  }, [enemyActionsResolution]);
-
-  // victoire et level up
-  useEffect(() => {
-    if (enemyStats.currentLife < 1) {
-      setLvlGame((prev) => prev + 1);
-    }
-  }, [enemyStats.currentLife]);
-  // Game Over
-  useEffect(() => {
-    if (playerStats.currentLife < 1) {
-      setLvlGame(7);
-    }
-  }, [playerStats.currentLife]);
-  // affichage changement de vie pour le joueur et l'ennemi
-
-  // console.log(render);
   return (
     <div>
       {(lvlGame === 0 || lvlGame === 2 || lvlGame === 4 || lvlGame === 6) && (
@@ -659,30 +570,6 @@ export default function Game() {
           </button>
         </div>
       )}
-      {(lvlGame === 1 || lvlGame === 3 || lvlGame === 5) && deckJeu && (
-        <>
-          <Board
-            playerStats={playerStats}
-            enemyStats={enemyStats}
-            enemyActions={enemyActions}
-            setEndPlayerTurn={setEndPlayerTurn}
-            fightTurns={fightTurns}
-          />
-          <Deck
-            champions={deckJeu}
-            startPlayerTurn={startPlayerTurn}
-            setStartPlayerTurn={setStartPlayerTurn}
-            setEnemyStats={setEnemyStats}
-            setPlayerStats={setPlayerStats}
-            playerStats={playerStats}
-            enemyStats={enemyStats}
-            setRender={setRender}
-            render={render}
-          />
-        </>
-      )}
-      {lvlGame === 2 && <div>Victoire le boss est vaincu !!!</div>}
-      {lvlGame === 7 && <div>Game Over !!!</div>}
     </div>
   );
 }

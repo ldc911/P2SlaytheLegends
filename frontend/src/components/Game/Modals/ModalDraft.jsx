@@ -256,7 +256,10 @@ export default function ModalDraft({
             );
           })
         ) : (
-          <div className="Deck-Complete" />
+          <div className="Deck-Complete">
+            <h1>PREPAREZ-VOUS</h1>
+            <h1>LE PREMIER ADVERSAIRE VOUS ATTEND</h1>
+          </div>
         )}
       </div>
       {deckDepart.length < 12 ? (
@@ -318,7 +321,7 @@ ModalDraft.propTypes = {
   setDeckJeu: PropTypes.func,
   setLvlGame: PropTypes.func,
   setStartGame: PropTypes.func,
-  deckDepart: PropTypes.arrayOf,
+  deckDepart: PropTypes.arrayOf(PropTypes.shape),
 };
 
 ModalDraft.defaultProps = {
