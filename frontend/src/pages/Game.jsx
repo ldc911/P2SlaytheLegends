@@ -19,6 +19,7 @@ export default function Game() {
   const [enemyLifeChange, setEnemyLifeChange] = useState(0);
   const [prevPlayerLife, setPrevPlayerLife] = useState(100);
   const [prevEnemyLife, setPrevEnemyLife] = useState(200);
+  const [item, setItem] = useState({});
   // Objet représentant le joueur test
   const [playerStats, setPlayerStats] = useState({
     currentLife: 100,
@@ -497,7 +498,7 @@ export default function Game() {
   // affichage changement de vie pour le joueur et l'ennemi
 
   return (
-    <div>
+    <div className="Game-Arena">
       {lvlGame === 0 && (
         <ModalDisplay setDeckJeu={setDeckJeu} setLvlGame={setLvlGame} />
       )}
@@ -511,6 +512,8 @@ export default function Game() {
             fightTurns={fightTurns}
             playerLifeChange={playerLifeChange}
             enemyLifeChange={enemyLifeChange}
+            item={item}
+            lvlGame={lvlGame}
           />
           <Deck
             champions={deckJeu}
@@ -529,8 +532,14 @@ export default function Game() {
       {lvlGame === 4 && <div>Victoire le boss est vaincu 2!!!</div>}
       {lvlGame === 7 && (
         <div className="Game-Over">
-          <p style={{ paddingTop: "2%", paddingLeft: "2%" }}>
-            vous avez échoué après {totalTurns} tours
+          <p
+            style={{
+              paddingTop: "2%",
+              paddingLeft: "2%",
+              color: "#c89d3e",
+            }}
+          >
+            Vous avez échoué après {totalTurns} tours
           </p>
           <Link className="Modale-link" to="/">
             <button
