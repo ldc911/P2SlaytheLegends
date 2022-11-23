@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-shadow */
-/* eslint-disable no-unused-vars */
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import "../../assets/css/Game/player.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
