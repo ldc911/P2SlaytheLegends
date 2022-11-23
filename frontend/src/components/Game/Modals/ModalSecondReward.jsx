@@ -34,7 +34,7 @@ export default function ModalSecondReward({
     newPlayerStats.debuff.vulnerable = 0;
     newPlayerStats.debuff.weak = 0;
     newPlayerStats.debuff.poison = 0;
-    newPlayerStats.debuff.distribDown = 0;
+    newPlayerStats.debuff.distribDown = -1;
     newPlayerStats.drawCard = 0;
     return newPlayerStats;
   };
@@ -257,7 +257,7 @@ ModalSecondReward.defaultProps = {
       vulnerable: 0,
       weak: 0,
       poison: 0,
-      distribDown: 0,
+      distribDown: -1,
     },
     drawCard: 0,
     startDistrib: 0,
@@ -293,7 +293,7 @@ ModalSecondReward.defaultProps = {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `30 Damages / 15 Block`,
     },
     {
@@ -307,7 +307,7 @@ ModalSecondReward.defaultProps = {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `5 Poison / 15 Block`,
     },
     {
@@ -321,7 +321,7 @@ ModalSecondReward.defaultProps = {
       blockBuff: 0,
       drawDebuff: 0,
       leech: true,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `40 Damages / Leech Life`,
     },
     {
@@ -335,7 +335,7 @@ ModalSecondReward.defaultProps = {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `1 Dodge / 1 Weak`,
     },
     {
@@ -349,7 +349,7 @@ ModalSecondReward.defaultProps = {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `30 Damages / 20 Block`,
     },
   ],

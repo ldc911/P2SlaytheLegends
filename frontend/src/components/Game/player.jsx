@@ -29,7 +29,7 @@ library.add(
   faHeart
 );
 
-export default function player({ player, playerLifeChange }) {
+export default function Player({ player, playerLifeChange }) {
   return (
     <div className="player-stat">
       <div className="Top-Player">
@@ -135,13 +135,13 @@ export default function player({ player, playerLifeChange }) {
               {player.debuff.poison > 0 && `${player.debuff.poison}`}{" "}
             </span>
           )}
-          {player.debuff.distribDown > 0 && (
+          {player.debuff.distribDown > -1 && (
             <span className="distribDown">
               <FontAwesomeIcon
                 icon="fa-solid fa-hand-point-down"
                 title="Reçoit 1 carte de moins au début du tour"
               />
-              {player.debuff.distribDown > 0 && `${player.debuff.distribDown}`}
+              {player.debuff.distribDown > -1 && `${player.debuff.distribDown + 1}`}
             </span>
           )}
         </div>
