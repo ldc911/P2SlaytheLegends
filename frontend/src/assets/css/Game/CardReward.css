@@ -1,0 +1,28 @@
+.ModalReward-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20vh;
+}
+
+.CardReward-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2vh;
+}
+
+.cardSelected {
+  transform: scale(1.2);
+}
+
+.CardReward-stats {
+  height: 4em;
+}
+
+.CardReward-pic {
+  width: 10vw;
+  min-width: 75px;
+  max-width: 125px;
+  border: 1px solid var(--secondary-color);
+  cursor: url("../../cursor/cursor.cur"), auto;
+}

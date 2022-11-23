@@ -1,0 +1,101 @@
+.modalLibBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(200, 200, 200, 0.7);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0px;
+  border: none;
+  white-space: normal;
+  z-index: 15;
+}
+
+.modalLibContainer {
+  width: 70%;
+  height: 70%;
+  border-radius: 12px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border: none;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  scrollbar-color: rebeccapurple green;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .modalLibContainer {
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+  .modalLibContainer {
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 80%;
+    height: 80%;
+  }
+}
+
+.modalLibContainer .modalLibTitle {
+  text-align: center;
+  color: #c89d3e;
+  font-size: 2.5rem;
+}
+
+.modalLibContainer .modalLibTitle h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.modalLibTitleCloseBtn {
+  display: flex;
+  justify-content: flex-end;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #c89d3e;
+}
+
+.modalLibContainer .modalLibBody {
+  flex: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7rem;
+  text-align: center;
+  color: #c89d3e;
+}
+
+.modalLibBody p {
+  background-color: #171726cc;
+  border-radius: 10px;
+  padding: 2%;
+}
+
+.modalLibContainer .footer {
+  flex: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

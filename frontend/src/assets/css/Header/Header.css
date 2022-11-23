@@ -1,0 +1,12 @@
+header {
+  max-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerLogo {
+  max-height: 70px;
+  height: 20vmin;
+  margin-left: 5%;
+}

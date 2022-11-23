@@ -1,0 +1,167 @@
+.libWrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+}
+
+.Library-filterbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--bg-color-opacity);
+  border-radius: 8px;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+/* <<<<<menu de recherche>>>>> */
+#search {
+  height: 2rem;
+  width: 10vw;
+  min-width: 5rem;
+  max-width: 10rem;
+  border: none;
+  border-radius: 5px;
+  margin-right: 0.1rem;
+  padding-left: 5px;
+  cursor: url("../cursor/text.cur"), auto;
+}
+
+/* .Search-menu {
+  display: flex;
+  align-items: center;
+} */
+
+.Search-icon {
+  display: none;
+}
+
+/* <<<<<menus déroulants>>>>> */
+.Filter-head {
+  border-left: 1px solid var(--secondary-color);
+  border-right: 1px solid var(--secondary-color);
+  width: 22vw;
+  min-width: 5rem;
+  text-align: center;
+}
+
+/* carac spécifique du main bouton du menu déroulant */
+.Filter-head button {
+  font-weight: bolder;
+}
+
+.Filter-list {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color-opacity);
+  width: 22vw;
+  z-index: 5;
+}
+
+.Filter-list-none {
+  display: none;
+}
+
+/* carac communes boutons */
+.Filter-list button,
+.Filter-list-widescreen button {
+  border-left: 1px solid var(--secondary-color);
+  border-right: 1px solid var(--secondary-color);
+  padding-top: 0.4rem;
+}
+
+/*carac spécifique du menu déroulant*/
+.Filter-list button {
+  width: 22vw;
+  min-width: 5rem;
+}
+
+.Filter-list button:last-child {
+  padding-bottom: 0.4rem;
+}
+
+.Filter-list button:hover {
+  background-color: var(--bg-color);
+  font-size: medium;
+}
+
+@media screen and (min-width: 800px) {
+  #search {
+    height: 2rem;
+    width: 12vw;
+    min-width: 5vw;
+    max-width: 10rem;
+    border: none;
+    border-radius: 5px;
+    margin-right: 0.1rem;
+    padding-left: 5px;
+  }
+
+  .Search-menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .Search-icon {
+    display: block;
+    max-height: 30px;
+    margin-right: 1rem;
+  }
+
+  .Filter-head button {
+    display: none;
+  }
+
+  .Filter-head {
+    border: none;
+  }
+
+  .Filter-list-widescreen button:hover {
+    background-color: var(--bg-color);
+    transform: scale(1.1);
+  }
+
+  .Filter-list-widescreen button {
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    padding-bottom: 0.2rem;
+    font-size: calc(0.6rem + 0.4vw);
+  }
+
+  .Filter-list-widescreen button:last-child {
+    border-right: 2px solid var(--secondary-color);
+  }
+
+  .Filter-list-widescreen button:first-child {
+    border-left: 2px solid var(--secondary-color);
+  }
+
+  .Filter-selected {
+    color: var(--secondary-color);
+    font-weight: bold;
+  }
+}
+
+/*Affichage des cartes dans la bibliothèque*/
+.libDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1vw;
+  border-top: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 4vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  scrollbar-color: rebeccapurple green;
+  scrollbar-width: thin;
+}

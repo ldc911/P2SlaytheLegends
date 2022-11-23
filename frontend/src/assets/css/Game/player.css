@@ -1,0 +1,75 @@
+.player-stat {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 2vw;
+  width: 15%;
+  top: 15%;
+}
+.Top-Player {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.entoure-barredevie-player {
+  text-align: center;
+  border-color: black;
+  height: 5vh;
+  width: 15vw;
+  position: relative;
+  border-radius: 2rem;
+  border: 1px solid var(--secondary-color);
+  background-color: var(--bg-color-opacity);
+}
+.vie-player {
+  top: 0;
+  width: 20vw;
+  position: absolute;
+  height: 4.5vh;
+  border-radius: 2rem;
+  background: linear-gradient(blue, red);
+}
+.vie-text-player {
+  z-index: 1;
+  position: relative;
+  font-size: 1rem;
+  margin: auto;
+}
+
+.block-player {
+  color: cadetblue;
+  left: -6%;
+  font-weight: bold;
+}
+
+.avoidAttack {
+  font-weight: bold;
+  color: cadetblue;
+}
+.attackBuff {
+  color: cadetblue;
+  font-weight: bold;
+}
+.distribDown {
+  font-weight: Bold;
+  color: red;
+}
+.playerLifeChange {
+  color: greenyellow;
+  font-weight: bold;
+  position: relative;
+}
+.playerinferieur {
+  color: red;
+  font-weight: bold;
+  position: relative;
+}
+
+.inLineBlockPlayer {
+  display: inline-block;
+}
+@media screen and (max-width: 1024px) {
+  .player-stat {
+    top: 2%;
+  }
+}

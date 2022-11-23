@@ -1,0 +1,195 @@
+/* https://javisperez.github.io/tailwindcolorshades/?scampi=5456a3&smalt=262d88 /
+/ https://javisperez.github.io/tailwindcolorshades/?corn-harvest=9a7423&marigold=c89d3e */
+
+@font-face {
+  font-family: "BeaufortforLOL-Bold";
+  src: url("../fonts/beaufort-for-lol/12420e8c141ca7c3dff41de2d59df13e.eot");
+  src: url("../fonts/beaufort-for-lol/12420e8c141ca7c3dff41de2d59df13e.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/beaufort-for-lol/12420e8c141ca7c3dff41de2d59df13e.woff2")
+      format("woff2"),
+    url("../fonts/beaufort-for-lol/12420e8c141ca7c3dff41de2d59df13e.woff")
+      format("woff"),
+    url("../fonts/beaufort-for-lol/12420e8c141ca7c3dff41de2d59df13e.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/12420e8c141ca7c3dff41de2d59df13e.svg#BeaufortforLOL-Bold")
+      format("svg");
+}
+
+@font-face {
+  font-family: "Spiegle-Bold";
+  src: url("../fonts/spiegel/spiegel.ttf");
+  /* src: url("../fonts/spiegel/spiegel-bold.ttf"); */
+}
+
+:root {
+  --primary-color: #5456a3;
+  --secondary-color: #c89d3e;
+  --font-color: #e1e1ff;
+  --bg-color: #161625;
+  --bg-color-opacity: #161625cc;
+  /* CC = 0.8 opacity 80% */
+  --bg-color-hsla: 240, 25%, 12%;
+  --heading-color: #818cab;
+  /* Font */
+  --space: 8vmin;
+  --font-primary: "Spiegle-Bold", sans-serif;
+  --font-heading: "BeaufortforLOL-Bold", serif;
+  /* img */
+  --logo-riot: url("../img/AboutRiot/Riot_Games_Logo_light.png");
+  --logo-central: url("../img/HomeMenu/bouton_central.svg");
+}
+
+[data-theme="light"] {
+  --primary-color: #262d88;
+  --secondary-color: #9a7423;
+  --font-color: #1e1e00;
+  --bg-color: #e6dcc8;
+  --bg-color-opacity: #e6dcc8cc;
+  /* CC = 0.8 opacity 80% */
+  --bg-color-hsla: 40, 38%, 84%;
+  --heading-color: #292922;
+  /* img */
+  --logo-riot: url("https://upload.wikimedia.org/wikipedia/fr/7/7c/Riot_Games_Logo.png");
+  --logo-central: url("./src/assets/img/HomeMenu/bouton_central_light.svg");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  cursor: url("../cursor/normal.cur"), auto;
+  font-family: var(--font-primary);
+  font-size: calc(1rem + 0.25vh);
+  /*font-size: clamp(1.2rem, 5vw, 1.5rem);*/
+  line-height: 1.5;
+
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  max-width: 100%;
+  margin: 0 auto;
+
+  /* //full bg image // */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+hr {
+  border-top: 1px solid var(--secondary-color);
+}
+
+br {
+  line-height: 1.5;
+}
+
+p {
+  margin-bottom: 0.8em;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+main.pagecontent {
+  background-color: var(--bg-color-opacity);
+  width: 90vw;
+  height: calc(97vh - 140px);
+  padding: 2vw;
+  margin: 2vh auto 2vh auto;
+  border-radius: 15px;
+}
+
+.main-content {
+  width: 100%;
+  min-height: 100%;
+}
+
+h1 {
+  font-family: var(--font-heading);
+}
+
+.backgrount-image-body::before {
+  content: "";
+  z-index: -1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(
+    to bottom,
+    hsla(var(--bg-color-hsla), 0) 0%,
+    hsla(var(--bg-color-hsla), 0.013) 8.1%,
+    hsla(var(--bg-color-hsla), 0.049) 15.5%,
+    hsla(var(--bg-color-hsla), 0.104) 22.5%,
+    hsla(var(--bg-color-hsla), 0.175) 29%,
+    hsla(var(--bg-color-hsla), 0.259) 35.3%,
+    hsla(var(--bg-color-hsla), 0.352) 41.2%,
+    hsla(var(--bg-color-hsla), 0.45) 47.1%,
+    hsla(var(--bg-color-hsla), 0.55) 52.9%,
+    hsla(var(--bg-color-hsla), 0.648) 58.8%,
+    hsla(var(--bg-color-hsla), 0.741) 64.7%,
+    hsla(var(--bg-color-hsla), 0.825) 71%,
+    hsla(var(--bg-color-hsla), 0.896) 77.5%,
+    hsla(var(--bg-color-hsla), 0.951) 84.5%,
+    hsla(var(--bg-color-hsla), 0.987) 91.9%,
+    hsl(var(--bg-color-hsla)) 100%
+  );
+}
+
+.backgrount-image-body::after {
+  content: "";
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15%;
+  background: linear-gradient(
+    to top,
+    hsla(var(--bg-color-hsla), 0) 0%,
+    hsla(var(--bg-color-hsla), 0.013) 8.1%,
+    hsla(var(--bg-color-hsla), 0.049) 15.5%,
+    hsla(var(--bg-color-hsla), 0.104) 22.5%,
+    hsla(var(--bg-color-hsla), 0.175) 29%,
+    hsla(var(--bg-color-hsla), 0.259) 35.3%,
+    hsla(var(--bg-color-hsla), 0.352) 41.2%,
+    hsla(var(--bg-color-hsla), 0.45) 47.1%,
+    hsla(var(--bg-color-hsla), 0.55) 52.9%,
+    hsla(var(--bg-color-hsla), 0.648) 58.8%,
+    hsla(var(--bg-color-hsla), 0.741) 64.7%,
+    hsla(var(--bg-color-hsla), 0.825) 71%,
+    hsla(var(--bg-color-hsla), 0.896) 77.5%,
+    hsla(var(--bg-color-hsla), 0.951) 84.5%,
+    hsla(var(--bg-color-hsla), 0.987) 91.9%,
+    hsl(var(--bg-color-hsla)) 100%
+  );
+}
+
+button {
+  font-family: var(--font-primary);
+  font-size: calc(0.6rem + 1vw);
+  color: var(--font-color);
+  white-space: nowrap;
+  background: none;
+  border: none;
+  text-align: center;
+  cursor: url("../cursor/cursor.cur"), auto;
+  overflow: hidden;
+  outline: none;
+}
+
+@media screen and (max-height: 500px) {
+  main.pagecontent {
+    height: calc(97vh - 70px);
+  }
+}

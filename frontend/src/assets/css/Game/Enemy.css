@@ -1,0 +1,109 @@
+.enemy-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  margin: auto;
+  margin-top: 2vh;
+  margin-bottom: 0px;
+  z-index: 1;
+}
+
+.Top-Enemy {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.entoure-barredevie-enemy {
+  text-align: center;
+  height: 5vh;
+  width: 100%;
+  position: relative;
+  border-radius: 2rem;
+  border: 1px solid var(--secondary-color);
+  background-color: var(--bg-color-opacity);
+}
+.vie-enemy {
+  top: 0;
+  width: 20vw;
+  position: absolute;
+  height: 4.5vh;
+  border-radius: 2rem;
+  background: linear-gradient(blue, red);
+}
+.vie-text-enemy {
+  z-index: 1;
+  margin: auto;
+  position: relative;
+}
+.enemyLifeChange {
+  color: greenyellow;
+  font-weight: bold;
+  position: relative;
+}
+.enemyinferieur {
+  color: red;
+  font-weight: bold;
+  position: relative;
+}
+
+.vidediv {
+  z-index: 1;
+}
+.block-enemy {
+  color: cadetblue;
+  font-weight: bold;
+  position: relative;
+}
+
+.AttackBuff {
+  color: cadetblue;
+  font-weight: bold;
+}
+.blockBuff {
+  color: cadetblue;
+  font-weight: bold;
+}
+.vulnerable {
+  color: rgb(247, 19, 19);
+  font-weight: bold;
+}
+.weak {
+  font-weight: bold;
+  color: rgb(247, 19, 19);
+}
+.poison {
+  font-weight: bold;
+  color: rgb(247, 19, 19);
+}
+.avoidAttack {
+  font-weight: bold;
+  color: cadetblue;
+}
+.inLineBlockEnemy {
+  display: inline-block;
+}
+.resist-phys {
+  color: purple;
+}
+
+.resist-magic {
+  color: purple;
+}
+
+.resist-poison {
+  color: purple;
+}
+
+.Boss-Description-container {
+  position: fixed;
+  top: 11%;
+  right: 1%;
+  height: 5vh;
+  width: 30vw;
+}
+.Boss-Description {
+  margin: 0px;
+  font-size: 1rem;
+  white-space: wrap;
+}

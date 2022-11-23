@@ -1,0 +1,107 @@
+/* /// Drop Zone */
+.drag-drop-zone button {
+  position: fixed;
+  right: 5vw;
+  bottom: 30vh;
+}
+.drag-drop-zone {
+  top: 0;
+  position: fixed;
+  margin: calc(39vh - 99px) 19vw;
+  width: 50vw;
+  height: 350px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: center;
+}
+.drag-drop-zone:hover {
+  cursor: url("../../cursor/alt.cur"), auto;
+}
+.lvl1 .drag-drop-zone {
+  background-image: url("../../img/Game/dragon.png");
+}
+.lvl3 .drag-drop-zone {
+  background-image: url("../../img/Game/herald2.png");
+}
+.lvl5 .drag-drop-zone {
+  background-image: url("../../img/Game/nashor.png");
+}
+.drag-drop-zone p {
+  color: #fff;
+}
+
+.drag-drop-zone.inside-drag-area {
+  opacity: 0.7;
+}
+
+/* /// Containt Bottom */
+.game-bottom {
+  position: fixed;
+  bottom: 14vh;
+  height: 20vh;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+
+/* // CARTE dans Hand */
+.hand {
+  width: 90vw;
+  flex: 1;
+  padding: 0.5vw;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+
+.Card-Zone {
+}
+
+/* /// DrawPile et cimetery img */
+.infodumpcard {
+  position: absolute;
+  font-family: "BeaufortforLOL-Bold";
+  color: #c89d3e;
+  right: 5%;
+  margin-bottom: 0.8rem;
+  z-index: 1;
+}
+
+.infoparent {
+  position: relative;
+  width: fit-content;
+}
+
+.dumpcard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-end;
+  flex-wrap: nowrap;
+  margin: 2vw;
+}
+
+.drawpile img,
+.cimetery img {
+  height: 15vh;
+}
+
+.drawpile,
+.cimetery {
+  height: 100%;
+  padding: 2vw;
+  width: 10vw;
+}
+
+@media screen and (max-width: 875px) {
+  .hand {
+    flex-wrap: wrap;
+  }
+}
