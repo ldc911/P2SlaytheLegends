@@ -33,7 +33,23 @@ library.add(
   faVialCircleCheck
 );
 
-export default function Enemy({ enemy, enemyLifeChange }) {
+export default function Enemy({
+  enemy,
+  enemyLifeChange,
+  enemyDisplayedActions,
+  lvlGame,
+}) {
+  const enemyPassives = (lvl) => {
+    switch (lvl) {
+      case 3:
+        return "Tous les 3 tours l'Herald gagne 1 point de dégat";
+      case 5:
+      case 6:
+        return "Tous les 3 tours Nashor gagne 2 points de dégats et 2 point en resistance Physique, Magique et Poison";
+      default:
+        return "";
+    }
+  };
   return (
     <div className="enemy-stat">
       <div className="Top-Enemy">
@@ -179,6 +195,12 @@ export default function Enemy({ enemy, enemyLifeChange }) {
               </span>
             )}
           </span>
+        </div>
+        <div className="Boss-Description-container">
+          <p className="Boss-Description">
+            Prochaine Attaque: {enemyDisplayedActions}
+          </p>
+          <p className="Boss-Description">{enemyPassives(lvlGame)}</p>
         </div>
       </div>
     </div>

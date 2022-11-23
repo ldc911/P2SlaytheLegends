@@ -95,3 +95,16 @@
 .resist-poison{
   color:purple
 }
+
+.Boss-Description-container{
+  position: fixed;
+  top: 11%;
+  right: 1%;
+  height: 5vh;
+  width: 30vw;
+}
+.Boss-Description{
+  margin:0px;
+  font-size: 1rem;
+  white-space: wrap;
+}

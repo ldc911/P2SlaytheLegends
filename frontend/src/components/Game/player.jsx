@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-shadow */
 /* eslint-disable no-unused-vars */
@@ -29,7 +30,7 @@ library.add(
   faHeart
 );
 
-export default function player({ player, playerLifeChange }) {
+export default function Player({ player, playerLifeChange }) {
   return (
     <div className="player-stat">
       <div className="Top-Player">

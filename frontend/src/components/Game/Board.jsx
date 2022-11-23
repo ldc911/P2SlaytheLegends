@@ -13,10 +13,17 @@ export default function Board({
   fightTurns,
   playerLifeChange,
   enemyLifeChange,
+  enemyDisplayedActions,
+  lvlGame,
 }) {
   return (
     <div className="board-container">
-      <Enemy enemy={enemy} enemyLifeChange={enemyLifeChange} />
+      <Enemy
+        enemy={enemy}
+        enemyLifeChange={enemyLifeChange}
+        enemyDisplayedActions={enemyDisplayedActions}
+        lvlGame={lvlGame}
+      />
       <Player player={player} playerLifeChange={playerLifeChange} />
       <div className="energy-fdt">
         <div className="energy-div">
