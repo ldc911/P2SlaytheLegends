@@ -228,6 +228,8 @@ Enemy.propTypes = {
     }),
   }),
   enemyLifeChange: PropTypes.number,
+  enemyDisplayedActions: PropTypes.string,
+  lvlGame: PropTypes.number,
 };
 
 Enemy.defaultProps = {
@@ -242,4 +244,6 @@ Enemy.defaultProps = {
     debuff: { vulnerable: 0, weak: 0, poison: 0 },
   },
   enemyLifeChange: 0,
+  enemyDisplayedActions: "",
+  lvlGame: 0,
 };
