@@ -2,6 +2,7 @@
 /* eslint-disable no-shadow */
 /* eslint-disable no-unused-vars */
 import React, { useState, useRef, useEffect } from "react";
+import PropTypes from "prop-types";
 import "../../assets/css/Game/player.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -29,7 +30,7 @@ library.add(
   faHeart
 );
 
-export default function player({ player, playerLifeChange }) {
+export default function Player({ player, playerLifeChange }) {
   return (
     <div className="player-stat">
       <div className="Top-Player">
@@ -149,3 +150,67 @@ export default function player({ player, playerLifeChange }) {
     </div>
   );
 }
+
+Player.propTypes = {
+  player: PropTypes.shape({
+    currentLife: PropTypes.number,
+    maxLife: PropTypes.number,
+    currentEnergy: PropTypes.number,
+    tempBuff: PropTypes.shape({
+      block: PropTypes.number,
+      avoidAttack: PropTypes.number,
+    }),
+    fullCombatBuff: PropTypes.shape({
+      attackBuff: PropTypes.number,
+      blockBuff: PropTypes.number,
+    }),
+    fullGameBuff: PropTypes.shape({
+      magicBuff: PropTypes.number,
+      physBuff: PropTypes.number,
+      defenseBuff: PropTypes.number,
+      poisonBuff: PropTypes.number,
+      healBuff: PropTypes.number,
+    }),
+    debuff: PropTypes.shape({
+      vulnerable: PropTypes.number,
+      weak: PropTypes.number,
+      poison: PropTypes.number,
+      distribDown: PropTypes.number,
+    }),
+    drawCard: PropTypes.number,
+    startDistrib: PropTypes.number,
+  }),
+  playerLifeChange: PropTypes.number,
+};
+
+Player.defaultProps = {
+  player: {
+    currentLife: 0,
+    maxLife: 0,
+    currentEnergy: 0,
+    tempBuff: {
+      block: 0,
+      avoidAttack: 0,
+    },
+    fullCombatBuff: {
+      attackBuff: 0,
+      blockBuff: 0,
+    },
+    fullGameBuff: {
+      magicBuff: 0,
+      physBuff: 0,
+      defenseBuff: 0,
+      poisonBuff: 0,
+      healBuff: 0,
+    },
+    debuff: {
+      vulnerable: 0,
+      weak: 0,
+      poison: 0,
+      distribDown: 0,
+    },
+    drawCard: 0,
+    startDistrib: 0,
+  },
+  playerLifeChange: 0,
+};
