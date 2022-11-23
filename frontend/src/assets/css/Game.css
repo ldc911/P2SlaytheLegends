@@ -7,7 +7,7 @@
   height: 100vh;
   background-image: url("../img/Game/arena.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: cover;
   background-size: 100% auto;
 }
 .Game-Over{

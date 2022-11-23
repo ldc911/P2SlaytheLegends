@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import "../../assets/css/Game/Enemy.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -33,7 +32,23 @@ library.add(
   faVialCircleCheck
 );
 
-export default function Enemy({ enemy, enemyLifeChange }) {
+export default function Enemy({
+  enemy,
+  enemyLifeChange,
+  enemyDisplayedActions,
+  lvlGame,
+}) {
+  const enemyPassives = (lvl) => {
+    switch (lvl) {
+      case 3:
+        return "Tous les 3 tours l'Herald gagne 1 point de dégat";
+      case 5:
+      case 6:
+        return "Tous les 3 tours Nashor gagne 2 points de dégats et 2 point en resistance Physique, Magique et Poison";
+      default:
+        return "";
+    }
+  };
   return (
     <div className="enemy-stat">
       <div className="Top-Enemy">
@@ -180,7 +195,55 @@ export default function Enemy({ enemy, enemyLifeChange }) {
             )}
           </span>
         </div>
+        <div className="Boss-Description-container">
+          <p className="Boss-Description">
+            Prochaine Attaque: {enemyDisplayedActions}
+          </p>
+          <p className="Boss-Description">{enemyPassives(lvlGame)}</p>
+        </div>
       </div>
     </div>
   );
 }
+
+Enemy.propTypes = {
+  enemy: PropTypes.shape({
+    currentLife: PropTypes.number,
+    maxLife: PropTypes.number,
+    resistPhys: PropTypes.number,
+    resistMag: PropTypes.number,
+    resistPoison: PropTypes.number,
+    tempBuff: PropTypes.shape({
+      block: PropTypes.number,
+      avoidAttack: PropTypes.number,
+    }),
+    fullCombatBuff: PropTypes.shape({
+      attackBuff: PropTypes.number,
+      blockBuff: PropTypes.number,
+    }),
+    debuff: PropTypes.shape({
+      vulnerable: PropTypes.number,
+      weak: PropTypes.number,
+      poison: PropTypes.number,
+    }),
+  }),
+  enemyLifeChange: PropTypes.number,
+  enemyDisplayedActions: PropTypes.string,
+  lvlGame: PropTypes.number,
+};
+
+Enemy.defaultProps = {
+  enemy: {
+    currentLife: 200,
+    maxLife: 200,
+    resistPhys: 0,
+    resistMag: 0,
+    resistPoison: 0,
+    tempBuff: { block: 0, avoidAttack: 0 },
+    fullCombatBuff: { attackBuff: 0, blockBuff: 0 },
+    debuff: { vulnerable: 0, weak: 0, poison: 0 },
+  },
+  enemyLifeChange: 0,
+  enemyDisplayedActions: "",
+  lvlGame: 0,
+};

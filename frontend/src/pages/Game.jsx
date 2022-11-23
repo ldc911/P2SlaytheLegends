@@ -524,7 +524,7 @@ export default function Game() {
           <Board
             player={playerStats}
             enemy={enemyStats}
-            enemyActions={enemyActions}
+            enemyDisplayedActions={enemyActions.displayedActions}
             setEndPlayerTurn={setEndPlayerTurn}
             fightTurns={fightTurns}
             playerLifeChange={playerLifeChange}
