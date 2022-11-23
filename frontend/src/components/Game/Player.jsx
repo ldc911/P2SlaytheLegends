@@ -206,7 +206,7 @@ Player.defaultProps = {
       vulnerable: 0,
       weak: 0,
       poison: 0,
-      distribDown: 0,
+      distribDown: -1,
     },
     drawCard: 0,
     startDistrib: 0,
