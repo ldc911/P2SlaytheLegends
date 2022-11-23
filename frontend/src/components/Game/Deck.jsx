@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import PropTypes from "prop-types";
 import React, { useState, useRef, useEffect } from "react";
 import GameCard from "./GameCard";
@@ -17,21 +19,19 @@ export default function Deck({
 }) {
   // Les States
 
-  ///Premierer distribution à chaque nouveau LvL
+  /// Premierer distribution à chaque nouveau LvL
   const firstCard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]; // default deck
   firstCard.sort(() => Math.random() - 0.5); // melange le deck default
   let numberDistribStart = playerStats.startDistrib;
-  console.log(`playerstatsdebuff = >> ${playerStats.debuff.distribDown}`)
-  if (playerStats.debuff.distribDown >= 0){
-    numberDistribStart = numberDistribStart - 1;
-    console.log(`Carte de depart à deistribuer = >> ${numberDistribStart}`)
+  if (playerStats.debuff.distribDown >= 0) {
+    numberDistribStart -= 1;
   }
   const [deck, setDeck] = useState({
     drawPile: [...firstCard.splice(numberDistribStart)],
     hand: [...firstCard.splice(0, numberDistribStart)],
     cimetery: [],
   });
-  /////// Fin distribution audepart ////
+  /// //// Fin distribution audepart ////
 
   const [cardManager, setCardManager] = useState({
     index: -1,
@@ -55,7 +55,10 @@ export default function Deck({
         deck.drawPile.length - numberDistribStart,
         deck.drawPile.length
       );
-      deck.drawPile.splice(deck.drawPile.length - numberDistribStart, deck.drawPile.length);
+      deck.drawPile.splice(
+        deck.drawPile.length - numberDistribStart,
+        deck.drawPile.length
+      );
     }
   };
 
@@ -111,7 +114,10 @@ export default function Deck({
           deck.drawPile.length - numberDistribStart,
           deck.drawPile.length
         );
-        deck.drawPile.splice(deck.drawPile.length - numberDistribStart, deck.drawPile.length);
+        deck.drawPile.splice(
+          deck.drawPile.length - numberDistribStart,
+          deck.drawPile.length
+        );
       }
       setHand(deck.hand);
       setDeck(deck);
@@ -160,9 +166,7 @@ export default function Deck({
           className="drag-drop-zone"
           onDrop={(e) => dropEnnemy(e)}
           onDragOver={(e) => allowDrop(e)}
-        >
-        
-        </div>
+        />
       </div>
       <div className="game-bottom">
         <div className="dumpcard">

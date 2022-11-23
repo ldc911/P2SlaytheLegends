@@ -142,7 +142,8 @@ export default function Player({ player, playerLifeChange }) {
                 icon="fa-solid fa-hand-point-down"
                 title="Reçoit 1 carte de moins au début du tour"
               />
-              {player.debuff.distribDown > -1 && `${player.debuff.distribDown + 1}`}
+              {player.debuff.distribDown > -1 &&
+                `${player.debuff.distribDown + 1}`}
             </span>
           )}
         </div>
