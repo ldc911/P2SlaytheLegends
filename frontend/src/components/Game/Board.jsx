@@ -1,44 +1,36 @@
 /* eslint-disable react/prop-types */
-// import PropTypes from "prop-types";
-import React from "react";
+/* eslint-disable no-unused-vars */
+import React, { useState, useRef, useEffect } from "react";
+import "../../assets/css/Game/Board.css";
+import Enemy from "./Enemy";
+// eslint-disable-next-line import/no-unresolved
+import Player from "./Player";
 
 export default function Board({
-  playerStats,
-  enemyStats,
-  enemyActions,
+  enemy,
+  player,
   setEndPlayerTurn,
   fightTurns,
   playerLifeChange,
   enemyLifeChange,
 }) {
   return (
-    <div className="stats-wrapper">
-      <div>
-        <button type="button" onClick={() => setEndPlayerTurn(true)}>
-          fin de tour
-        </button>
-        <div>Turn: {fightTurns}</div>
-        <p>
-          Boss: Life: {enemyStats.currentLife} / vulnerable:{" "}
-          {enemyStats.debuff.vulnerable} / weak: {enemyStats.debuff.weak} /
-          poison: {enemyStats.debuff.poison} / Next Action:{" "}
-          {enemyActions.displayedActions} / Block: {enemyStats.tempBuff.block} /
-          last heal or damage:{enemyLifeChange}
-        </p>
+    <div className="board-container">
+      <Enemy enemy={enemy} enemyLifeChange={enemyLifeChange} />
+      <Player player={player} playerLifeChange={playerLifeChange} />
+      <div className="mana-game">
+        {player.currentEnergy}/{player.maxEnergy}
       </div>
-      <div>
-        <p>
-          Player: Life: {playerStats.currentLife} / Block:{" "}
-          {playerStats.tempBuff.block} / dodge:{" "}
-          {playerStats.tempBuff.avoidAttack} / Attack:{" "}
-          {playerStats.fullCombatBuff.attackBuff} / Block+:{" "}
-          {playerStats.fullCombatBuff.blockBuff} / Energy:{" "}
-          {playerStats.currentEnergy} / {playerStats.maxEnergy} / vulne:{" "}
-          {playerStats.debuff.vulnerable} / weak: {playerStats.debuff.weak} /
-          poison: {playerStats.debuff.poison} / distrib down:{" "}
-          {playerStats.debuff.distribDown} / last heal or damage:
-          {playerLifeChange}
-        </p>
+      <button
+        className="findetour-game"
+        type="button"
+        onClick={() => setEndPlayerTurn(true)}
+      >
+        {" "}
+        END TURN{" "}
+      </button>
+      <div className="">
+        <div />
       </div>
     </div>
   );

@@ -523,8 +523,8 @@ export default function Game() {
       {(lvlGame === 1 || lvlGame === 3 || lvlGame === 5) && deckJeu && (
         <>
           <Board
-            playerStats={playerStats}
-            enemyStats={enemyStats}
+            player={playerStats}
+            enemy={enemyStats}
             enemyActions={enemyActions}
             setEndPlayerTurn={setEndPlayerTurn}
             fightTurns={fightTurns}
@@ -546,8 +546,6 @@ export default function Game() {
           />
         </>
       )}
-      {lvlGame === 2 && <div>Victoire le boss est vaincu 1!!!</div>}
-      {lvlGame === 4 && <div>Victoire le boss est vaincu 2!!!</div>}
       {lvlGame === 7 && (
         <div className="Game-Over">
           <p
