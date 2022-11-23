@@ -8,11 +8,11 @@ import ThemeButton from "./ThemeButton";
 export default function HeaderHome() {
   const location = useLocation();
   const specAc = matchPath({ path: "/" }, location.pathname);
-  const specG = matchPath({ path: "/game" }, location.pathname);
+
   return (
     <header className="headerHome ">
       <img className="headerLogo" src={logoHeader} alt="logo Lol" />
-      {(!specAc || !specG) && <Navbar />}
+      {!specAc && <Navbar />}
 
       <ThemeButton />
     </header>
