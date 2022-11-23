@@ -18,17 +18,22 @@ export default function Board({
     <div className="board-container">
       <Enemy enemy={enemy} enemyLifeChange={enemyLifeChange} />
       <Player player={player} playerLifeChange={playerLifeChange} />
-      <div className="mana-game">
-        {player.currentEnergy}/{player.maxEnergy}
+      <div className="energy-fdt">
+        <div className="energy-div">
+          <h2 className="energy-text">Energy</h2>
+          <div className="mana-game">
+            {player.currentEnergy}/{player.maxEnergy}
+          </div>
+        </div>
+        <button
+          className="findetour-game"
+          type="button"
+          onClick={() => setEndPlayerTurn(true)}
+        >
+          {" "}
+          END TURN{" "}
+        </button>
       </div>
-      <button
-        className="findetour-game"
-        type="button"
-        onClick={() => setEndPlayerTurn(true)}
-      >
-        {" "}
-        END TURN{" "}
-      </button>
       <div className="">
         <div />
       </div>

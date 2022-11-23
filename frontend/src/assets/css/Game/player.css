@@ -1,13 +1,20 @@
 .player-stat {
   display: flex;
   flex-direction: column;
-  position: relative;
-  left: 10vw;
+  position: absolute;
+  left: 2vw;
+  width:15%;
+  top:15%;
+}
+.Top-Player{
+  display:flex;  
+  width:100%;
+  justify-content:space-between;
 }
 .entoure-barredevie-player {
   text-align: center;
   border-color: black;
-  height: 7vh;
+  height: 5vh;
   width: 15vw;
   position: relative;
   border-radius: 2rem;
@@ -18,21 +25,15 @@
   top: 0;
   width: 20vw;
   position: absolute;
-  height: 6.5vh;
+  height: 4.5vh;
   border-radius: 2rem;
   background: linear-gradient(blue, red);
 }
 .vie-text-player {
   z-index: 1;
-  /* La largeur de l’élément */
-  /* La hauteur de l’élément */
-  /* Centrer verticalement et horizontalement */
-  position: absolute;
-  top: 55%;
-  left: 40%;
-  font-weight: bold;
-  font-size: 0.8rem;
-  margin: -15px; /* Appliquer des marges négatives aux propriétés top et left pour centrer parfaitement l’élément */
+  position: relative;  
+  font-size: 1rem;
+  margin: auto;
 }
 
 .block-player {
@@ -43,29 +44,33 @@
 
 .avoidAttack {
   font-weight: bold;
+  color: cadetblue;
 }
 .attackBuff {
-  color: greenyellow;
+  color: cadetblue;
   font-weight: bold;
 }
 .distribDown {
   font-weight: Bold;
+  color: red;
 }
 .playerLifeChange {
   color: greenyellow;
-  left: 12%;
   font-weight: bold;
   position: relative;
-  top: 5vh;
+
 }
 .playerinferieur {
   color: red;
-  left: 12%;
   font-weight: bold;
   position: relative;
-  top: 5vh;
 }
 
 .inLineBlockPlayer {
   display: inline-block;
+}
+@media screen and (max-width: 1024px) {
+  .player-stat {
+    top: 2%;
+  }
 }

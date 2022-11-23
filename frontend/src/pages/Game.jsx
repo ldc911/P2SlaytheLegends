@@ -491,9 +491,8 @@ export default function Game() {
     }
   }, [playerStats.currentLife]);
   // affichage changement de vie pour le joueur et l'ennemi
-
   return (
-    <div>
+    <div className="Game-Arena">
       {(lvlGame === 0 || lvlGame === 2 || lvlGame === 4 || lvlGame === 6) && (
         <ModalDisplay
           setDeckJeu={setDeckJeu}
