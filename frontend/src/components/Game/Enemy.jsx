@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import "../../assets/css/Game/Enemy.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -184,3 +183,41 @@ export default function Enemy({ enemy, enemyLifeChange }) {
     </div>
   );
 }
+
+Enemy.propTypes = {
+  enemy: PropTypes.shape({
+    currentLife: PropTypes.number,
+    maxLife: PropTypes.number,
+    resistPhys: PropTypes.number,
+    resistMag: PropTypes.number,
+    resistPoison: PropTypes.number,
+    tempBuff: PropTypes.shape({
+      block: PropTypes.number,
+      avoidAttack: PropTypes.number,
+    }),
+    fullCombatBuff: PropTypes.shape({
+      attackBuff: PropTypes.number,
+      blockBuff: PropTypes.number,
+    }),
+    debuff: PropTypes.shape({
+      vulnerable: PropTypes.number,
+      weak: PropTypes.number,
+      poison: PropTypes.number,
+    }),
+  }),
+  enemyLifeChange: PropTypes.number,
+};
+
+Enemy.defaultProps = {
+  enemy: {
+    currentLife: 200,
+    maxLife: 200,
+    resistPhys: 0,
+    resistMag: 0,
+    resistPoison: 0,
+    tempBuff: { block: 0, avoidAttack: 0 },
+    fullCombatBuff: { attackBuff: 0, blockBuff: 0 },
+    debuff: { vulnerable: 0, weak: 0, poison: 0 },
+  },
+  enemyLifeChange: 0,
+};
