@@ -4,7 +4,6 @@ import ModalDisplay from "../components/Game/ModalDisplay";
 import Deck from "../components/Game/Deck";
 import Board from "../components/Game/Board";
 import "../assets/css/Game.css";
-import Board from "../components/Game/Board";
 
 export default function Game() {
   const [render, setRender] = useState(false);
@@ -547,7 +546,7 @@ export default function Game() {
           />
         </>
       )}
-          {lvlGame === 7 && (
+      {lvlGame === 7 && (
         <div className="Game-Over">
           <p
             style={{

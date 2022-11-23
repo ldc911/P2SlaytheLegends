@@ -1,5 +1,5 @@
 .ModalReward-lvlUp {
-  display:flex;
+  display: flex;
   align-items: center;
 }
 
@@ -10,11 +10,11 @@
   align-items: center;
 }
 
-.ModalReward-win h1{
+.ModalReward-win h1 {
   text-shadow: 2px 3px 4px var(--bg_color);
 }
 
-.ModalReward-win img{
+.ModalReward-win img {
   margin-top: 3vh;
   max-width: 60vw;
 }

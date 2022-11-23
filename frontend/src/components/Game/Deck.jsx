@@ -195,7 +195,7 @@ export default function Deck({
               );
               return (
                 <div
-                  className={`Card-Zone${
+                  className={`Card-Zone draggable${
                     cardEnergy > playerStats.currentEnergy ? " manared" : ""
                   }`}
                   key={champions[item].champion.id}
