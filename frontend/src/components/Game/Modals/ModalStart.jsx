@@ -17,11 +17,6 @@ export default function ModalStart({ setStartGame }) {
           QUIT GAME
         </button>
       </Link>
-      <Link className="Modale-link" to="/scores">
-        <button type="button" className="Modale-validate">
-          SCORE
-        </button>
-      </Link>
     </div>
   );
 }

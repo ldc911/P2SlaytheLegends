@@ -15,6 +15,10 @@
   background-repeat: no-repeat;
   background-color: transparent;
 }
+/* .drag-drop-zone:hover{
+  cursor: url("../../cursor/alt.cur"), auto;
+} */
+
 .drag-drop-zone.lvl1 {
   background-image: url("../../img/Game/dragon.png");
 }
@@ -27,6 +31,7 @@
 .drag-drop-zone p {
   color: #fff;
 }
+
 .drag-drop-zone.inside-drag-area {
   opacity: 0.7;
 }
@@ -51,7 +56,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   align-content: flex-start;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   gap: 1vw;
 }
@@ -60,6 +65,19 @@
 }
 
 /* /// DrawPile et cimetery img */
+.infodumpcard{
+  position: absolute;
+  font-family: "BeaufortforLOL-Bold";
+  color: #c89d3e;
+  right: 1%;
+  margin-bottom: 0.8rem;
+  z-index: 1;
+}
+
+.infoparent{
+  position: relative;
+}
+
 .dumpcard {
   display: flex;
   flex-direction: column;
@@ -67,6 +85,7 @@
   align-items: center;
   align-content: flex-end;
   flex-wrap: nowrap;
+  margin: 2vw;
 }
 
 .drawpile img,
@@ -74,7 +93,7 @@
   height: 15vh;
 }
 
-.drawpile .cimetery {
+.drawpile, .cimetery {
   height: 100%;
   flex: 1;
   padding: 2vw;
