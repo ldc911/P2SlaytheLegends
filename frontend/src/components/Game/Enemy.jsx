@@ -49,6 +49,18 @@ export default function Enemy({
         return "";
     }
   };
+  const enemyName = (lvl) => {
+    switch (lvl) {
+      case 1:
+        return "Dragon";
+      case 3:
+        return "Herald";
+      case 5:
+        return "Nashor";
+      default:
+        return "";
+    }
+  };
   return (
     <div className="enemy-stat">
       <div className="Top-Enemy">
@@ -61,6 +73,9 @@ export default function Enemy({
             title={`${enemy.tempBuff.block.toString()} points de Block`}
           />
           {enemy.tempBuff.block > 0 && `${enemy.tempBuff.block}  `}
+        </div>
+        <div>
+          <h3>{enemyName(lvlGame)}</h3>
         </div>
         <div
           className={enemyLifeChange > 0 ? "enemyLifeChange" : "enemyinferieur"}
