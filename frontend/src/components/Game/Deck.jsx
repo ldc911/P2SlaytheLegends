@@ -157,10 +157,16 @@ export default function Deck({
       <div className="game-bottom">
         <div className="dumpcard">
           <div className="drawpile">
-            <img src={backCard} alt="Deck" draggable="false" />
+            <div className="infoparent">
+              <p className="infodumpcard">{deck.drawPile.length}</p>
+              <img src={backCard} alt="Deck" draggable="false" />
+            </div>
           </div>
           <div className="cimetery">
-            <img src={backCard} alt="Cemetery" draggable="false" />
+            <div className="infoparent">
+              <p className="infodumpcard">{deck.cimetery.length}</p>
+              <img src={backCard} alt="Cemetery" draggable="false" />
+            </div>
           </div>
         </div>
         <div className="hand">
