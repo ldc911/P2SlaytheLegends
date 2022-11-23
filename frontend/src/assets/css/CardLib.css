@@ -141,3 +141,37 @@
     max-width: 151px;
   }
 }
+
+@media screen and (max-width: 945px) {
+  .skillsCard p {
+    font-size: 0.6rem;
+  }
+  .champCardName h3 {
+    font-size: 0.6rem;
+    line-height: 12px;
+    font-weight: 500;
+  }
+  .champCard {
+    min-height: 137px;
+    min-width: 100px;
+    max-height: 137px;
+    max-width: 100px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .skillsCard p {
+    font-size: 0.6rem;
+  }
+  .champCardName h3 {
+    font-size: 0.6rem;
+    line-height: 12px;
+    font-weight: 500;
+  }
+  .champCard {
+    min-height: 116px;
+    min-width: 85px;
+    max-height: 116px;
+    max-width: 85px;
+  }
+}
