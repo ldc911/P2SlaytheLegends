@@ -34,7 +34,7 @@ export default function Game() {
       poisonBuff: 0,
       healBuff: 0,
     },
-    debuff: { vulnerable: 0, weak: 0, poison: 0, distribDown: 0 },
+    debuff: { vulnerable: 0, weak: 0, poison: 0, distribDown: -1 },
     drawCard: 0,
     startDistrib: 5,
   });
@@ -61,7 +61,7 @@ export default function Game() {
     blockBuff: 0,
     drawDebuff: 0,
     leech: false,
-    distribDown: 0,
+    distribDown: -1,
     displayedActions: `25 Damages`,
   });
   // Objet représentant la liste des actions possible de l'ennemi pendant le combat
@@ -78,7 +78,7 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `25 Damage`,
     },
     {
@@ -106,7 +106,7 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `20 Damage / 20 Block`,
     },
     {
@@ -120,7 +120,7 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `20 Damage / 2 Weak`,
     },
     {
@@ -134,7 +134,7 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `30 Damages`,
     },
   ]);
@@ -174,7 +174,7 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `25 Damages`,
     },
     {
@@ -188,7 +188,7 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `15 Damages / 15 Block`,
     },
     {
@@ -202,7 +202,7 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `25 Block / 1 Vulne`,
     },
     {
@@ -216,7 +216,7 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `30 Damages / 10 Block`,
     },
     {
@@ -230,7 +230,7 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: true,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `25 Damages / Leech Life`,
     },
   ];
@@ -247,7 +247,7 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `30 Damages / 15 Block`,
     },
     {
@@ -261,7 +261,7 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `5 Poison / 15 Block`,
     },
     {
@@ -275,7 +275,7 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: true,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `40 Damages / Leech Life`,
     },
     {
@@ -289,7 +289,7 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `1 Dodge / 1 Weak`,
     },
     {
@@ -303,7 +303,7 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `30 Damages / 20 Block`,
     },
   ];
@@ -357,7 +357,7 @@ export default function Game() {
     if (playerCopy.debuff.poison > 0) {
       playerCopy.debuff.poison -= 1;
     }
-    if (playerCopy.debuff.distribDown > 0) {
+    if (playerCopy.debuff.distribDown > -1) {
       playerCopy.debuff.distribDown -= 1;
     }
     return playerCopy;
@@ -450,7 +450,7 @@ export default function Game() {
       if (enemyActions.weak > 0) {
         playerCopy.debuff.weak += enemyActions.weak;
       }
-      if (enemyActions.distribDown > 0) {
+      if (enemyActions.distribDown > -1) {
         playerCopy.debuff.distribDown += enemyActions.distribDown;
       }
 
@@ -520,7 +520,7 @@ export default function Game() {
         />
       )}
       {(lvlGame === 1 || lvlGame === 3 || lvlGame === 5) && deckJeu && (
-        <>
+        <div className={`lvl${lvlGame.toString()}`}>
           <Board
             player={playerStats}
             enemy={enemyStats}
@@ -543,7 +543,7 @@ export default function Game() {
             setRender={setRender}
             render={render}
           />
-        </>
+        </div>
       )}
       {lvlGame === 7 && (
         <div className="Game-Over">

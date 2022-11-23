@@ -2,7 +2,7 @@
   position: absolute;
   width: 100%;
   height: 60vh;
-  border-radius: 2rem; 
+  border-radius: 2rem;
 }
 .findetour-game {
   background: none;
@@ -12,19 +12,19 @@
   color: #fff;
   font-size: 1em;
   margin: 2px;
-  padding: 1em; 
+  padding: 1em;
   right: 4vw;
   height: 8vh;
   position: absolute;
   bottom: 36%;
 }
-.energy-div{
+.energy-div {
   position: absolute;
   bottom: 19vh;
   left: 6vw;
 }
-.energy-text{
-  color:#c89d3e;
+.energy-text {
+  color: #c89d3e;
   font-family: "BeaufortforLOL-Bold";
 }
 .mana-game {
@@ -32,7 +32,7 @@
   padding: 16px;
   background: url(/src/assets/img/Board/Mana-Image.png) 40%;
   background-size: cover;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   font-size: 1.5rem;
   color: #c89d3e;
   font-weight: bold;
@@ -42,7 +42,7 @@
   width: 70px;
   height: 70px;
   border: 2px solid rgb(103 148 3);
-  margin:auto;
+  margin: auto;
 }
 .numberOfTurns {
   position: absolute;
@@ -60,7 +60,7 @@
   .energy-div {
     font-size: 0.8rem;
   }
-  .mana-game{
+  .mana-game {
     font-size: 1rem;
   }
 }

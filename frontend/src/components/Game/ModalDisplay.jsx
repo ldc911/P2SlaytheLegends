@@ -357,7 +357,7 @@ ModalDisplay.defaultProps = {
       vulnerable: 0,
       weak: 0,
       poison: 0,
-      distribDown: 0,
+      distribDown: -1,
     },
     drawCard: 0,
     startDistrib: 0,
@@ -412,7 +412,7 @@ ModalDisplay.defaultProps = {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `25 Damages`,
     },
     {
@@ -426,7 +426,7 @@ ModalDisplay.defaultProps = {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `15 Damages / 15 Block`,
     },
     {
@@ -440,7 +440,7 @@ ModalDisplay.defaultProps = {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `25 Block / 1 Vulne`,
     },
     {
@@ -454,7 +454,7 @@ ModalDisplay.defaultProps = {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `30 Damages / 10 Block`,
     },
     {
@@ -468,7 +468,7 @@ ModalDisplay.defaultProps = {
       blockBuff: 0,
       drawDebuff: 0,
       leech: true,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `25 Damages / Leech Life`,
     },
   ],
@@ -485,7 +485,7 @@ ModalDisplay.defaultProps = {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `30 Damages / 15 Block`,
     },
     {
@@ -499,7 +499,7 @@ ModalDisplay.defaultProps = {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `5 Poison / 15 Block`,
     },
     {
@@ -513,7 +513,7 @@ ModalDisplay.defaultProps = {
       blockBuff: 0,
       drawDebuff: 0,
       leech: true,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `40 Damages / Leech Life`,
     },
     {
@@ -527,7 +527,7 @@ ModalDisplay.defaultProps = {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `1 Dodge / 1 Weak`,
     },
     {
@@ -541,7 +541,7 @@ ModalDisplay.defaultProps = {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: 0,
+      distribDown: -1,
       displayedActions: `30 Damages / 20 Block`,
     },
   ],

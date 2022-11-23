@@ -6,26 +6,25 @@
 }
 .drag-drop-zone {
   top: 0;
-  border: red solid 1px;
   position: fixed;
-  margin: calc(30vh - 100px) 25vw;
+  margin: calc(39vh - 99px) 19vw;
   width: 50vw;
-  height: 30vh;
+  height: 350px;
   background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent;
+  background-position: center;
 }
-/* .drag-drop-zone:hover{
+.drag-drop-zone:hover {
   cursor: url("../../cursor/alt.cur"), auto;
-} */
-
-.drag-drop-zone.lvl1 {
+}
+.lvl1 .drag-drop-zone {
   background-image: url("../../img/Game/dragon.png");
 }
-.drag-drop-zone.lvl1.lvl2 {
+.lvl3 .drag-drop-zone {
   background-image: url("../../img/Game/herald2.png");
 }
-.drag-drop-zone.lvl1.lvl3 {
+.lvl5 .drag-drop-zone {
   background-image: url("../../img/Game/nashor.png");
 }
 .drag-drop-zone p {
@@ -65,7 +64,7 @@
 }
 
 /* /// DrawPile et cimetery img */
-.infodumpcard{
+.infodumpcard {
   position: absolute;
   font-family: "BeaufortforLOL-Bold";
   color: #c89d3e;
@@ -74,9 +73,9 @@
   z-index: 1;
 }
 
-.infoparent{
+.infoparent {
   position: relative;
-  width:fit-content
+  width: fit-content;
 }
 
 .dumpcard {
@@ -94,7 +93,8 @@
   height: 15vh;
 }
 
-.drawpile, .cimetery {
+.drawpile,
+.cimetery {
   height: 100%;
   flex: 1;
   padding: 2vw;
