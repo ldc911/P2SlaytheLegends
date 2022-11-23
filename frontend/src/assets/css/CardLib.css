@@ -124,3 +124,20 @@
   transform: scale(1.1);
   box-shadow: 0 10px 6px var(--bg-color);
 }
+
+@media screen and (max-width: 1135px) {
+  .skillsCard p {
+    font-size: 0.6rem;
+  }
+  .champCardName h3 {
+    font-size: 0.6rem;
+    line-height: 12px;
+    font-weight: 500;
+  }
+  .champCard {
+    min-height: 172px;
+    min-width: 126px;
+    max-height: 206px;
+    max-width: 151px;
+  }
+}
